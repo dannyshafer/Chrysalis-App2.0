@@ -123,3 +123,121 @@ Started GET "/stocks" for ::1 at 2015-08-09 14:31:15 -0700
 Processing by StocksController#index as JSON
   [1m[36mStock Load (0.4ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
 Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+
+
+Started OPTIONS "/stocks" for ::1 at 2015-08-09 14:57:25 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"stocks"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 14:57:25 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 35ms (Views: 20.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 14:58:16 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:00:19 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:00:59 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:00:59 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:01:00 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:01:00 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (0.3ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:01:00 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (0.5ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started OPTIONS "/stocks" for ::1 at 2015-08-09 15:28:25 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"stocks"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:28:25 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (0.4ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Started OPTIONS "/stocks" for ::1 at 2015-08-09 15:40:58 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"stocks"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:40:58 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:41:01 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (0.3ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:41:03 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (0.4ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:41:04 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (0.3ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:41:13 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (0.5ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:41:14 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stocks" for ::1 at 2015-08-09 15:41:18 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)

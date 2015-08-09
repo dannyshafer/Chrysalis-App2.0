@@ -3,7 +3,8 @@ var Reqwest = require('reqwest');
 var NavBar = require('./NavBar.jsx')
 var LandingPage = require('./LandingPage.jsx')
 var ProfileContainer = require('./ProfileContainer.jsx')
-
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
 
 var App = React.createClass({
   getDefaultProps: function() {
@@ -25,11 +26,11 @@ var App = React.createClass({
   },
   render: function () {
     return (
-      <div>
+      <div id="app">
         <NavBar />
-        <LandingPage />
-        <ProfileContainer origin={this.props.origin} readFromAPI={this.readFromAPI}/>
-
+        <div id="content">
+          <RouteHandler origin={this.props.origin} readFromAPI={this.readFromAPI} />
+        </div>
       </div>
     );
   },

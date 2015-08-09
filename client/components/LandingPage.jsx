@@ -2,7 +2,7 @@ var React = require('react')
 
 var LandingPage = React.createClass({
   render: function(){
-    return(
+    return (
       <div>
         <h3>Landing Page</h3>
       </div>
