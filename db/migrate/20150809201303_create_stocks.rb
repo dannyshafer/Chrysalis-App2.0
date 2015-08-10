@@ -25,6 +25,7 @@ class CreateStocks < ActiveRecord::Migration
       t.float :graham_number_v_ind
       t.float :shares_v_ind
       t.float :book_value_v_ind
+      t.string :info
 
       t.timestamps null: false
     end

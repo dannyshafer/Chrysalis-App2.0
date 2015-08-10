@@ -98,6 +98,7 @@ class StocksController < ApplicationController
 def update
   stocks_runner
   industries_runner
+  stocks_update_versus_index
   p '***********************'
   p 'done!'
   render json: {message: 'success in updating stocks'}
