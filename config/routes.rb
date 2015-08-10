@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'users/profile', to: 'users#profile'
   put 'users/profile', to: 'users#update'
   get 'stocks/recommendations', to: 'stocks#recommendations'
-  get 'stocks/update', to: 'stocks#udpate'
+  get 'stocks/update', to: 'stocks#update'
 
   resources :users, only: [:index]
   resources :stocks, only: [:index]
