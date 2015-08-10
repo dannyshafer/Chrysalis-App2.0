@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809201335) do
+ActiveRecord::Schema.define(version: 20150810215323) do
+
+  create_table "definitions", force: :cascade do |t|
+    t.string   "term"
+    t.string   "explanation"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "descriptions", force: :cascade do |t|
+    t.integer  "risk_preference"
+    t.string   "description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "industries", force: :cascade do |t|
     t.string   "name"
@@ -61,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150809201335) do
     t.float    "shares_v_ind"
     t.float    "book_value_v_ind"
     t.string   "info"
+    t.float    "beta"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
