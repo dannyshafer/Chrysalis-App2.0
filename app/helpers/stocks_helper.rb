@@ -30,7 +30,7 @@ module StocksHelper
       full_url = url + symbol.ticker + connect + eps + pe + pbook + psales + markcap + ask + bid + peg + book_value
       response = HTTParty.get(full_url)
       parsed = CSV.parse(response)[0]
-      if parsed[1].to_f != nil
+      if parsed[1].to_f != 0
         symbol.update_attributes(eps: parsed[0].to_f,
           pe: parsed[1].to_f,
           pbook: parsed[2].to_f,
@@ -65,7 +65,7 @@ module StocksHelper
 
     Stock.all.each do |symbol|
       link_info = "http://finance.yahoo.com/q/pr?s=" + symbol.ticker + "+Profile"
-      beta_info = "http://finance.yahoo.com/q?s="+ symbol
+      beta_info = "http://finance.yahoo.com/q?s=" + symbol
       info = Nokogiri::HTML(open(link_info)).css('p')[1].text
       beta = Nokogiri::HTML(open(beta_info)).css('.yfnc_tabledata1')[5].text.to_f
       symbol.update_attributes(info: info, beta: beta)
