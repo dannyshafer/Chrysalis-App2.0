@@ -4,6 +4,7 @@ class CreateStocks < ActiveRecord::Migration
       t.string :ticker
       t.string :name
       t.string :industry
+      t.integer :asi_component
       t.float :eps
       t.float :pe
       t.float :pbook

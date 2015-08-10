@@ -12,6 +12,8 @@ var NavBar = React.createClass({
       var signingLink = <span onClick={this.handleSignOutLink}>Sign Out</span>;
       var profileLink = <Link to="profile">{this.props.currentUser}</Link>
       var recommendationLink = <Link to="recommendation">Recommendation</Link>
+      var updateLink = <Link to="update">Update Stocks</Link>
+
     } else {
       var signingLink = <a href={this.props.origin + '/request_token'}>Sign In</a>;
     }
@@ -20,6 +22,7 @@ var NavBar = React.createClass({
       {profileLink}
       {signingLink}
       {recommendationLink}
+      {updateLink}
       <Link to="landingpage">landing page</Link>
       </div>
       );
