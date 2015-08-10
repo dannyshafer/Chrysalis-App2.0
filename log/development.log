@@ -902,3 +902,498 @@ Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 17:45:43 -0700
 Processing by UsersController#profile as JSON
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
 Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/bundle.js" for 127.0.0.1 at 2015-08-09 18:58:17 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/bundle.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.2ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.7ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (167.7ms)
+
+
+Started GET "/bundle.js" for 127.0.0.1 at 2015-08-09 18:58:18 -0700
+
+ActionController::RoutingError (No route matches [GET] "/bundle.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (91.1ms)
+
+
+Started GET "/request_token" for 127.0.0.1 at 2015-08-09 18:58:27 -0700
+Processing by TokensController#request_token as HTML
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "oauths" ("token", "secret", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["token", "MFdMCwAAAAAAg9XwAAABTxVUkSE"], ["secret", "Sw5VaPDPcERuMzy2ggXIqdbyrvfCDtgG"], ["created_at", "2015-08-10 01:58:27.606668"], ["updated_at", "2015-08-10 01:58:27.606668"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to https://api.twitter.com/oauth/authenticate?oauth_callback=http%3A%2F%2F127.0.0.1%3A3000%2Faccess_token&oauth_token=MFdMCwAAAAAAg9XwAAABTxVUkSE
+Completed 302 Found in 202ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/access_token?oauth_token=MFdMCwAAAAAAg9XwAAABTxVUkSE&oauth_verifier=MULTHtxr34SsEPplkw8xfJuZvfBn3Qzf" for 127.0.0.1 at 2015-08-09 18:58:29 -0700
+Processing by TokensController#access_token as HTML
+  Parameters: {"oauth_token"=>"MFdMCwAAAAAAg9XwAAABTxVUkSE", "oauth_verifier"=>"MULTHtxr34SsEPplkw8xfJuZvfBn3Qzf"}
+  [1m[36mOauth Load (0.2ms)[0m  [1mSELECT  "oauths".* FROM "oauths" WHERE "oauths"."token" = ? LIMIT 1[0m  [["token", "MFdMCwAAAAAAg9XwAAABTxVUkSE"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Redirected to http://localhost:8080?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIzNDA0ODM0NjkiLCJleHAiOjE0MzkyNTgzMDl9.t9C-pDSJ07HxGGFp__HKlWhXcaEabMlAvT_kOmb90Uw
+Completed 302 Found in 938ms (ActiveRecord: 0.7ms)
+
+
+Started OPTIONS "/current_user" for 127.0.0.1 at 2015-08-09 18:58:30 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"current_user"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 18:58:30 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started OPTIONS "/users/profile" for 127.0.0.1 at 2015-08-09 18:58:31 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"users/profile"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 18:58:31 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/users/profile" for 127.0.0.1 at 2015-08-09 18:58:39 -0700
+Processing by UsersController#update as JSON
+  Parameters: {"info"=>{"risk_preference"=>54, "age"=>41}}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "risk_preference" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["risk_preference", 54], ["updated_at", "2015-08-10 01:58:39.110736"], ["id", 2]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 18:58:43 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateStocks (20150809201303)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "stocks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ticker" varchar, "name" varchar, "industry" varchar, "eps" float, "pe" float, "pbook" float, "psales" float, "markcap" float, "ask" float, "bid" float, "peg" float, "graham_number" float, "shares" float, "book_value" float, "eps_v_ind" float, "pe_v_ind" float, "pbook_v_ind" float, "psales_v_ind" float, "markcap_v_ind" float, "peg_v_ind" float, "graham_number_v_ind" float, "shares_v_ind" float, "book_value_v_ind" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150809201303"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateIndustries (20150809201322)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "industries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "eps" float, "pe" float, "pbook" float, "psales" float, "markcap" float, "peg" float, "book_value" float, "shares" float, "graham_number" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150809201322"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateUsers (20150809201329)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uid" varchar NOT NULL, "handle" varchar NOT NULL, "risk_preference" integer, "age" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_users_on_uid" ON "users" ("uid")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150809201329"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateOauths (20150809201335)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "oauths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "token" varchar NOT NULL, "secret" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_oauths_on_token" ON "oauths" ("token")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150809201335"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_oauths_on_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_oauths_on_token' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid' AND type='index'
+[0m
+
+
+Started GET "/bundle.js" for 127.0.0.1 at 2015-08-09 19:05:29 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/bundle.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.8ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/ryanau/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (104.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 19:05:38 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 72ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/request_token" for 127.0.0.1 at 2015-08-09 19:05:43 -0700
+Processing by TokensController#request_token as HTML
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "oauths" ("token", "secret") VALUES (?, ?)  [["token", "ZqndFQAAAAAAg9XwAAABTxVbN1Q"], ["secret", "v0mzBc7oFGp0hkYHiYbf0GLeMtfar017"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://api.twitter.com/oauth/authenticate?oauth_callback=http%3A%2F%2F127.0.0.1%3A3000%2Faccess_token&oauth_token=ZqndFQAAAAAAg9XwAAABTxVbN1Q
+Completed 302 Found in 171ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/access_token?oauth_token=ZqndFQAAAAAAg9XwAAABTxVbN1Q&oauth_verifier=2jdWV752HDgeJvckBFCwkK9EztTLz3VR" for 127.0.0.1 at 2015-08-09 19:05:44 -0700
+Processing by TokensController#access_token as HTML
+  Parameters: {"oauth_token"=>"ZqndFQAAAAAAg9XwAAABTxVbN1Q", "oauth_verifier"=>"2jdWV752HDgeJvckBFCwkK9EztTLz3VR"}
+  [1m[35mOauth Load (0.3ms)[0m  SELECT  "oauths".* FROM "oauths" WHERE "oauths"."token" = ? LIMIT 1  [["token", "ZqndFQAAAAAAg9XwAAABTxVbN1Q"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("uid", "handle", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uid", "340483469"], ["handle", "ryan_au"], ["created_at", "2015-08-10 02:05:45.287547"], ["updated_at", "2015-08-10 02:05:45.287547"]]
+  [1m[35m (4.4ms)[0m  commit transaction
+Redirected to http://localhost:8080?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIzNDA0ODM0NjkiLCJleHAiOjE0MzkyNTg3NDV9.leA9h9-10iTOX0IhHFWNju-bzU9GnECK0Wh-RJe68e4
+Completed 302 Found in 753ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 19:05:45 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:05:46 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/users/profile" for 127.0.0.1 at 2015-08-09 19:05:51 -0700
+Processing by UsersController#update as JSON
+  Parameters: {"info"=>{"risk_preference"=>41, "age"=>31}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "risk_preference" = ?, "age" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["risk_preference", 41], ["age", 31], ["updated_at", "2015-08-10 02:05:51.807187"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:05:54 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/users/profile" for 127.0.0.1 at 2015-08-09 19:05:58 -0700
+Processing by UsersController#update as JSON
+  Parameters: {"info"=>{"risk_preference"=>26, "age"=>65}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "risk_preference" = ?, "age" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["risk_preference", 26], ["age", 65], ["updated_at", "2015-08-10 02:05:58.957894"], ["id", 1]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:06:01 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:06:06 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:06:11 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started OPTIONS "/current_user" for 127.0.0.1 at 2015-08-09 19:10:06 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"current_user"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 19:10:06 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 19:10:22 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started OPTIONS "/users/profile" for 127.0.0.1 at 2015-08-09 19:10:23 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"users/profile"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:10:23 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 19:10:44 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 19:14:48 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:14:51 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:14:55 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:14:56 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:14:58 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:14:59 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 19:15:21 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:15:22 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 19:15:41 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:15:42 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 19:16:57 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:16:58 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 19:17:26 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 19:17:27 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started OPTIONS "/current_user" for 127.0.0.1 at 2015-08-09 21:13:28 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"current_user"}
+  Rendered text template (0.2ms)
+Completed 200 OK in 13ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 21:13:28 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 17ms (Views: 3.4ms | ActiveRecord: 0.9ms)
+
+
+Started OPTIONS "/users/profile" for 127.0.0.1 at 2015-08-09 21:13:29 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"users/profile"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 21:13:29 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 21:13:32 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 21:13:32 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started OPTIONS "/users/profile" for 127.0.0.1 at 2015-08-09 21:27:20 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"users/profile"}
+  Rendered text template (0.1ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 21:27:20 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/users/profile" for 127.0.0.1 at 2015-08-09 21:27:26 -0700
+Processing by UsersController#update as JSON
+  Parameters: {"info"=>{"risk_preference"=>5, "age"=>65}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (8.3ms)[0m  UPDATE "users" SET "risk_preference" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["risk_preference", 5], ["updated_at", "2015-08-10 04:27:26.235437"], ["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 21:27:27 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started OPTIONS "/current_user" for 127.0.0.1 at 2015-08-09 21:27:28 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"current_user"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-09 21:27:28 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-09 21:27:29 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)

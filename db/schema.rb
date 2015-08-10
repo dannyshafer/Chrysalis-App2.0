@@ -29,10 +29,8 @@ ActiveRecord::Schema.define(version: 20150809201335) do
   end
 
   create_table "oauths", force: :cascade do |t|
-    t.string   "token",      null: false
-    t.string   "secret",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "token",  null: false
+    t.string "secret", null: false
   end
 
   add_index "oauths", ["token"], name: "index_oauths_on_token"

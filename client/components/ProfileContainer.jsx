@@ -50,7 +50,7 @@ var ProfileContainer= React.createClass({
                 <br />
                 <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
                 <br />
-                <Slider defaultValue={this.state.risk_preference} min={0} max={100} onChange={this.handleRiskSliderMove} />
+                <Slider defaultValue={this.state.risk_preference} min={0} max={10} onChange={this.handleRiskSliderMove} />
                 <br />
                 <label for="age">Age: {this.state.age}</label>
                 <br />
