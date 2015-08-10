@@ -9,21 +9,24 @@ var NavBar = React.createClass({
   },
   render: function(){
     if (this.props.signedIn) {
-      var signingLink = <span onClick={this.handleSignOutLink}>Sign Out</span>;
-      var profileLink = <Link to="profile">{this.props.currentUser}</Link>
-      var recommendationLink = <Link to="recommendation">Recommendation</Link>
-      var updateLink = <Link to="update">Update Stocks</Link>
-
+      var signingLink = <li><span onClick={this.handleSignOutLink}>Sign Out</span></li>;
+      var profileLink = <li><Link to="profile">{this.props.currentUser}</Link></li>
+      var recommendationLink = <li><Link to="recommendation">Recommendations</Link></li>
+      var updateLink = <li><Link to="update">Update Stocks</Link></li>
     } else {
-      var signingLink = <a href={this.props.origin + '/request_token'}>Sign In</a>;
+      var signingLink = <li><a href={this.props.origin + '/request_token'}>Sign In</a></li>;
     }
     return (
       <div>
-      {profileLink}
-      {signingLink}
-      {recommendationLink}
-      {updateLink}
-      <Link to="landingpage">landing page</Link>
+        <nav className="nav">
+          <ul>
+            {signingLink}
+            {profileLink}
+            {recommendationLink}
+            {updateLink}
+            <li><Link to="landingpage">landing page</Link></li>
+          </ul>
+        </nav>
       </div>
       );
   },
