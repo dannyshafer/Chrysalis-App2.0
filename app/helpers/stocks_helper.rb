@@ -7,8 +7,8 @@ module StocksHelper
     if !Stock.find_by(id: 1)
       stocks_make_dict
       populate_data
-      stocks_update_versus_index
     end
+    stocks_update_versus_index
   end
 
   def populate_data
