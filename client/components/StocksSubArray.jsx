@@ -1,7 +1,12 @@
 var React = require('react');
+var StocksCard = require('./StocksCard.jsx')
+
 
 var StocksSubArray = React.createClass({
+
+
 	render: function () {
+
 		var stocks = this.props.stocks.map(function (stock, index) {
 			return (
 				<li key={index}>
@@ -13,6 +18,7 @@ var StocksSubArray = React.createClass({
 			<div>
 				<ul>
 					{stocks}
+					<StocksCard />
 				</ul>
 			</div>
 		);

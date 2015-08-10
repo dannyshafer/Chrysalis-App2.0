@@ -2214,3 +2214,609 @@ Processing by StocksController#index as JSON
   [1m[36mStock Load (0.1ms)[0m  [1mSELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?[0m  [["eps", 1.0]]
   [1m[35mStock Load (0.1ms)[0m  SELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?  [["eps", 2.0]]
 Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started OPTIONS "/current_user" for 127.0.0.1 at 2015-08-10 07:46:00 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"current_user"}
+  Rendered text template (0.3ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 07:46:00 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 14ms (Views: 3.1ms | ActiveRecord: 1.2ms)
+
+
+Started OPTIONS "/users/profile" for 127.0.0.1 at 2015-08-10 07:46:01 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"users/profile"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 07:46:01 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started OPTIONS "/stocks" for 127.0.0.1 at 2015-08-10 07:46:01 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"stocks"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-08-10 07:46:01 -0700
+Processing by StocksController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+  [1m[35mStock Load (0.3ms)[0m  SELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?  [["eps", 1.0]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?[0m  [["eps", 2.0]]
+Completed 200 OK in 19ms (Views: 5.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 07:47:54 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 07:47:55 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 07:49:07 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 07:49:08 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 07:50:55 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 07:50:56 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started OPTIONS "/current_user" for 127.0.0.1 at 2015-08-10 08:03:43 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"current_user"}
+  Rendered text template (0.3ms)
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:03:43 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 19ms (Views: 7.3ms | ActiveRecord: 1.8ms)
+
+
+Started OPTIONS "/users/profile" for 127.0.0.1 at 2015-08-10 08:03:44 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"users/profile"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:03:44 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started OPTIONS "/stocks" for 127.0.0.1 at 2015-08-10 08:03:44 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"stocks"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-08-10 08:03:44 -0700
+Processing by StocksController#index as JSON
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?[0m  [["eps", 1.0]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?  [["eps", 2.0]]
+Completed 200 OK in 16ms (Views: 6.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:03:56 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:03:57 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-08-10 08:03:57 -0700
+Processing by StocksController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+  [1m[35mStock Load (0.3ms)[0m  SELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?  [["eps", 1.0]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?[0m  [["eps", 2.0]]
+Completed 200 OK in 16ms (Views: 1.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:04:47 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:04:48 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-08-10 08:04:48 -0700
+Processing by StocksController#index as JSON
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?[0m  [["eps", 1.0]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?  [["eps", 2.0]]
+Completed 200 OK in 12ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started OPTIONS "/current_user" for 127.0.0.1 at 2015-08-10 08:19:48 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"current_user"}
+  Rendered text template (0.5ms)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:19:48 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 16ms (Views: 3.8ms | ActiveRecord: 1.6ms)
+
+
+Started OPTIONS "/users/profile" for 127.0.0.1 at 2015-08-10 08:19:49 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"users/profile"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:19:49 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started OPTIONS "/stocks" for 127.0.0.1 at 2015-08-10 08:19:49 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"stocks"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-08-10 08:19:49 -0700
+Processing by StocksController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?  [["eps", 1.0]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?[0m  [["eps", 2.0]]
+Completed 200 OK in 20ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:22:42 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 37ms (Views: 13.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:22:45 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-08-10 08:22:45 -0700
+Processing by StocksController#index as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?[0m  [["eps", 1.0]]
+  [1m[35mStock Load (0.3ms)[0m  SELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?  [["eps", 2.0]]
+Completed 200 OK in 32ms (Views: 9.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:22:54 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:22:56 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-08-10 08:22:56 -0700
+Processing by StocksController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?  [["eps", 1.0]]
+  [1m[36mStock Load (0.1ms)[0m  [1mSELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?[0m  [["eps", 2.0]]
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:28:12 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 31ms (Views: 5.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:28:13 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started OPTIONS "/current_user" for 127.0.0.1 at 2015-08-10 08:30:15 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"current_user"}
+  Rendered text template (0.2ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:30:15 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 16ms (Views: 3.5ms | ActiveRecord: 2.5ms)
+
+
+Started OPTIONS "/users/profile" for 127.0.0.1 at 2015-08-10 08:30:16 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"users/profile"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:30:16 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:30:26 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:30:27 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:30:40 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (2.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:30:42 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:31:35 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (4.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 30ms (Views: 7.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:31:36 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:36:53 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:36:53 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:37:49 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:37:51 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started OPTIONS "/current_user" for 127.0.0.1 at 2015-08-10 08:42:48 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"current_user"}
+  Rendered text template (0.2ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:42:48 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 18ms (Views: 3.8ms | ActiveRecord: 1.2ms)
+
+
+Started OPTIONS "/users/profile" for 127.0.0.1 at 2015-08-10 08:42:49 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"users/profile"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:42:49 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:43:22 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:43:22 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:44:14 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:44:15 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:45:12 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:45:13 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:46:18 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:46:19 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:47:06 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:47:07 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started OPTIONS "/current_user" for 127.0.0.1 at 2015-08-10 08:55:00 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"current_user"}
+  Rendered text template (0.1ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:55:00 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+Started OPTIONS "/users/profile" for 127.0.0.1 at 2015-08-10 08:55:02 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"users/profile"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:55:02 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 08:59:58 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 19ms (Views: 4.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 08:59:59 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started OPTIONS "/stocks" for 127.0.0.1 at 2015-08-10 08:59:59 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"stocks"}
+  Rendered text template (0.6ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-08-10 08:59:59 -0700
+Processing by StocksController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?[0m  [["eps", 1.0]]
+  [1m[35mStock Load (0.1ms)[0m  SELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?  [["eps", 2.0]]
+Completed 200 OK in 24ms (Views: 5.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 09:02:34 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 64ms (Views: 4.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 09:02:35 -0700
+Processing by UsersController#profile as JSON
+  [1m[35mUser Load (2.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-08-10 09:02:35 -0700
+Processing by StocksController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+  [1m[35mStock Load (0.6ms)[0m  SELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?  [["eps", 1.0]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT "stocks".* FROM "stocks" WHERE "stocks"."eps" = ?[0m  [["eps", 2.0]]
+Completed 200 OK in 27ms (Views: 5.7ms | ActiveRecord: 0.9ms)
+
+
+Started OPTIONS "/current_user" for 127.0.0.1 at 2015-08-10 09:06:45 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"current_user"}
+  Rendered text template (0.2ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 09:06:45 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (2.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 32ms (Views: 9.2ms | ActiveRecord: 2.3ms)
+
+
+Started OPTIONS "/users/profile" for 127.0.0.1 at 2015-08-10 09:06:46 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"users/profile"}
+  Rendered text template (0.1ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 09:06:46 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 09:09:57 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 09:09:58 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 09:10:20 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 09:10:21 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 09:10:44 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 09:10:45 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 09:11:01 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 09:11:01 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 09:12:49 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 09:12:49 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 09:13:19 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 09:13:20 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current_user" for 127.0.0.1 at 2015-08-10 09:15:15 -0700
+Processing by ApplicationController#current_user as JSON
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1  [["uid", "340483469"]]
+Completed 200 OK in 19ms (Views: 4.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/profile" for 127.0.0.1 at 2015-08-10 09:15:16 -0700
+Processing by UsersController#profile as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT 1[0m  [["uid", "340483469"]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)

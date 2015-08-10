@@ -36,14 +36,14 @@ var StocksContainer = React.createClass({
 	render: function () {
 		if (this.props.risk === 1) {
 		  return (
-		    <div>
+		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <StocksSubArray stocks={this.state.stocks_1} />
 		    </div>
 		  );
 		} else if (this.props.risk === 2) {
 		  return (
-		    <div>
+		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <StocksSubArray stocks={this.state.stocks_2} />
 
