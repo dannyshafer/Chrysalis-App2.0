@@ -19,7 +19,6 @@ var StocksSubArray = React.createClass({
 	    };
 	  },
 
-
 	render: function () {
 
 		var stocks = this.props.stocks.map(function (stock, index) {

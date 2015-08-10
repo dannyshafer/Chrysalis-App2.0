@@ -31,9 +31,9 @@ glossary = {
 }
 
 descriptions.each do |key, value|
-  Description.create(name: key, description: value)
+  Description.create(risk_preference: key, description: value)
 end
 
 glossary.each do |key, value|
-  Definitions.create(name: key, description: value)
+  Definition.create(term: key, explanation: value)
 end
