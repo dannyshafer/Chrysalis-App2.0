@@ -11,6 +11,7 @@
 .env
 .DS_Store
 /node_modules
+/log
 
 ## Specific to RubyMotion:
 .dat*

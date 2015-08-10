@@ -4,6 +4,7 @@ var App = require('../components/App.jsx');
 var ProfileContainer = require('../components/ProfileContainer.jsx');
 var LandingPage = require('../components/LandingPage.jsx');
 var RecommendationContainer = require('../components/RecommendationContainer.jsx');
+var UpdateContainer = require('../components/UpdateContainer.jsx');
 var DefaultRoute = Router.DefaultRoute;
 var Route = Router.Route;
 
@@ -12,5 +13,7 @@ module.exports = (
     <DefaultRoute name="landingpage" handler={LandingPage} />
     <Route name="profile" handler={ProfileContainer} />
     <Route name="recommendation" handler={RecommendationContainer} />
+    <Route name="update" handler={UpdateContainer} />
+
   </Route>
   );
