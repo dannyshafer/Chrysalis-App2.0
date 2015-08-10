@@ -3,3 +3,13 @@ body {
   background-color: black;
 }*/
 
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+.card {
+  margin: -150px -250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
