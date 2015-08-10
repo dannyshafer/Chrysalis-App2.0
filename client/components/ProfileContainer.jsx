@@ -11,9 +11,9 @@ var ProfileContainer= React.createClass({
     };
   },
   componentDidMount: function(){
-    this.readUserInfoFromApi();
+    this.readUserInfoFromAPI();
   },
-  readUserInfoFromApi: function(){
+  readUserInfoFromAPI: function(){
     this.props.readFromAPI(this.props.origin + '/users/profile', function(info){
       this.setState({risk_preference: info.risk_preference, age: info.age});
     }.bind(this));
@@ -50,7 +50,7 @@ var ProfileContainer= React.createClass({
                 <br />
                 <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
                 <br />
-                <Slider defaultValue={this.state.risk_preference} min={0} max={10} onChange={this.handleRiskSliderMove} />
+                <Slider defaultValue={this.state.risk_preference} min={1} max={10} onChange={this.handleRiskSliderMove} />
                 <br />
                 <label for="age">Age: {this.state.age}</label>
                 <br />
