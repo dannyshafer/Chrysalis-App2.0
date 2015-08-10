@@ -18,7 +18,6 @@ var StocksSubArray = React.createClass({
 			<div>
 				<ul>
 					{stocks}
-					<StocksCard />
 				</ul>
 			</div>
 		);
