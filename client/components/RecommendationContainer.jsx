@@ -16,6 +16,7 @@ var RecommendationContainer= React.createClass({
   readUserInfoFromApi: function(){
     console.log('reading')
     this.props.readFromAPI(this.props.origin + '/users/profile', function(info){
+      console.log('setting')
       this.setState({risk_preference: info.risk_preference});
     }.bind(this));
   },

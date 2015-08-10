@@ -9,6 +9,7 @@ gem 'spring', :group => :development
 
 
 gem 'sqlite3'
+gem 'httparty'
 
 gem 'oauth'
 

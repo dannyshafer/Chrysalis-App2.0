@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'access_token', to: 'tokens#access_token'
   get 'users/profile', to: 'users#profile'
   put 'users/profile', to: 'users#update'
+  get 'stocks/recommendations', to: 'stocks#recommendations'
+  get 'stocks/update', to: 'stocks#update'
 
   resources :users, only: [:index]
   resources :stocks, only: [:index]
