@@ -1,4 +1,5 @@
 require('./assets/app.css');
+require('./assets/rc-slider.css');
 // require('./assets/menu.css');
 // require('./assets/blabs.css');
 // require('./assets/pure.css')
