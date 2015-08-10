@@ -1,5 +1,8 @@
 var React = require('react');
-var StocksSubArray = require('./StocksSubArray.jsx')
+var StocksSubArray = require('./StocksSubArray.jsx');
+var mui = require('material-ui');
+var RefreshIndicator = mui.RefreshIndicator;
+var ThemeManager = new mui.Styles.ThemeManager();
 
 var StocksContainer = React.createClass({
 	getInitialState: function () {
@@ -18,6 +21,16 @@ var StocksContainer = React.createClass({
 			risk: null,
 		};
 	},
+
+	childContextTypes: {
+    muiTheme: React.PropTypes.object
+  },
+
+	getChildContext: function () { 
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
+  },
 
 	componentDidMount: function () {
 		this.readStocksFromAPI();
@@ -136,7 +149,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div>
 		      <h1>Stocks Recommended</h1>
-		      <h3>Loading...</h3>
+		      <RefreshIndicator size={40} left={80} top={5} status="loading" />
 		    </div>
 		  );
 		};
