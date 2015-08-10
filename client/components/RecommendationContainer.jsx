@@ -1,5 +1,6 @@
 var React = require('react');
 var Slider = require('rc-slider');
+var StocksContainer = require('./StocksContainer.jsx')
 
 var RecommendationContainer= React.createClass({
   getInitialState: function () {
@@ -29,15 +30,15 @@ var RecommendationContainer= React.createClass({
           <h1>Recommendation Page</h1>
           <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
           <br />
-          <Slider defaultValue={this.state.risk_preference} min={0} max={10} onChange={this.handleRiskSliderMove} />
+          <Slider defaultValue={this.state.risk_preference} min={1} max={10} onChange={this.handleRiskSliderMove} signedIn={this.state.signedIn} currentUser={this.state.currentUser}/>
           <br />
+          <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} />
         </div>
       );
     } else {
       return (
         <div>
           <h1>Your Recommendation is Loading...</h1>
-          <h3>Loading...</h3>
         </div>
       );
     };
