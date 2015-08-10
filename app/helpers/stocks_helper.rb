@@ -1,6 +1,8 @@
 require 'csv'
 require 'json'
 require 'HTTParty'
+require 'nokogiri'
+require 'open-uri'
 
 module StocksHelper
   def stocks_runner
@@ -8,7 +10,7 @@ module StocksHelper
       stocks_make_dict
       populate_data
     end
-    stocks_update_versus_index
+    
   end
 
   def populate_data
@@ -43,10 +45,11 @@ module StocksHelper
 
       if symbol.eps >= 0 && symbol.book_value >= 0 && shares >= 0
         gnum = Math.sqrt(22.5 * symbol.eps * (symbol.book_value/shares))
+        symbol.update_attributes(graham_number: gnum, shares: shares)
       else
         gnum = 0
       end
-      symbol.update_attributes(graham_number: gnum, shares: shares)
+      
     end
 
     Stock.where(graham_number: 0).destroy_all
@@ -58,6 +61,13 @@ module StocksHelper
     Stock.where(peg: nil).destroy_all
     Stock.where(book_value: nil).destroy_all
     Stock.where(shares: nil).destroy_all
+
+    Stock.all.each do |symbol|
+      url = "http://finance.yahoo.com/q/pr?s=" + symbol.ticker + "+Profile"
+      info = Nokogiri::HTML(open(url)).css('p')[1].text
+      symbol.update_attributes(info: info)
+    end
+
   end
 
   def stocks_update_versus_index

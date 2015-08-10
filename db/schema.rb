@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20150809201335) do
     t.float    "graham_number_v_ind"
     t.float    "shares_v_ind"
     t.float    "book_value_v_ind"
+    t.string   "info"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
