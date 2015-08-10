@@ -65,7 +65,7 @@ module StocksHelper
 
     Stock.all.each do |symbol|
       link_info = "http://finance.yahoo.com/q/pr?s=" + symbol.ticker + "+Profile"
-      beta_info = "http://finance.yahoo.com/q?s=" + symbol
+      beta_info = "http://finance.yahoo.com/q?s=" + symbol.ticker
       info = Nokogiri::HTML(open(link_info)).css('p')[1].text
       beta = Nokogiri::HTML(open(beta_info)).css('.yfnc_tabledata1')[5].text.to_f
       symbol.update_attributes(info: info, beta: beta)
