@@ -12,7 +12,6 @@
 .DS_Store
 /node_modules
 /log
-/db/development.sqlite3
 
 ## Specific to RubyMotion:
 .dat*

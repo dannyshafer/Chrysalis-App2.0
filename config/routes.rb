@@ -19,4 +19,5 @@ Rails.application.routes.draw do
     get 'baskets/today', to: 'baskets#today'
   end
   resources :stocks, only: [:index]
+  match '*all', to: 'application#index', via: [:get]
 end
