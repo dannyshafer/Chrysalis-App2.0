@@ -28,6 +28,7 @@ class CreateStocks < ActiveRecord::Migration
       t.string :info
       t.float :beta
       t.string :logo_url
+      t.string :exchange
 
       t.timestamps null: false
     end
