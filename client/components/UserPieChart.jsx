@@ -24,23 +24,17 @@ var UserPieChart = React.createClass({
 	},
 
 	handleAddBasket: function () {
-		console.log('message received')
 		var total = this.state.basket.stocks.length
 		var low = 0;
 		var mid = 0;
 		var high = 0;
-
-		console.log(this.state.basket.stocks[0])
+		console.log(this.state.basket)
 		for (var i = 0; i < this.state.basket.stocks.length; i++) {
-			console.log(this.state.basket.stocks[i].asi_component)
 			if (1 <= this.state.basket.stocks[i].asi_component && this.state.basket.stocks[i].asi_component <= 3) {
-				console.log('adding low')
 				low += 1
 			} else if (4 <= this.state.basket.stocks[i].asi_component && this.state.basket.stocks[i].asi_component <= 7) {
-				console.log('adding mid')
 				mid += 1
 			} else if (8 <= this.state.basket.stocks[i].asi_component && this.state.basket.stocks[i].asi_component <= 10) {
-				console.log('adding high')
 				high += 1
 			};
 		};
@@ -62,9 +56,6 @@ var UserPieChart = React.createClass({
 	},
 
 	render: function () {
-		console.log('low' + this.state.low)
-		console.log('mid' + this.state.mid)
-		console.log('high' + this.state.high)
 		if (this.state.none === 10) {
 			var data = {
 				label: 'somethingA',
@@ -84,7 +75,6 @@ var UserPieChart = React.createClass({
 				{x: 'Mid-Risk', y: this.state.mid}]
 			};
 		} else if (this.state.mid === 0 && this.state.high === 0) {
-			console.log('only low')
 			var data = {
 				label: 'somethingA',
 				values: [

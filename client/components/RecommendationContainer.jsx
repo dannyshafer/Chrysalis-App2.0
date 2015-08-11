@@ -53,6 +53,7 @@ var RecommendationContainer = React.createClass({
 
   createUserBasket: function (e) {
     e.preventDefault();
+    console.log('creating user basket')
     var uid = this.props.currentUser.uid
     var data = {
       info: {
@@ -76,6 +77,8 @@ var RecommendationContainer = React.createClass({
           <br />
           <UserPieChart readFromAPI={this.props.readFromAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
           <RaisedButton label="Create Today's Basket" primary={true} onClick={this.createUserBasket}/>
+          <br />
+          {this.state.message}
           <br />
           <br />
           <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>

@@ -37,7 +37,7 @@ var StocksContainer = React.createClass({
 	},
 
 	readStocksFromAPI: function () {
-		this.props.readFromAPI(this.props.origin + '/stocks/recommendations', function(info){
+		this.props.readFromAPI(this.props.origin + '/recommendations/recommendations', function(info){
 		  this.setState({
 		  	status: "completed",
 		  	stocks_1: info.stocks_1,
