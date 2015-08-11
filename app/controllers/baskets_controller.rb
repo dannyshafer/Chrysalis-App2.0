@@ -24,7 +24,7 @@ class BasketsController < ApplicationController
     # fix the date
     basket = []
 
-    @current_user.baskets.find_by(data: 'today').records.each do |record|
+    @current_user.baskets.find_by(date: 'today').records.each do |record|
       basket << record
     end
 
