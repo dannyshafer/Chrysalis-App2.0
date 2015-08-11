@@ -59,6 +59,7 @@ GEM
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
     pg (0.18.2)
+    puma (2.12.3)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -115,6 +116,7 @@ DEPENDENCIES
   jwt
   oauth
   pg
+  puma
   rails (= 4.2.0)
   rails-api
   rails_12factor
