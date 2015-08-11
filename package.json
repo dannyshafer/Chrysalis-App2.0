@@ -28,6 +28,7 @@
     "reqwest": "^1.1.5",
     "style-loader": "^0.8.3",
     "webpack": "^1.6.0",
-    "webpack-dev-server": "^1.8.0"
+    "webpack-dev-server": "^1.8.0",
+    "react-d3-components": "0.4.8"
   }
 }
