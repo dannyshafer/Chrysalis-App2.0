@@ -9,6 +9,15 @@ var FlatButton = mui.FlatButton;
 var Dialog = mui.Dialog;
 
 var StocksSubArray = React.createClass({
+  getInitialState: function(){
+    return{
+      definitions: null,
+    };
+  },
+
+  componentDidMount: function(){
+    this.getDefinitionsFromAPI();
+  },
 
 	childContextTypes: {
     muiTheme: React.PropTypes.object
@@ -18,6 +27,12 @@ var StocksSubArray = React.createClass({
     return {
       muiTheme: ThemeManager.getCurrentTheme()
     };
+  },
+
+  getDefinitionsFromAPI: function(){
+    this.props.readFromAPI(this.props.origin + '/definitions', function(info){
+      this.setState({definitions: info});
+    }.bind(this));
   },
 
 	handleMouseOver: function(){
@@ -37,7 +52,7 @@ var StocksSubArray = React.createClass({
 		        showExpandableButton={true}>
 		      </CardHeader>
 		      <CardText expandable={true}>
-		      		<Dialog ref="betaDialog">Dialog is shit</Dialog>
+		      		<Dialog ref="betaDialog">{this.state.definitions["Beta"]}</Dialog>
 		      		<div className="definition" onMouseOver={this.handleMouseOver}>
 		      		Beta: {stock.beta}
 		      		</div><br/>

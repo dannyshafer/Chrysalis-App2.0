@@ -26,7 +26,7 @@ var StocksContainer = React.createClass({
     muiTheme: React.PropTypes.object
   },
 
-	getChildContext: function () { 
+	getChildContext: function () {
     return {
       muiTheme: ThemeManager.getCurrentTheme()
     };
@@ -61,7 +61,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_1.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_1} />
+		      <StocksSubArray stocks={this.state.stocks_1} readFromAPI={this.props.readFromAPI}/>
 		    </div>
 		  );
 		} else if (this.props.risk === 2) {
@@ -69,7 +69,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_2.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_2} />
+		      <StocksSubArray stocks={this.state.stocks_2} readFromAPI={this.props.readFromAPI}/>
 
 		    </div>
 		  );
@@ -78,7 +78,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_3.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_3} />
+		      <StocksSubArray stocks={this.state.stocks_3} readFromAPI={this.props.readFromAPI}/>
 
 		    </div>
 		  );
@@ -87,7 +87,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_4.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_4} />
+		      <StocksSubArray stocks={this.state.stocks_4} readFromAPI={this.props.readFromAPI}/>
 
 		    </div>
 		  );
@@ -96,7 +96,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_5.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_5} />
+		      <StocksSubArray stocks={this.state.stocks_5} readFromAPI={this.props.readFromAPI}/>
 
 		    </div>
 		  );
@@ -105,7 +105,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_6.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_6} />
+		      <StocksSubArray stocks={this.state.stocks_6} readFromAPI={this.props.readFromAPI}/>
 
 		    </div>
 		  );
@@ -114,7 +114,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_7.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_7} />
+		      <StocksSubArray stocks={this.state.stocks_7} readFromAPI={this.props.readFromAPI}/>
 
 		    </div>
 		  );
@@ -123,7 +123,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_8.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_8} />
+		      <StocksSubArray stocks={this.state.stocks_8} readFromAPI={this.props.readFromAPI}/>
 
 		    </div>
 		  );
@@ -132,7 +132,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_9.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_9} />
+		      <StocksSubArray stocks={this.state.stocks_9} readFromAPI={this.props.readFromAPI}/>
 
 		    </div>
 		  );
@@ -141,7 +141,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_10.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_10} />
+		      <StocksSubArray stocks={this.state.stocks_10} readFromAPI={this.props.readFromAPI}/>
 
 		    </div>
 		  );
