@@ -1,6 +1,7 @@
 var React = require('react');
 var Slider = require('rc-slider');
 var StocksContainer = require('./StocksContainer.jsx');
+var RecommendedPieChart = require('./RecommendedPieChart.jsx')
 var mui = require('material-ui');
 var RefreshIndicator = mui.RefreshIndicator;
 var ThemeManager = new mui.Styles.ThemeManager();
@@ -46,6 +47,8 @@ var RecommendationContainer= React.createClass({
       return (
         <div>
           <h1>Recommendation Page</h1>
+          <RecommendedPieChart />
+
           <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
           <br />
           <br />
