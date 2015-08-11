@@ -1,30 +1,13 @@
-var React = require('react');
+var React = require('React');
 var ReactD3 = require('react-d3-components');
 var PieChart = ReactD3.PieChart;
 
-var RecommendedPieChart = React.createClass({
+var UserPieChart = React.createClass({
 	getInitialState: function () {
-		if (this.props.age <= 25) {
-			var low = 2;
-			var mid = 3;
-			var high = 5;
-		} else if (this.props.age <= 40) {
-			var low = 3;
-			var mid = 5;
-			var high = 2;
-		} else if (this.props.age <= 60) {
-			var low = 4;
-			var mid = 5;
-			var high = 1;
-		} else {
-			var low = 6;
-			var mid = 3;
-			var high = 1;
-		}
 		return {
-			low: low,
-			mid: mid,
-			high: high,
+			low: 3,
+			mid: 3,
+			high: 4,
 		};
 	},
 	render: function () {
@@ -37,7 +20,7 @@ var RecommendedPieChart = React.createClass({
 		var sort = null;
 		return (
 			<div>
-				<h4>Your Recommended Allocation</h4>
+				<h4>Your Currently Selected Allocation</h4>
 				<PieChart
 				data={data}
 				width={500}
@@ -49,4 +32,4 @@ var RecommendedPieChart = React.createClass({
 	},
 });
 
-module.exports = RecommendedPieChart;
+module.exports = UserPieChart;
