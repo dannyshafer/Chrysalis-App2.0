@@ -1,5 +1,5 @@
 class BasketsController < ApplicationController
-  before_action :authenticate_request, only: [:index, :show, :today]
+  before_action :authenticate_request, only: [:index, :show, :today, :create]
 
   def index
     baskets = []
@@ -31,4 +31,22 @@ class BasketsController < ApplicationController
     info = {today_basket: basket}
     render json: info
   end
+
+  def create
+    basket = @current_user.baskets.create(date: Time.now())
+
+    info_params.each do |stock|
+      basket.records.create(
+
+        )
+    end
+    basket.records.create()
+
+  end
+
+  private
+    def info_params
+      params.require(:info).permit(:basket)
+    end
+
 end
