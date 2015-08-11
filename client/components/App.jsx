@@ -1,8 +1,8 @@
 var React = require('react');
 var Reqwest = require('reqwest');
 var NavBar = require('./NavBar.jsx')
-var LandingPage = require('./LandingPage.jsx')
-var ProfileContainer = require('./ProfileContainer.jsx')
+// var LandingPage = require('./LandingPage.jsx')
+// var ProfileContainer = require('./ProfileContainer.jsx')
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Uri = require('jsuri');
