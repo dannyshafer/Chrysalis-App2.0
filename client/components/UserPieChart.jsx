@@ -28,7 +28,6 @@ var UserPieChart = React.createClass({
 		var low = 0;
 		var mid = 0;
 		var high = 0;
-		console.log(this.state.basket)
 		for (var i = 0; i < this.state.basket.stocks.length; i++) {
 			if (1 <= this.state.basket.stocks[i].asi_component && this.state.basket.stocks[i].asi_component <= 3) {
 				low += 1

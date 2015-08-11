@@ -35,7 +35,7 @@ var ProfileContainer= React.createClass({
         age: this.state.age
       }
     };
-    this.props.writeToAPI(this.props.origin + '/users/' + uid + '/profile', 'put', data, function(message){
+    this.props.writeToAPI(this.props.origin + '/users/' + uid + '/profile', 'put', JSON.stringify(data), function(message){
       this.setState({message: "Profile Updated!"})
     }.bind(this));
   },

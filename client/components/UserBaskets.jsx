@@ -2,12 +2,12 @@ var React = require('react');
 
 var mui = require('material-ui');
 var ThemeManager = new mui.Styles.ThemeManager();
+var UserBasketTable = require('./UserBasketTable.jsx');
 
 var UserBaskets = React.createClass({
 	getInitialState: function () {
 		return {
 			baskets: []
-
 		};
 	},
 
@@ -22,7 +22,7 @@ var UserBaskets = React.createClass({
 	},
 
 	componentDidMount: function () {
-
+		this.readUserBasketsFromAPI();
 	},
 
 
@@ -37,9 +37,15 @@ var UserBaskets = React.createClass({
 	},
 
 	render: function () {
+		var baskets = this.state.baskets.map(function (basket, index) {
+			return (
+				<UserBasketTable basket={basket} />
+			);
+		}.bind(this));
 		return (
 			<div>
 				<h3>Your Saved Baskets</h3>
+				{baskets}
 			</div>
 		);
 	},

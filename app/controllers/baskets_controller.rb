@@ -1,3 +1,5 @@
+require 'date'
+
 class BasketsController < ApplicationController
   before_action :authenticate_request, only: [:index, :show, :today, :create]
 
@@ -5,12 +7,14 @@ class BasketsController < ApplicationController
     baskets = []
 
     @current_user.baskets.all.each do |basket|
-      basket = []
+      stocks = []
       basket.records.each do |record|
-        basket << record
+        stocks << record
       end
-      baskets << basket
+      baskets << stocks
     end
+    p '**********'
+    p baskets
 
     info = {baskets: baskets}
     render json: info
@@ -24,7 +28,7 @@ class BasketsController < ApplicationController
     # fix the date
     basket = []
 
-    @current_user.baskets.find_by(data: 'today').records.each do |record|
+    @current_user.baskets.find_by(date: 'today').records.each do |record|
       basket << record
     end
 
@@ -34,19 +38,21 @@ class BasketsController < ApplicationController
 
   def create
     basket = @current_user.baskets.create(date: Time.now())
+    records_id = []
 
-    info_params.each do |stock|
-      basket.records.create(
-
-        )
+    info_params.each do |key, ticker|
+      records_id << Record.find_by(ticker: ticker, date: DateTime.now.to_date).id
     end
-    basket.records.create()
 
+    records_id.each do |id|
+      basket.records_baskets.create(record_id: id)
+    end
+    render json: {message: "success"}
   end
 
   private
     def info_params
-      params.require(:info).permit(:basket)
+      params.require(:ids)
     end
 
 end

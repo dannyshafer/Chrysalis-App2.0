@@ -46,7 +46,7 @@ var App = React.createClass({
       url: url,
       type: 'json',
       method: method,
-      data: JSON.stringify(data),
+      data: data,
       contentType: 'application/json',
       headers: {'Authorization': sessionStorage.getItem('jwt')},
       success: successFunction,
@@ -56,6 +56,7 @@ var App = React.createClass({
       }
     });
   },
+
   render: function () {
     return (
       <div id="app">
