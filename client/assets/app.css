@@ -10,13 +10,18 @@ html {
 }
 
 nav {
-  border: 1px solid #00ccff;
-  background-color: #00ccff;
+  border: 1px solid #777AC7;
+  background-color: #777AC7;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #FFC000;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #FFC000;
 }
 
 nav li {
@@ -26,7 +31,7 @@ nav li {
 
 }
  .slogan {
-  color: #FFC000;
+  color: #00ccff;
   text-align: center;
   margin-top: 300px;
   font-size: 30px;
