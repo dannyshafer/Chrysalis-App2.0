@@ -10,6 +10,10 @@ class ApplicationController < ActionController::API
     render json: @current_user, only: [:handle, :uid]
   end
 
+  def index
+    render file: 'public/index.html'
+  end
+
   private
   def allow_cross_origin_requests
     headers['Access-Control-Allow-Origin'] = '*'
