@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'stocks/recommendations', to: 'stocks#recommendations'
   get 'stocks/update', to: 'stocks#update'
 
+  resources :definitions, only: [:index]
   resources :users, only: [:index]
+  resources :descriptions, only: [:index]
   resources :stocks, only: [:index]
 end
