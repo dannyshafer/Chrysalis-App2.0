@@ -9,11 +9,17 @@ Rails.application.routes.draw do
   get 'stocks/recommendations', to: 'stocks#recommendations'
   get 'stocks/update', to: 'stocks#update'
 
+<<<<<<< HEAD
+  resources :definitions, only: [:index]
+  resources :users, only: [:index]
+  resources :descriptions, only: [:index]
+=======
   resources :users, only: [:index] do
     get 'profile', to: 'users#profile'
     put 'profile', to: 'users#update'
     resources :baskets, only: [:index, :show]
     get 'baskets/today', to: 'baskets#today'
   end
+>>>>>>> 8011c2479d1528153662354f17f0df7f29584d3e
   resources :stocks, only: [:index]
 end

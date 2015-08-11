@@ -1,7 +1,6 @@
 var React = require('react');
 var mui = require('material-ui');
-
-
+var Dialog = mui.Dialog;
 var Card = mui.Card;
 var CardHeader = mui.CardHeader;
 var CardText = mui.CardText;
@@ -25,7 +24,7 @@ var StockCard = React.createClass({
 		muiTheme: React.PropTypes.object
 	},
 
-	getChildContext: function () { 
+	getChildContext: function () {
 		return {
 			muiTheme: ThemeManager.getCurrentTheme()
 		};
@@ -40,6 +39,11 @@ var StockCard = React.createClass({
 		})
 	},
 
+	handleMouseOver: function(){
+    console.log("shit");
+    this.refs.betaDialog.show();
+  },
+
 	render: function () {
 		var stock = this.props.stock;
 		if (this.state.added === true) {
@@ -52,7 +56,10 @@ var StockCard = React.createClass({
 						showExpandableButton={true}>
 					</CardHeader>
 					<CardText expandable={true}>
-					<p>Beta: {stock.beta}</p>
+					<Dialog ref="betaDialog">{this.props.definitions["Beta"]}</Dialog>
+		      		<div className="definition" onMouseOver={this.handleMouseOver}>
+		      		Beta: {stock.beta}
+		      		</div><br/>
 					{stock.info}
 					</CardText>
 						<CardActions expandable={true}>
@@ -70,7 +77,10 @@ var StockCard = React.createClass({
 						showExpandableButton={true}>
 					</CardHeader>
 					<CardText expandable={true}>
-					<p>Beta: {stock.beta}</p>
+					<Dialog ref="betaDialog">{this.props.definitions["Beta"]}</Dialog>
+		      		<div className="definition" onMouseOver={this.handleMouseOver}>
+		      		Beta: {stock.beta}
+		      		</div><br/>
 					{stock.info}
 					</CardText>
 						<CardActions expandable={true}>

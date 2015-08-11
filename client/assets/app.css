@@ -87,6 +87,10 @@ video {
 
 }
 
+.definition {
+  display: inline-block;
+}
+
 #container {
 	margin-right: 20px;
 	margin-left: 20px;
