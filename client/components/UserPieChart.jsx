@@ -1,10 +1,6 @@
 var React = require('React');
 var ReactD3 = require('react-d3-components');
 var PieChart = ReactD3.PieChart;
-var EventEmitter = require('eventemitter3');
-var EE = new EventEmitter();
-
-
 
 var UserPieChart = React.createClass({
 	getInitialState: function () {
@@ -15,6 +11,7 @@ var UserPieChart = React.createClass({
 			none: 10,
 		};
 	},
+
 	handleAddBasket: function (level) {
 		var total = this.state.low + this.state.mid + this.state.high
 		if (level === "low") {
@@ -23,9 +20,6 @@ var UserPieChart = React.createClass({
 	},
 
 	componentDidMount: function () {
-		EE.on('added-to-basket', function(value) {
-			this.handleAddedToBasket(value);
-		});
 
 	},
 
@@ -37,7 +31,7 @@ var UserPieChart = React.createClass({
 	},
 
 	componentWillUnmount: function () {
-		EE.off('added-to-basket')
+
 	},
 
 	handleAddedToBasket: function (value) {

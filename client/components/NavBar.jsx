@@ -21,7 +21,7 @@ var NavBar = React.createClass({
       <div>
         <nav className="nav">
           <ul>
-            <li className="nav-item"><Link to="landingpage">landing page</Link></li>
+            <li className="nav-item"><Link to="landingpage">Chrysalis</Link></li>
             {profileLink}
             {recommendationLink}
             {userBasketLink}

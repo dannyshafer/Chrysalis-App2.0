@@ -8,8 +8,13 @@ var mui = require('material-ui');
 var RefreshIndicator = mui.RefreshIndicator;
 var ThemeManager = new mui.Styles.ThemeManager();
 
+var Basket = require('../basket.js');
 
-var RecommendationContainer= React.createClass({
+var basket = new Basket({data: Date.now()});
+
+var RecommendationContainer = React.createClass({
+
+
   getInitialState: function () {
     return {
       risk_preference: null,
@@ -29,8 +34,12 @@ var RecommendationContainer= React.createClass({
 
   componentDidMount: function(){
     this.readUserInfoFromApi();
+    basket.on('added-to-basket', this.addedToBasket);
   },
 
+  addedToBasket: function () {
+    console.log('adding to basket')
+  },
 
   readUserInfoFromApi: function(){
     var uid = this.props.currentUser.uid
