@@ -10,7 +10,7 @@ var RaisedButton = mui.RaisedButton;
 
 var EventEmitter = require('eventemitter3');
 
-var Basket = require('../../basket.js');
+// var Basket = require('../../basket.js');
 
 var StockCard = React.createClass({
 	getInitialState: function () {
@@ -30,7 +30,7 @@ var StockCard = React.createClass({
 	},
 	handleClicked: function () {
 		// emit to 3rd party basket.js
-		Basket.addToBasket(this.props.stock)
+		// Basket.addToBasket(this.props.stock)
 		var active = !this.state.added;
 		this.setState({
 			added: active,

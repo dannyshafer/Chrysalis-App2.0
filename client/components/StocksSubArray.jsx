@@ -12,12 +12,12 @@ var RaisedButton = mui.RaisedButton;
 var StocksSubArray = React.createClass({
   getInitialState: function(){
     return{
-      definitions: null,
+      definitions: {"Beta": "alsdjflaksjdfksjdf"},
     };
   },
 
   componentDidMount: function(){
-    this.getDefinitionsFromAPI();
+    // this.getDefinitionsFromAPI();
   },
 
 	childContextTypes: {
@@ -30,11 +30,11 @@ var StocksSubArray = React.createClass({
     };
   },
 
-  getDefinitionsFromAPI: function(){
-    this.props.readFromAPI(this.props.origin + '/definitions', function(info){
-      this.setState({definitions: info});
-    }.bind(this));
-  },
+  // getDefinitionsFromAPI: function(){
+  //   this.props.readFromAPI(this.props.origin + '/definitions', function(info){
+  //     this.setState({definitions: info});
+  //   }.bind(this));
+  // },
 
 
   handleClicked: function () {
