@@ -25,9 +25,16 @@ var UserPieChart = React.createClass({
 	componentDidMount: function () {
 		EE.on('added-to-basket', function(value) {
 			this.handleAddedToBasket(value);
-		})
+		});
+
 	},
 
+	readUserBasketFromAPI: function () {
+		var uid = this.props.currentUser.uid
+		this.props.readFromAPI(this.props.origin + '/users/' + uid + '/baskets/today', function(info){
+		  this.setState({risk_preference: info.risk_preference, age: info.age});
+		}.bind(this));
+	},
 
 	componentWillUnmount: function () {
 		EE.off('added-to-basket')

@@ -14,20 +14,21 @@ var ProfileContainer= React.createClass({
     this.readUserInfoFromAPI();
   },
   readUserInfoFromAPI: function(){
-    this.props.readFromAPI(this.props.origin + '/users/profile', function(info){
+    var uid = this.props.currentUser.uid
+    this.props.readFromAPI(this.props.origin + '/users/' + uid + '/profile', function(info){
       this.setState({risk_preference: info.risk_preference, age: info.age});
     }.bind(this));
   },
   updateProfileAPI: function(e){
     e.preventDefault();
+    var uid = this.props.currentUser.uid
     var data = {
       info: {
         risk_preference: this.state.risk_preference,
         age: this.state.age
       }
     };
-    alert('Updating your profile...');
-    this.props.writeToAPI(this.props.origin + '/users/profile', 'put', data, function(message){
+    this.props.writeToAPI(this.props.origin + '/users/' + uid + '/profile', 'put', data, function(message){
       this.setState({message: "Profile Updated!"})
     }.bind(this));
   },
