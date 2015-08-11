@@ -13,8 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20150811143608) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "baskets", force: :cascade do |t|
     t.integer  "user_id"
+    t.string   "name"
+    t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -53,7 +58,7 @@ ActiveRecord::Schema.define(version: 20150811143608) do
     t.string "secret", null: false
   end
 
-  add_index "oauths", ["token"], name: "index_oauths_on_token"
+  add_index "oauths", ["token"], name: "index_oauths_on_token", using: :btree
 
   create_table "recommendations", force: :cascade do |t|
     t.string   "ticker"
@@ -83,6 +88,8 @@ ActiveRecord::Schema.define(version: 20150811143608) do
     t.string   "info"
     t.float    "beta"
     t.date     "date"
+    t.string   "logo_url"
+    t.string   "exchange"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -115,6 +122,8 @@ ActiveRecord::Schema.define(version: 20150811143608) do
     t.string   "info"
     t.float    "beta"
     t.date     "date"
+    t.string   "logo_url"
+    t.string   "exchange"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -153,15 +162,10 @@ ActiveRecord::Schema.define(version: 20150811143608) do
     t.float    "book_value_v_ind"
     t.string   "info"
     t.float    "beta"
+    t.string   "logo_url"
+    t.string   "exchange"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-  end
-
-  create_table "stocks_baskets", force: :cascade do |t|
-    t.integer  "stock_id"
-    t.integer  "basket_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -173,6 +177,6 @@ ActiveRecord::Schema.define(version: 20150811143608) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["uid"], name: "index_users_on_uid"
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
 end
