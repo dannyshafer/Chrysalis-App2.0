@@ -1,21 +1,56 @@
 var React = require('React');
 var ReactD3 = require('react-d3-components');
 var PieChart = ReactD3.PieChart;
+var EventEmitter = require('eventemitter3');
+var EE = new EventEmitter();
+
+
 
 var UserPieChart = React.createClass({
 	getInitialState: function () {
 		return {
-			low: 3,
-			mid: 3,
-			high: 4,
+			low: 0,
+			mid: 0,
+			high: 0,
+			none: 10,
 		};
 	},
+	handleAddBasket: function (level) {
+		var total = this.state.low + this.state.mid + this.state.high
+		if (level === "low") {
+
+		}
+	},
+
+	componentDidMount: function () {
+		EE.on('added-to-basket', function(value) {
+			this.handleAddedToBasket(value);
+		})
+	},
+
+
+	componentWillUnmount: function () {
+		EE.off('added-to-basket')
+	},
+
+	handleAddedToBasket: function (value) {
+	  console.log('message recieved + ' + value)
+	},
+
 	render: function () {
-		var data = {
-			label: 'somethingA',
-			values: [{x: 'Low-Risk', y: this.state.low}, 
-			{x: 'Mid-Risk', y: this.state.mid}, 
-			{x: 'High-Risk', y: this.state.high}]
+		if (this.state.none === 10) {
+			var data = {
+				label: 'somethingA',
+				values: [
+				{x: 'None is added', y: this.state.none}]
+			};
+		} else {
+			var data = {
+				label: 'somethingA',
+				values: [{x: 'Low-Risk', y: this.state.low}, 
+				{x: 'Mid-Risk', y: this.state.mid}, 
+				{x: 'High-Risk', y: this.state.high}]
+			};
 		};
 		var sort = null;
 		return (
@@ -33,3 +68,5 @@ var UserPieChart = React.createClass({
 });
 
 module.exports = UserPieChart;
+
+
