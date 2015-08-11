@@ -53,14 +53,23 @@ var RecommendationContainer = React.createClass({
 
   createUserBasket: function (e) {
     e.preventDefault();
+    console.log(this.state.basket)
+    var id = {}
+
+    for(var i = 0; i < this.state.basket.stocks.length; i++) {
+        id[i] = this.state.basket.stocks[i].ticker
+    }
+
     console.log('creating user basket')
-    var uid = this.props.currentUser.uid
+    console.log(id)
+    debugger
+
     var data = {
-      info: {
-        basket: this.state.basket,
-      }
-    };
-    this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets', 'post', data, function(message){
+      ids: id
+    }
+    var uid = this.props.currentUser.uid
+
+    this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets', 'post', JSON.stringify(data), function(message){
       this.setState({message: "Basket of the Day Created!"})
     }.bind(this));
   },
