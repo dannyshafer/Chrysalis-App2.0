@@ -1,4 +1,4 @@
-var React = require('React');
+var React = require('react');
 var ReactD3 = require('react-d3-components');
 var PieChart = ReactD3.PieChart;
 
@@ -48,8 +48,8 @@ var UserPieChart = React.createClass({
 		} else {
 			var data = {
 				label: 'somethingA',
-				values: [{x: 'Low-Risk', y: this.state.low}, 
-				{x: 'Mid-Risk', y: this.state.mid}, 
+				values: [{x: 'Low-Risk', y: this.state.low},
+				{x: 'Mid-Risk', y: this.state.mid},
 				{x: 'High-Risk', y: this.state.high}]
 			};
 		};
