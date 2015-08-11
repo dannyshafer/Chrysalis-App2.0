@@ -10,6 +10,7 @@ var RecommendationContainer= React.createClass({
   getInitialState: function () {
     return {
       risk_preference: null,
+      age: null,
     };
   },
 
@@ -35,7 +36,7 @@ var RecommendationContainer= React.createClass({
     console.log('reading')
     this.props.readFromAPI(this.props.origin + '/users/profile', function(info){
       console.log('setting')
-      this.setState({risk_preference: info.risk_preference});
+      this.setState({risk_preference: info.risk_preference, age: info.age});
     }.bind(this));
   },
 
@@ -47,7 +48,7 @@ var RecommendationContainer= React.createClass({
       return (
         <div>
           <h1>Recommendation Page</h1>
-          <RecommendedPieChart />
+          <RecommendedPieChart age={this.state.age}/>
 
           <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
           <br />
