@@ -10,15 +10,6 @@ var RaisedButton = mui.RaisedButton;
 
 
 var StocksSubArray = React.createClass({
-  getInitialState: function(){
-    return{
-      definitions: {"Beta": "alsdjflaksjdfksjdf"},
-    };
-  },
-
-  componentDidMount: function(){
-    // this.getDefinitionsFromAPI();
-  },
 
 	childContextTypes: {
     muiTheme: React.PropTypes.object
@@ -30,13 +21,6 @@ var StocksSubArray = React.createClass({
     };
   },
 
-  // getDefinitionsFromAPI: function(){
-  //   this.props.readFromAPI(this.props.origin + '/definitions', function(info){
-  //     this.setState({definitions: info});
-  //   }.bind(this));
-  // },
-
-
   handleClicked: function () {
   	console.log('healsflakj')
   },
@@ -45,7 +29,7 @@ var StocksSubArray = React.createClass({
 		var stocks = this.props.stocks.map(function (stock, index) {
 			return (
 
-  				<StockCard stock={stock} definitions={this.state.definitions}/>
+  				<StockCard stock={stock} definitions={this.props.definitions}/>
 			);
 		}.bind(this));
 		return (

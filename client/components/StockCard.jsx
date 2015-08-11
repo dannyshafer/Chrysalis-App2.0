@@ -7,7 +7,6 @@ var CardText = mui.CardText;
 var CardActions = mui.CardActions;
 var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
-
 var EventEmitter = require('eventemitter3');
 
 // var Basket = require('../../basket.js');
@@ -28,6 +27,7 @@ var StockCard = React.createClass({
 			muiTheme: ThemeManager.getCurrentTheme()
 		};
 	},
+
 	handleClicked: function () {
 		// emit to 3rd party basket.js
 		// Basket.addToBasket(this.props.stock)
@@ -36,10 +36,12 @@ var StockCard = React.createClass({
 			added: active,
 		})
 	},
+
 	handleMouseOver: function(){
     console.log("shit");
     this.refs.betaDialog.show();
   },
+
 	render: function () {
 		var stock = this.props.stock;
 		if (this.state.added === true) {
