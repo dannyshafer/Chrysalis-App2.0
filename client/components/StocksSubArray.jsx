@@ -31,6 +31,7 @@ var StocksSubArray = React.createClass({
 		        showExpandableButton={true}>
 		      </CardHeader>
 		      <CardText expandable={true}>
+		      		<p>Beta: {stock.beta}</p>
 					{stock.info}
 		      </CardText>
 		      <CardActions expandable={true}>
