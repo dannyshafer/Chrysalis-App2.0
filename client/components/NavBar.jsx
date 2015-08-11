@@ -12,7 +12,8 @@ var NavBar = React.createClass({
       var profileLink = <li className="nav-item"><Link to="profile">{this.props.currentUser}</Link></li>
       var recommendationLink = <li className="nav-item"><Link to="recommendation">Recommendations</Link></li>
       var updateLink = <li className="nav-item"><Link to="update">Update Stocks</Link></li>
-      var signingLink = <li className="nav-item"><span onClick={this.handleSignOutLink}>Sign Out</span></li>;
+      var userBasketLink = <li className="nav-item"><Link to="user_baskets">Baskets</Link></li>
+      var signingLink = <li className="nav-item"><span onClick={this.handleSignOutLink}>Sign Out</span></li>
     } else {
       var signingLink = <li className="nav-item"><a href={this.props.origin + '/request_token'}>Sign In</a></li>;
     }
@@ -23,6 +24,7 @@ var NavBar = React.createClass({
             <li className="nav-item"><Link to="landingpage">landing page</Link></li>
             {profileLink}
             {recommendationLink}
+            {userBasketLink}
             {updateLink}
             {signingLink}
           </ul>

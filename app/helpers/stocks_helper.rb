@@ -116,25 +116,25 @@ module StocksHelper
   end
 
   def make_asi_component(beta)
-    if beta >= -5.982 && beta < -1.441 #declie 1
+    if beta >= -5.982 && beta < -1.441 #decile 1
       1
-    elsif beta > -1.441 && beta < -0.642 #declie 2
+    elsif beta > -1.441 && beta < -0.642 #decile 2
       2
-    elsif beta > -0.642 && beta < 0.157 #declie 3
+    elsif beta > -0.642 && beta < 0.157 #decile 3
       3
-    elsif beta > 0.157 && beta < 0.956 #declie 4
+    elsif beta > 0.157 && beta < 0.956 #decile 4
       4
-    elsif beta > 0.956 && beta < 1.755 #declie 5
+    elsif beta > 0.956 && beta < 1.755 #decile 5
       5
-    elsif beta > 1.755 && beta < 2.554 #declie 6
+    elsif beta > 1.755 && beta < 2.554 #decile 6
       6
-    elsif beta > 2.554 && beta < 3.353 #declie 7
+    elsif beta > 2.554 && beta < 3.353 #decile 7
       7
-    elsif beta > 3.353 && beta < 4.152 #declie 8
+    elsif beta > 3.353 && beta < 4.152 #decile 8
       8
-    elsif beta > 4.152 && beta < 4.951 #declie 9
+    elsif beta > 4.152 && beta < 4.951 #decile 9
       9
-    else  #declie 10
+    else  #decile 10
       10
     end
   end

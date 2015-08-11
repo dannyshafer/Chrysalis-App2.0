@@ -13,7 +13,7 @@ var App = React.createClass({
     return {origin: 'http://localhost:3000'};
   },
   getInitialState: function() {
-    return {signedIn: false, currentUser: {handle: ''}};
+    return {signedIn: false, currentUser: {handle: '', uid: null}};
   },
   componentWillMount: function() {
     var jwt = new Uri(location.search).getQueryParamValue('jwt');
@@ -24,7 +24,7 @@ var App = React.createClass({
   },
   currentUserFromAPI: function() {
     this.readFromAPI(this.props.origin + '/current_user', function(user) {
-      this.setState({signedIn: true, currentUser: user});
+      this.setState({signedIn: true, currentUser: user, uid: user.uid});
     }.bind(this));
   },
   readFromAPI: function(url, successFunction) {

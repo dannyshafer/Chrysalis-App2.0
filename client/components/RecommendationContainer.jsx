@@ -27,19 +27,14 @@ var RecommendationContainer= React.createClass({
     };
   },
 
-  componentDidMount: function () {
-    this.readStocksFromAPI();
-  },
-
   componentDidMount: function(){
     this.readUserInfoFromApi();
   },
 
 
   readUserInfoFromApi: function(){
-    console.log('reading')
-    this.props.readFromAPI(this.props.origin + '/users/profile', function(info){
-      console.log('setting')
+    var uid = this.props.currentUser.uid
+    this.props.readFromAPI(this.props.origin + '/users/' + uid + '/profile', function(info){
       this.setState({risk_preference: info.risk_preference, age: info.age});
     }.bind(this));
   },
@@ -54,7 +49,7 @@ var RecommendationContainer= React.createClass({
           <h1>Recommendation Page</h1>
           <RecommendedPieChart age={this.state.age}/>
           <br />
-          <UserPieChart />
+          <UserPieChart readFromAPI={this.props.readFromAPI} currentUser={this.state.currentUser}/>
           <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
           <br />
           <br />
