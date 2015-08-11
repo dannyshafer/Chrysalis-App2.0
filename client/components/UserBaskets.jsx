@@ -6,6 +6,7 @@ var ThemeManager = new mui.Styles.ThemeManager();
 var UserBaskets = React.createClass({
 	getInitialState: function () {
 		return {
+			baskets: []
 
 		};
 	},
@@ -24,11 +25,12 @@ var UserBaskets = React.createClass({
 
 	},
 
+
 	readUserBasketsFromAPI: function () {
 		var uid = this.props.currentUser.uid
 		this.props.readFromAPI(this.props.origin + '/users/' + uid + '/baskets', function(info){
 		  this.setState({
-
+		  	baskets: info.baskets
 
 		  });
 		}.bind(this));
@@ -37,7 +39,7 @@ var UserBaskets = React.createClass({
 	render: function () {
 		return (
 			<div>
-				<h3>Your Baskets</h3>
+				<h3>Your Saved Baskets</h3>
 			</div>
 		);
 	},

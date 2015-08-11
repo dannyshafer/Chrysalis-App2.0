@@ -10,7 +10,8 @@ var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
 
 var EventEmitter = require('eventemitter3');
-var Controller = require('../main.jsx');
+
+var Basket = require('../../basket.js');
 
 
 
@@ -32,8 +33,8 @@ var StockCard = React.createClass({
 	},
 
 	handleClicked: function () {
-		Controller.emit('added-to-basket')
-		console.log("car-add")
+		// emit to 3rd party basket.js
+		Basket.addToBasket(this.props.stock)
 		var active = !this.state.added;
 		this.setState({
 			added: active,
