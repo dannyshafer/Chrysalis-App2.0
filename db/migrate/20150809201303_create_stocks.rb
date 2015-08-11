@@ -26,6 +26,7 @@ class CreateStocks < ActiveRecord::Migration
       t.float :shares_v_ind
       t.float :book_value_v_ind
       t.string :info
+      t.float :beta
 
       t.timestamps null: false
     end

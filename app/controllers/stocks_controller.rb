@@ -81,20 +81,6 @@ class StocksController < ApplicationController
             }
    render json: @stocks
  end
-
- # def index
- #   if !Stock.find_by(id: 1)
- #     make_dict
- #   end
- #   if !Stock.find_by(id: 2).pe
- #     populate_data
- #   else
- #     update_versus_index
- #   end
- #   @stocks = Stock.all
- #   render 'index'
- # end
-
 def update
   stocks_runner
   industries_runner

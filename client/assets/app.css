@@ -58,3 +58,8 @@ video {
   -webkit-filter: brightness(45%);
 
 }
+
+#container {
+	margin-right: 20px;
+	margin-left: 20px;
+}

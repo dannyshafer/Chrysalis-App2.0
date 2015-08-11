@@ -30,26 +30,27 @@ module StocksHelper
       full_url = url + symbol.ticker + connect + eps + pe + pbook + psales + markcap + ask + bid + peg + book_value
       response = HTTParty.get(full_url)
       parsed = CSV.parse(response)[0]
-      symbol.update_attributes(eps: parsed[0].to_f,
-        pe: parsed[1].to_f,
-        pbook: parsed[2].to_f,
-        psales: parsed[3].to_f,
-        markcap: parsed[4].to_f * 1000000000,
-        ask: parsed[5].to_f,
-        bid: parsed[6].to_f,
-        peg: parsed[7].to_f,
-        book_value: parsed[8].to_f * 1000000000
-        )
+      if parsed[1].to_f != 0
+        symbol.update_attributes(eps: parsed[0].to_f,
+          pe: parsed[1].to_f,
+          pbook: parsed[2].to_f,
+          psales: parsed[3].to_f,
+          markcap: parsed[4].to_f * 1000000000,
+          ask: parsed[5].to_f,
+          bid: parsed[6].to_f,
+          peg: parsed[7].to_f,
+          book_value: parsed[8].to_f * 1000000000
+          )
 
-      shares = symbol.markcap/((symbol.ask + symbol.bid)/2)
+        shares = symbol.markcap/((symbol.ask + symbol.bid)/2)
 
-      if symbol.eps >= 0 && symbol.book_value >= 0 && shares >= 0
-        gnum = Math.sqrt(22.5 * symbol.eps * (symbol.book_value/shares))
-        symbol.update_attributes(graham_number: gnum, shares: shares)
-      else
-        gnum = 0
+        if symbol.eps >= 0 && symbol.book_value >= 0 && shares >= 0
+          gnum = Math.sqrt(22.5 * symbol.eps * (symbol.book_value/shares))
+          symbol.update_attributes(graham_number: gnum, shares: shares)
+        else
+          gnum = 0
+        end
       end
-      
     end
 
     Stock.where(graham_number: 0).destroy_all
@@ -63,9 +64,11 @@ module StocksHelper
     Stock.where(shares: nil).destroy_all
 
     Stock.all.each do |symbol|
-      url = "http://finance.yahoo.com/q/pr?s=" + symbol.ticker + "+Profile"
-      info = Nokogiri::HTML(open(url)).css('p')[1].text
-      symbol.update_attributes(info: info)
+      link_info = "http://finance.yahoo.com/q/pr?s=" + symbol.ticker + "+Profile"
+      beta_info = "http://finance.yahoo.com/q?s=" + symbol.ticker
+      info = Nokogiri::HTML(open(link_info)).css('p')[1].text
+      beta = Nokogiri::HTML(open(beta_info)).css('.yfnc_tabledata1')[5].text.to_f
+      symbol.update_attributes(info: info, beta: beta)
     end
 
   end
