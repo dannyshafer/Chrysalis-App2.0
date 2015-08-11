@@ -1,10 +1,13 @@
 var React = require('react');
 var Slider = require('rc-slider');
+
 var StocksContainer = require('./StocksContainer.jsx');
 var RecommendedPieChart = require('./RecommendedPieChart.jsx')
+var UserPieChart = require('./UserPieChart.jsx')
 var mui = require('material-ui');
 var RefreshIndicator = mui.RefreshIndicator;
 var ThemeManager = new mui.Styles.ThemeManager();
+
 
 var RecommendationContainer= React.createClass({
   getInitialState: function () {
@@ -24,18 +27,14 @@ var RecommendationContainer= React.createClass({
     };
   },
 
-  componentDidMount: function () {
-    this.readStocksFromAPI();
-  },
-
   componentDidMount: function(){
     this.readUserInfoFromApi();
   },
 
+
   readUserInfoFromApi: function(){
-    console.log('reading')
-    this.props.readFromAPI(this.props.origin + '/users/profile', function(info){
-      console.log('setting')
+    var uid = this.props.currentUser.uid
+    this.props.readFromAPI(this.props.origin + '/users/' + uid + '/profile', function(info){
       this.setState({risk_preference: info.risk_preference, age: info.age});
     }.bind(this));
   },
@@ -49,7 +48,8 @@ var RecommendationContainer= React.createClass({
         <div>
           <h1>Recommendation Page</h1>
           <RecommendedPieChart age={this.state.age}/>
-
+          <br />
+          <UserPieChart readFromAPI={this.props.readFromAPI} currentUser={this.state.currentUser}/>
           <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
           <br />
           <br />
@@ -57,7 +57,7 @@ var RecommendationContainer= React.createClass({
           <Slider defaultValue={this.state.risk_preference} min={1} max={10} onChange={this.handleRiskSliderMove} signedIn={this.state.signedIn} currentUser={this.state.currentUser}/>
           </div>
           <br />
-          <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} />
+          <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin}/>
         </div>
       );
     } else {

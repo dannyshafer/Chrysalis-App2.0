@@ -1,0 +1,96 @@
+var React = require('react');
+var mui = require('material-ui');
+var Dialog = mui.Dialog;
+var Card = mui.Card;
+var CardHeader = mui.CardHeader;
+var CardText = mui.CardText;
+var CardActions = mui.CardActions;
+var ThemeManager = new mui.Styles.ThemeManager();
+var RaisedButton = mui.RaisedButton;
+
+var EventEmitter = require('eventemitter3');
+var Controller = require('../main.jsx');
+
+
+
+var StockCard = React.createClass({
+	getInitialState: function () {
+		return {
+			added: false,
+		};
+	},
+
+	childContextTypes: {
+		muiTheme: React.PropTypes.object
+	},
+
+	getChildContext: function () {
+		return {
+			muiTheme: ThemeManager.getCurrentTheme()
+		};
+	},
+
+	handleClicked: function () {
+		Controller.emit('added-to-basket')
+		console.log("car-add")
+		var active = !this.state.added;
+		this.setState({
+			added: active,
+		})
+	},
+
+	handleMouseOver: function(){
+    console.log("shit");
+    this.refs.betaDialog.show();
+  },
+
+	render: function () {
+		var stock = this.props.stock;
+		if (this.state.added === true) {
+			return (
+				<Card initiallyExpanded={false}>
+					<CardHeader
+						key={stock.id}
+						title={stock.ticker}
+						subtitle={stock.name}
+						showExpandableButton={true}>
+					</CardHeader>
+					<CardText expandable={true}>
+					<Dialog ref="betaDialog">{this.props.definitions["Beta"]}</Dialog>
+		      		<div className="definition" onMouseOver={this.handleMouseOver}>
+		      		Beta: {stock.beta}
+		      		</div><br/>
+					{stock.info}
+					</CardText>
+						<CardActions expandable={true}>
+						<RaisedButton disabled={true} label="Added to Basket" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
+					</CardActions>
+				</Card>
+				);
+		} else {
+			return (
+				<Card initiallyExpanded={false}>
+					<CardHeader
+						key={stock.id}
+						title={stock.ticker}
+						subtitle={stock.name}
+						showExpandableButton={true}>
+					</CardHeader>
+					<CardText expandable={true}>
+					<Dialog ref="betaDialog">{this.props.definitions["Beta"]}</Dialog>
+		      		<div className="definition" onMouseOver={this.handleMouseOver}>
+		      		Beta: {stock.beta}
+		      		</div><br/>
+					{stock.info}
+					</CardText>
+						<CardActions expandable={true}>
+						<RaisedButton disabled={false} label="Add to Basket" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
+					</CardActions>
+				</Card>
+			);
+		};
+	},
+});
+
+module.exports = StockCard;
+

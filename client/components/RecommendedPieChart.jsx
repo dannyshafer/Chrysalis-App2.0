@@ -30,9 +30,9 @@ var RecommendedPieChart = React.createClass({
 	render: function () {
 		var data = {
 			label: 'somethingA',
-			values: [{x: 'Low-Risk', y: 2}, 
-			{x: 'Mid-Risk', y: 3}, 
-			{x: 'High-Risk', y: 5}]
+			values: [{x: 'Low-Risk', y: this.state.low}, 
+			{x: 'Mid-Risk', y: this.state.mid}, 
+			{x: 'High-Risk', y: this.state.high}]
 		};
 		var sort = null;
 		return (
@@ -40,8 +40,8 @@ var RecommendedPieChart = React.createClass({
 				<h4>Your Recommended Allocation</h4>
 				<PieChart
 				data={data}
-				width={600}
-				height={400}
+				width={500}
+				height={350}
 				margin={{top: 10, bottom: 10, left: 100, right: 100}}
 				sort={sort} />
 			</div>

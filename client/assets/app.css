@@ -1,3 +1,7 @@
+@import url("http://fonts.googleapis.com/css?family=Raleway");
+@import url("http://fonts.googleapis.com/css?family=Josefin+Slab");
+@import url("http://fonts.googleapis.com/css?family=Maven+Pro");
+
 /*
 body {
   background-color: black;
@@ -10,13 +14,37 @@ html {
 }
 
 nav {
-  border: 1px solid #00ccff;
-  background-color: #00ccff;
+  border: 1px solid #777AC7;
+  background-color: #777AC7;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #FFC000;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #FFC000;
+}
+.sub-title {
+  font-family: 'Josefin Slab';
+  letter-spacing: .15em;
+}
+
+.title {
+  font-family: 'Maven Pro';
+  font-size: 3em;
+  margin-bottom: 0;
+  color: #00ccff;
+  text-shadow:
+    1px 0px 1px #ccc, 0px 1px 1px #eee,
+    2px 1px 1px #ccc, 1px 2px 1px #eee,
+    3px 2px 1px #ccc, 2px 3px 1px #eee,
+    4px 3px 1px #ccc, 3px 4px 1px #eee,
+    5px 4px 1px #ccc, 4px 5px 1px #eee,
+    6px 5px 1px #ccc, 5px 6px 1px #eee,
+    7px 6px 1px #ccc;
 }
 
 nav li {
@@ -26,7 +54,7 @@ nav li {
 
 }
  .slogan {
-  color: #FFC000;
+  color: #00ccff;
   text-align: center;
   margin-top: 300px;
   font-size: 30px;

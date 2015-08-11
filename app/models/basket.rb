@@ -1,4 +1,4 @@
 class Basket < ActiveRecord::Base
   belongs_to :user
-  has_many :stocks_baset
+  has_many :records_baskets
 end

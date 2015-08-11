@@ -6,11 +6,11 @@ var LandingPage = React.createClass({
     return (
       <div>
         <div className="slogan">
-          <h1>Chrysalis.</h1>
-          <h1>Hatching Insight.</h1>
+          <h1 className='title'>Chrysalis</h1>
+          <h2 className="sub-title">hatching insight</h2>
         </div>
         <div className='video-container'>
-          <video preload="true" autoPlay="autoplay" loop="loop" muted tabindex="0">
+          <video preload="true" autoPlay="autoplay" loop="loop" muted tabIndex="0">
             <source src="ChrysalisRain.mp4" type="video/mp4"></source>
           </video>
         </div>

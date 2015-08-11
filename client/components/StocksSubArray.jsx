@@ -1,12 +1,13 @@
 var React = require('react');
 var mui = require('material-ui');
+var StockCard = require('./StockCard.jsx')
 var Card = mui.Card;
 var CardHeader = mui.CardHeader;
 var CardText = mui.CardText;
 var CardActions = mui.CardActions;
 var ThemeManager = new mui.Styles.ThemeManager();
-var FlatButton = mui.FlatButton;
-var Dialog = mui.Dialog;
+var RaisedButton = mui.RaisedButton;
+
 
 var StocksSubArray = React.createClass({
   getInitialState: function(){
@@ -35,34 +36,16 @@ var StocksSubArray = React.createClass({
     }.bind(this));
   },
 
-	handleMouseOver: function(){
-    console.log("shit");
-    this.refs.betaDialog.show();
+
+  handleClicked: function () {
+  	console.log('healsflakj')
   },
 
 	render: function () {
-
 		var stocks = this.props.stocks.map(function (stock, index) {
 			return (
-				<Card initiallyExpanded={false}>
-		      <CardHeader
-		      	key={index}
-		        title={stock.ticker}
-		        subtitle={stock.name}
-		        showExpandableButton={true}>
-		      </CardHeader>
-		      <CardText expandable={true}>
-		      		<Dialog ref="betaDialog">{this.state.definitions["Beta"]}</Dialog>
-		      		<div className="definition" onMouseOver={this.handleMouseOver}>
-		      		Beta: {stock.beta}
-		      		</div><br/>
-					{stock.info}
-		      </CardText>
-		      <CardActions expandable={true}>
-		        <FlatButton label="Action1"/>
-		        <FlatButton label="Action2"/>
-		      </CardActions>
-		    </Card>
+
+  				<StockCard stock={stock} definitions={this.state.definitions}/>
 			);
 		}.bind(this));
 		return (

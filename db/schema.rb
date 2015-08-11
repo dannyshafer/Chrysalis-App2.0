@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810231854) do
+ActiveRecord::Schema.define(version: 20150811143608) do
 
   create_table "baskets", force: :cascade do |t|
     t.integer  "user_id"
@@ -54,6 +54,77 @@ ActiveRecord::Schema.define(version: 20150810231854) do
   end
 
   add_index "oauths", ["token"], name: "index_oauths_on_token"
+
+  create_table "recommendations", force: :cascade do |t|
+    t.string   "ticker"
+    t.string   "name"
+    t.string   "industry"
+    t.integer  "asi_component"
+    t.float    "eps"
+    t.float    "pe"
+    t.float    "pbook"
+    t.float    "psales"
+    t.float    "markcap"
+    t.float    "ask"
+    t.float    "bid"
+    t.float    "peg"
+    t.float    "graham_number"
+    t.float    "shares"
+    t.float    "book_value"
+    t.float    "eps_v_ind"
+    t.float    "pe_v_ind"
+    t.float    "pbook_v_ind"
+    t.float    "psales_v_ind"
+    t.float    "markcap_v_ind"
+    t.float    "peg_v_ind"
+    t.float    "graham_number_v_ind"
+    t.float    "shares_v_ind"
+    t.float    "book_value_v_ind"
+    t.string   "info"
+    t.float    "beta"
+    t.date     "date"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.string   "ticker"
+    t.string   "name"
+    t.string   "industry"
+    t.integer  "asi_component"
+    t.float    "eps"
+    t.float    "pe"
+    t.float    "pbook"
+    t.float    "psales"
+    t.float    "markcap"
+    t.float    "ask"
+    t.float    "bid"
+    t.float    "peg"
+    t.float    "graham_number"
+    t.float    "shares"
+    t.float    "book_value"
+    t.float    "eps_v_ind"
+    t.float    "pe_v_ind"
+    t.float    "pbook_v_ind"
+    t.float    "psales_v_ind"
+    t.float    "markcap_v_ind"
+    t.float    "peg_v_ind"
+    t.float    "graham_number_v_ind"
+    t.float    "shares_v_ind"
+    t.float    "book_value_v_ind"
+    t.string   "info"
+    t.float    "beta"
+    t.date     "date"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "records_baskets", force: :cascade do |t|
+    t.integer  "record"
+    t.integer  "basket"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "stocks", force: :cascade do |t|
     t.string   "ticker"
