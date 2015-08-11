@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20150810231854) do
 
   create_table "baskets", force: :cascade do |t|
     t.integer  "user_id"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

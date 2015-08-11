@@ -1,8 +1,8 @@
 var React = require('react');
 var Reqwest = require('reqwest');
 var NavBar = require('./NavBar.jsx')
-var LandingPage = require('./LandingPage.jsx')
-var ProfileContainer = require('./ProfileContainer.jsx')
+// var LandingPage = require('./LandingPage.jsx')
+// var ProfileContainer = require('./ProfileContainer.jsx')
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Uri = require('jsuri');
@@ -61,7 +61,9 @@ var App = React.createClass({
       <div id="app">
         <NavBar signedIn={this.state.signedIn} currentUser={this.state.currentUser} origin={this.props.origin}/>
         <div id="content">
+        <div id="container">
           <RouteHandler origin={this.props.origin} readFromAPI={this.readFromAPI} writeToAPI={this.writeToAPI} signedIn={this.state.signedIn} currentUser={this.state.currentUser}/>
+        </div>
         </div>
       </div>
     );

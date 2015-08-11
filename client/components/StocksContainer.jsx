@@ -1,5 +1,8 @@
 var React = require('react');
-var StocksSubArray = require('./StocksSubArray.jsx')
+var StocksSubArray = require('./StocksSubArray.jsx');
+var mui = require('material-ui');
+var RefreshIndicator = mui.RefreshIndicator;
+var ThemeManager = new mui.Styles.ThemeManager();
 
 var StocksContainer = React.createClass({
 	getInitialState: function () {
@@ -18,6 +21,16 @@ var StocksContainer = React.createClass({
 			risk: null,
 		};
 	},
+
+	childContextTypes: {
+    muiTheme: React.PropTypes.object
+  },
+
+	getChildContext: function () { 
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
+  },
 
 	componentDidMount: function () {
 		this.readStocksFromAPI();
@@ -47,7 +60,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
-		      <h3>No: {this.state.stocks_1.length}</h3>
+		      <h3>Number of Stocks: {this.state.stocks_1.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_1} />
 		    </div>
 		  );
@@ -55,7 +68,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
-		      <h3>No: {this.state.stocks_2.length}</h3>
+		      <h3>Number of Stocks: {this.state.stocks_2.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_2} />
 
 		    </div>
@@ -64,7 +77,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
-		      <h3>No: {this.state.stocks_3.length}</h3>
+		      <h3>Number of Stocks: {this.state.stocks_3.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_3} />
 
 		    </div>
@@ -73,7 +86,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
-		      <h3>No: {this.state.stocks_4.length}</h3>
+		      <h3>Number of Stocks: {this.state.stocks_4.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_4} />
 
 		    </div>
@@ -82,7 +95,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
-		      <h3>No: {this.state.stocks_5.length}</h3>
+		      <h3>Number of Stocks: {this.state.stocks_5.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_5} />
 
 		    </div>
@@ -91,7 +104,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
-		      <h3>No: {this.state.stocks_6.length}</h3>
+		      <h3>Number of Stocks: {this.state.stocks_6.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_6} />
 
 		    </div>
@@ -100,7 +113,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
-		      <h3>No: {this.state.stocks_7.length}</h3>
+		      <h3>Number of Stocks: {this.state.stocks_7.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_7} />
 
 		    </div>
@@ -109,7 +122,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
-		      <h3>No: {this.state.stocks_8.length}</h3>
+		      <h3>Number of Stocks: {this.state.stocks_8.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_8} />
 
 		    </div>
@@ -118,7 +131,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
-		      <h3>No: {this.state.stocks_9.length}</h3>
+		      <h3>Number of Stocks: {this.state.stocks_9.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_9} />
 
 		    </div>
@@ -127,7 +140,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
-		      <h3>No: {this.state.stocks_10.length}</h3>
+		      <h3>Number of Stocks: {this.state.stocks_10.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_10} />
 
 		    </div>
@@ -136,7 +149,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div>
 		      <h1>Stocks Recommended</h1>
-		      <h3>Loading...</h3>
+		      <RefreshIndicator size={40} left={80} top={5} status="loading" />
 		    </div>
 		  );
 		};
