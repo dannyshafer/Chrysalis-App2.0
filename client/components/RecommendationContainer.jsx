@@ -1,12 +1,29 @@
 var React = require('react');
 var Slider = require('rc-slider');
-var StocksContainer = require('./StocksContainer.jsx')
+var StocksContainer = require('./StocksContainer.jsx');
+var mui = require('material-ui');
+var RefreshIndicator = mui.RefreshIndicator;
+var ThemeManager = new mui.Styles.ThemeManager();
 
 var RecommendationContainer= React.createClass({
   getInitialState: function () {
     return {
       risk_preference: null,
     };
+  },
+
+  childContextTypes: {
+    muiTheme: React.PropTypes.object
+  },
+
+  getChildContext: function () { 
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
+  },
+
+  componentDidMount: function () {
+    this.readStocksFromAPI();
   },
 
   componentDidMount: function(){
@@ -31,7 +48,10 @@ var RecommendationContainer= React.createClass({
           <h1>Recommendation Page</h1>
           <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
           <br />
+          <br />
+          <div className="slider">
           <Slider defaultValue={this.state.risk_preference} min={1} max={10} onChange={this.handleRiskSliderMove} signedIn={this.state.signedIn} currentUser={this.state.currentUser}/>
+          </div>
           <br />
           <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} />
         </div>
@@ -39,7 +59,8 @@ var RecommendationContainer= React.createClass({
     } else {
       return (
         <div>
-          <h1>Your Recommendation is Loading...</h1>
+          <h1>Recommenation Page</h1>
+          <RefreshIndicator size={40} left={80} top={5} status="loading" />
         </div>
       );
     };
