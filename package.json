@@ -29,6 +29,8 @@
     "style-loader": "^0.8.3",
     "webpack": "^1.6.0",
     "webpack-dev-server": "^1.8.0",
-    "react-d3-components": "0.4.8"
+    "react-d3-components": "0.4.8",
+    "eventemitter3": "1.1.1",
+    "object-assign" : "3.0.0"
   }
 }

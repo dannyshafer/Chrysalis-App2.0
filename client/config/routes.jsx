@@ -8,6 +8,7 @@ var UpdateContainer = require('../components/UpdateContainer.jsx');
 var DefaultRoute = Router.DefaultRoute;
 var Route = Router.Route;
 
+
 module.exports = (
   <Route name="app" path="/" handler={App}>
     <DefaultRoute name="landingpage" handler={LandingPage} />

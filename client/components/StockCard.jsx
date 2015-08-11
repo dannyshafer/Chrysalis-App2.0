@@ -1,12 +1,17 @@
 var React = require('react');
 var mui = require('material-ui');
 
+
 var Card = mui.Card;
 var CardHeader = mui.CardHeader;
 var CardText = mui.CardText;
 var CardActions = mui.CardActions;
 var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
+
+var EventEmitter = require('eventemitter3');
+var Controller = require('../main.jsx');
+
 
 
 var StockCard = React.createClass({
@@ -27,6 +32,8 @@ var StockCard = React.createClass({
 	},
 
 	handleClicked: function () {
+		Controller.emit('added-to-basket')
+		console.log("car-add")
 		var active = !this.state.added;
 		this.setState({
 			added: active,
@@ -49,7 +56,7 @@ var StockCard = React.createClass({
 					{stock.info}
 					</CardText>
 						<CardActions expandable={true}>
-						<RaisedButton disabled={true} label="Add to Basket" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
+						<RaisedButton disabled={true} label="Added to Basket" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
 					</CardActions>
 				</Card>
 				);
@@ -76,3 +83,4 @@ var StockCard = React.createClass({
 });
 
 module.exports = StockCard;
+
