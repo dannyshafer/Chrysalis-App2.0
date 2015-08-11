@@ -1,6 +1,6 @@
 require 'csv'
 require 'json'
-require 'HTTParty'
+require 'httparty'
 require 'nokogiri'
 require 'open-uri'
 
