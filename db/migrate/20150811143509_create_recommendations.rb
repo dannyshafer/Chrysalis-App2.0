@@ -29,6 +29,7 @@ class CreateRecommendations < ActiveRecord::Migration
       t.float :beta
       t.date :date
       t.string :logo_url
+      t.string :exchange
 
       t.timestamps null: false
     end
