@@ -28,6 +28,7 @@ class CreateRecords < ActiveRecord::Migration
       t.string :info
       t.float :beta
       t.date :date
+      t.string :logo_url
 
       t.timestamps null: false
     end
