@@ -231,7 +231,7 @@ def make_asi_component(beta)
 
     stocks = ["aapl","msft","hpq","ibm","orcl"] #this variable is where we put the symbols in a user's basket
     basket_week_performance = 0
-    stocks.each do |i|
+    stocks.each do |i| #this line has to be edited to accomodate whatever the basket is called
       container2 = []
       doc2 = Nokogiri::HTML(open("http://finance.yahoo.com/q/hp?s=aapl+Historical+Prices"))
       doc2.css('.yfnc_tabledata1').each do |i|
