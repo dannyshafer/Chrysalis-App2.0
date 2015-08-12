@@ -21,7 +21,6 @@ module IndustriesHelper
         book_value: Stock.where("industry = ? AND book_value >= ?", ind.name, 0).average(:book_value),
         shares: Stock.where("industry = ? AND shares >= ?", ind.name, 0).average(:shares),
         graham_number: Stock.where("industry = ? AND graham_number >= ?", ind.name, 0).average(:graham_number)
-
         )
     end
   end
