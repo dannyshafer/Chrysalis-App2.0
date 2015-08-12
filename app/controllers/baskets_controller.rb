@@ -5,18 +5,18 @@ class BasketsController < ApplicationController
 
   def index
     baskets = []
-
+    basket_info = []
     @current_user.baskets.all.each do |basket|
       stocks = []
+      basket_info << {name: basket.name, date: basket.date}
+
       basket.records.each do |record|
         stocks << record
       end
       baskets << stocks
     end
-    p '**********'
-    p baskets
 
-    info = {baskets: baskets}
+    info = {baskets: baskets, basket_info: basket_info}
     render json: info
   end
 
@@ -37,13 +37,12 @@ class BasketsController < ApplicationController
   end
 
   def create
-    basket = @current_user.baskets.create(date: Time.now())
+    p info_params
+    basket = @current_user.baskets.create(name: info_params["info"]["name"].capitalize!, date: Time.now())
     records_id = []
-
-    info_params.each do |key, ticker|
+    info_params["info"]["ids"].each do |key, ticker|
       records_id << Record.find_by(ticker: ticker, date: DateTime.now.to_date).id
     end
-
     records_id.each do |id|
       basket.records_baskets.create(record_id: id)
     end
@@ -52,7 +51,7 @@ class BasketsController < ApplicationController
 
   private
     def info_params
-      params.require(:ids)
+      params.permit!
     end
 
 end

@@ -5,16 +5,20 @@ var StocksContainer = require('./StocksContainer.jsx');
 var RecommendedPieChart = require('./RecommendedPieChart.jsx')
 var UserPieChart = require('./UserPieChart.jsx')
 var mui = require('material-ui');
-var RefreshIndicator = mui.RefreshIndicator;
+var LinearProgress = mui.LinearProgress;
 var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
 var Basket = require('../basket.js');
+var TextField = mui.TextField;
 
 var RecommendationContainer = React.createClass({
+  mixins: [React.addons.LinkedStateMixin],
+
   getInitialState: function () {
     return {
       risk_preference: null,
       age: null,
+      textFieldValue: '',
       basket: new Basket,
     };
   },
@@ -53,24 +57,22 @@ var RecommendationContainer = React.createClass({
 
   createUserBasket: function (e) {
     e.preventDefault();
-    console.log(this.state.basket)
     var id = {}
 
     for(var i = 0; i < this.state.basket.stocks.length; i++) {
         id[i] = this.state.basket.stocks[i].ticker
-    }
-
-    console.log('creating user basket')
-    console.log(id)
-    debugger
+    };
 
     var data = {
-      ids: id
-    }
+      info: {
+        ids: id,
+        name: this.state.textFieldValue,
+      }
+    };
     var uid = this.props.currentUser.uid
 
     this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets', 'post', JSON.stringify(data), function(message){
-      this.setState({message: "Basket of the Day Created!"})
+      this.setState({message: "Basket Created!"})
     }.bind(this));
   },
 
@@ -78,6 +80,25 @@ var RecommendationContainer = React.createClass({
     this.setState({risk_preference: value});
   },
   render: function () {
+    console.log(this.state.basket.stocks.length)
+    if (this.state.basket.stocks.length != 0) {
+      var addBox = (
+        <div>
+        <TextField
+                hintText="Required"
+                errorText={this.state.floatingErrorText}
+                floatingLabelText="Basket Name"
+                onChange={this._handleFloatingErrorInputChange} 
+                valueLink={this.linkState('textFieldValue')} />
+        <br />
+        <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket}/>
+        </div>
+      );
+    } else {
+      var addBox = (
+        <h4>To create a basket, please add at least one stock.</h4>
+      );
+    };
     if (this.state.risk_preference != null) {
       return (
         <div>
@@ -85,7 +106,7 @@ var RecommendationContainer = React.createClass({
           <RecommendedPieChart age={this.state.age}/>
           <br />
           <UserPieChart readFromAPI={this.props.readFromAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
-          <RaisedButton label="Create Today's Basket" primary={true} onClick={this.createUserBasket}/>
+          {addBox}
           <br />
           {this.state.message}
           <br />
@@ -104,7 +125,7 @@ var RecommendationContainer = React.createClass({
       return (
         <div>
           <h1>Recommenation Page</h1>
-          <RefreshIndicator size={40} left={80} top={5} status="loading" />
+          <LinearProgress mode="indeterminate"  />
         </div>
       );
     };

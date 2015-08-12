@@ -207,7 +207,7 @@ module StocksHelper
       Stock.create(ticker: j[0],
         name: j[1],
         industry: j[2],
-        logo_url: doc.css("img").first['src'],
+        logo_url: (doc.css("img").first['src']),
         )
     end
   end

@@ -1,8 +1,21 @@
 var React = require('react');
 var Slider = require('rc-slider');
+var mui = require('material-ui');
+var ThemeManager = new mui.Styles.ThemeManager();
+var LinearProgress = mui.LinearProgress;
 
 
 var ProfileContainer= React.createClass({
+  childContextTypes: {
+    muiTheme: React.PropTypes.object
+  },
+
+  getChildContext: function () {
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
+  },
+  
   getInitialState: function(){
     return{
       risk_preference: 0,
@@ -76,7 +89,7 @@ var ProfileContainer= React.createClass({
     return (
       <div>
         <h1>Your Profile</h1>
-        <h3>Loading...</h3>
+        <LinearProgress mode="indeterminate" />
       </div>
     );
   },
