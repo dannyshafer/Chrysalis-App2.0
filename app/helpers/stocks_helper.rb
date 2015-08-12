@@ -41,9 +41,15 @@ module StocksHelper
           ask: parsed[5].to_f,
           bid: parsed[6].to_f,
           peg: parsed[7].to_f,
-          book_value: parsed[8].to_f * 1000000000,
+          book_value: parsed[8].to_f * 1000000000)
+
+        begin
+        symbol.update_attributes(
           logo_url: (doc.css("img").first['src'])
           )
+        rescue
+          next
+        end
 
         shares = symbol.markcap/((symbol.ask + symbol.bid)/2)
 
@@ -136,7 +142,7 @@ module StocksHelper
         info: symbol.info,
         beta: symbol.beta,
         date: DateTime.now.to_date,
-        # logo_url: symbol.logo_url
+        logo_url: symbol.logo_url
         # exhange: symbol.exhange
         )
 
@@ -168,7 +174,7 @@ module StocksHelper
         info: symbol.info,
         beta: symbol.beta,
         date: DateTime.now.to_date,
-        # logo_url: symbol.logo_url
+        logo_url: symbol.logo_url
         # exhange: symbol.exhange
       )
     end
