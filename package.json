@@ -34,6 +34,7 @@
     "react-d3-components": "0.4.8",
     "eventemitter3": "1.1.1",
     "object-assign" : "3.0.0",
-    "react-chartjs-commonjs" : "0.0.3"
+    "react-chartjs-commonjs" : "0.0.3",
+    "jquery": "2.1.4"
   }
 }
