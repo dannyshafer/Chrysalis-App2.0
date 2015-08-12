@@ -12,10 +12,13 @@ var Basket = require('../basket.js');
 var TextField = mui.TextField;
 
 var RecommendationContainer = React.createClass({
+  mixins: [React.addons.LinkedStateMixin],
+
   getInitialState: function () {
     return {
       risk_preference: null,
       age: null,
+      textFieldValue: '',
       basket: new Basket,
     };
   },
@@ -59,15 +62,14 @@ var RecommendationContainer = React.createClass({
 
     for(var i = 0; i < this.state.basket.stocks.length; i++) {
         id[i] = this.state.basket.stocks[i].ticker
-    }
-
-    console.log('creating user basket')
-    console.log(id)
-    debugger
+    };
 
     var data = {
-      ids: id
-    }
+      info: {
+        ids: id,
+        name: this.state.textFieldValue,
+      }
+    };
     var uid = this.props.currentUser.uid
 
     this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets', 'post', JSON.stringify(data), function(message){
@@ -87,11 +89,13 @@ var RecommendationContainer = React.createClass({
           <br />
           <UserPieChart readFromAPI={this.props.readFromAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
           <TextField
-                  hintText="Hint Text"
+                  hintText="Required"
                   errorText={this.state.floatingErrorText}
-                  floatingLabelText="Floating Label Text"
-                  onChange={this._handleFloatingErrorInputChange} />
-          <RaisedButton label="Create Today's Basket" primary={true} onClick={this.createUserBasket}/>
+                  floatingLabelText="Basket Name"
+                  onChange={this._handleFloatingErrorInputChange} 
+                  valueLink={this.linkState('textFieldValue')} />
+          <br />
+          <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket}/>
           <br />
           {this.state.message}
           <br />

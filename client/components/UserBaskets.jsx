@@ -7,7 +7,8 @@ var UserBasketTable = require('./UserBasketTable.jsx');
 var UserBaskets = React.createClass({
 	getInitialState: function () {
 		return {
-			baskets: []
+			baskets: [],
+			basket_info: [],
 		};
 	},
 
@@ -30,7 +31,8 @@ var UserBaskets = React.createClass({
 		var uid = this.props.currentUser.uid
 		this.props.readFromAPI(this.props.origin + '/users/' + uid + '/baskets', function(info){
 		  this.setState({
-		  	baskets: info.baskets
+		  	baskets: info.baskets,
+		  	basket_info: info.basket_info
 
 		  });
 		}.bind(this));
@@ -38,8 +40,9 @@ var UserBaskets = React.createClass({
 
 	render: function () {
 		var baskets = this.state.baskets.map(function (basket, index) {
+			var info = this.state.basket_info[index]
 			return (
-				<UserBasketTable basket={basket} />
+				<UserBasketTable basket={basket} basket_info={info} />
 			);
 		}.bind(this));
 		return (
