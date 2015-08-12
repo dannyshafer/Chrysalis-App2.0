@@ -11,7 +11,12 @@ class UsersController < ApplicationController
   end
 
   def profile
-    info = {risk_preference: @current_user.risk_preference, age: @current_user.age}
+    if @current_user.age
+      output = true
+    else
+      output = false
+    end
+    info = {risk_preference: @current_user.risk_preference, age: @current_user.age, ageSet: output}
     render json: info
   end
 
