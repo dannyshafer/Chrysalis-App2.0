@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index] do
     get 'profile', to: 'users#profile'
     put 'profile', to: 'users#update'
-    resources :baskets, only: [:index, :show, :create]
+    resources :baskets, only: [:index, :show, :create, :destroy]
     get 'baskets/today', to: 'baskets#today'
   end
 

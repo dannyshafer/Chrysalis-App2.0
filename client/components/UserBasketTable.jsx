@@ -3,6 +3,7 @@ var mui = require('material-ui');
 
 var ThemeManager = new mui.Styles.ThemeManager();
 var Table = mui.Table;
+var RaisedButton = mui.RaisedButton;
 
 
 var UserBasketTable = React.createClass({
@@ -17,14 +18,21 @@ var UserBasketTable = React.createClass({
 		};
 	},
 
+	deleteBasket: function (e) {
+		e.preventDefault();
+		var uid = this.props.currentUser.uid
+		var id = this.props.basket_info.id
+		console.log(id)
+		var data = {id: id}
+		this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets/' + id, 'delete', JSON.stringify(data), function(message){
+			alert('Basket Deleted');
+			this.props.updateBasket("ljskdf");
+		});
+
+	},
+
 	render: function () {
-
 		var basket = this.props.basket
-		console.log(basket);
-		// var rowData = [
-		//   {id: {content: '1'}, name: {content: 'John Smith'}, status: {content: 'Employed'}},
-		// ];
-
 		var rowData = []
 		this.props.basket.map(function (stock, index) {
 			rowData.push({ticker: {content: stock.ticker}, 
@@ -35,7 +43,8 @@ var UserBasketTable = React.createClass({
 									  asi: {content: stock.asi_component}
 									})
 		})
-		console.log(rowData)
+		
+		var height = 80 + 30 * basket.length;
 
 		this.state = {
 		  fixedHeader: true,
@@ -46,7 +55,7 @@ var UserBasketTable = React.createClass({
 		  multiSelectable: false,
 		  canSelectAll: false,
 		  deselectOnClickaway: true,
-		  height: '300px',
+		  height: String(height),
 		  rowData: rowData
 		};
 
@@ -96,6 +105,8 @@ var UserBasketTable = React.createClass({
 				  canSelectAll={this.state.canSelectAll}
 				  deselectOnClickaway={this.state.deselectOnClickaway}
 				  onRowSelection={this._onRowSelection} />
+				  <br />
+				  <RaisedButton label="Delete Basket" primary={true} onClick={this.deleteBasket}/>
 			</div>
 		);
 	},
