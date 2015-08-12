@@ -116,22 +116,35 @@ var RecommendationContainer = React.createClass({
     } else {
       var addBox = (
         <Dialog openImmediately={true}>
+          Move the slider to browse different stocks
+          <br />
           To create a basket, please add at least one stock!
         </Dialog>
       );
     };
     if (this.state.risk_preference != null) {
       return (
-        <div>
+        <div className="container">
           {profileSetUpModal}
-          <RecommendedPieChart age={this.state.age}/>
-          <br />
-          <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
-          {addBox}
-          <br />
-          {this.state.message}
-          <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
-          <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
+          <div className="row">
+            <div className="small-12 medium-6 large-4 columns">
+            <RecommendedPieChart age={this.state.age}/>
+            <br />
+            </div>
+
+            <div className="small-12 medium-6 large-4 columns">
+            <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
+            <br />
+            </div>
+            <div className="small-12 medium-12 large-4 columns">
+            {addBox}
+            {this.state.message}
+            </div>
+            <div className="small-12 large-12 columns">
+              <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
+              <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
+            </div>
+          </div>
           <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.state.basket}/>
         </div>
       );

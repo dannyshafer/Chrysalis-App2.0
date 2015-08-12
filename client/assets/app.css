@@ -4,20 +4,23 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 
-
+/*
 body {
-  background-color: black;
+  background-color: white;
 }
-
+*/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
-* {
-  /*border: 1px solid red;*/
-}
+/** {
+  border: 1px solid red;
+}*/
 
 .landing-container {
   margin: 0;
@@ -51,9 +54,9 @@ body {
   line-height: 300%;
 }
 
-div {
+/*div {
   display: block;
-}
+}*/
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -124,3 +127,12 @@ video {
 
 }
 
+.container {
+  margin-top: 10px;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+/*.columns {
+  border: 1px solid red;
+}*/
