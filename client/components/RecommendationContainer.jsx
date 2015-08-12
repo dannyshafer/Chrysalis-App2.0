@@ -150,7 +150,7 @@ var RecommendationContainer = React.createClass({
       );
     } else {
       return (
-        <div>
+        <div className="container">
           <h3>Loading Your Recommended Stocks...</h3>
           {profileSetUpModal}
           <LinearProgress mode="indeterminate"  />

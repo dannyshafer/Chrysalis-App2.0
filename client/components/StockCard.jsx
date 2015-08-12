@@ -61,8 +61,7 @@ var StockCard = React.createClass({
 			);
 		};
 		return (
-      <div className="small-12 medium-6 large-4 columns">
-
+      <div className="small-12 medium-6 large-4 columns end">
 				<Card initiallyExpanded={false}>
 					<Dialog ref="betaDialog"><strong>Beta:</strong><br/><br/>{this.props.definitions["Beta"]}</Dialog>
 					<Dialog ref="EPSDialog"><strong>EPS:</strong><br/><br/>{this.props.definitions["EPS"]}</Dialog>
@@ -85,6 +84,7 @@ var StockCard = React.createClass({
 						<CardActions expandable={true}>
 					</CardActions>
 				</Card>
+				<br />
 			</div>
 		);
 	},

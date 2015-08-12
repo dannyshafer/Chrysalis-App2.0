@@ -30,11 +30,11 @@ class StocksController < ApplicationController
        stocks_3 << i
      end
    end
-   # Stock.where(asi_component: 4).each do |i|
-   #   if (i.eps_v_ind.to_f >= 0) && (i.peg_v_ind.to_f <= 0) && (i.graham_number.to_f > i.bid.to_f) && (i.pe_v_ind <= 0)
-   #     stocks_4 << i
-   #   end
-   # end
+   Stock.where(asi_component: 4).each do |i|
+     if (i.eps_v_ind.to_f >= 0) && (i.peg_v_ind.to_f <= 0) && (i.graham_number.to_f > i.bid.to_f) && (i.pe_v_ind <= 0)
+       stocks_4 << i
+     end
+   end
    Stock.where(asi_component: 5).each do |i|
      if (i.eps_v_ind.to_f >= 0) && (i.peg_v_ind.to_f <= 0) && (i.graham_number.to_f > i.bid.to_f) && (i.pe_v_ind <= 0)
        stocks_5 << i
@@ -60,14 +60,14 @@ class StocksController < ApplicationController
        stocks_9 << i
      end
    end
-   # Stock.where(asi_component: 10).each do |i|
-   #   if (i.eps_v_ind.to_f >= 0) && (i.peg_v_ind.to_f <= 0) && (i.graham_number.to_f > i.bid.to_f) && (i.pe_v_ind <= 0)
-   #     stocks_10 << i
-   #   end
-   # end
+   Stock.where(asi_component: 10).each do |i|
+     if (i.eps_v_ind.to_f >= 0) && (i.peg_v_ind.to_f <= 0) && (i.graham_number.to_f > i.bid.to_f) && (i.pe_v_ind <= 0)
+       stocks_10 << i
+     end
+   end
 
 
-   @stocks = {stocks_1: stocks_1, 
+   @stocks = {stocks_1: stocks_1,
               stocks_2: stocks_2,
               stocks_3: stocks_3,
               stocks_4: stocks_4,
