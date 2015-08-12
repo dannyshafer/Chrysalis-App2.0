@@ -8,7 +8,7 @@ var NavBar = React.createClass({
     sessionStorage.setItem('jwt','');
     location = '/';
   },
-  
+
   render: function(){
     if (this.props.signedIn) {
       var profileLink = <li className="nav-item"><Link to="profile">{this.props.currentUser}</Link></li>
@@ -16,7 +16,7 @@ var NavBar = React.createClass({
       var updateLink = <li className="nav-item"><Link to="update">Update Stocks</Link></li>
       var userBasketLink = <li className="nav-item"><Link to="user_baskets">Baskets</Link></li>
       var signingLink = <li className="nav-item"><span onClick={this.handleSignOutLink}>Sign Out</span></li>
-      var glossary = <li><Link to="glossary"><i className="material-icons">description</i></Link></li>
+      var glossary = <li className="nav-item"><Link to="glossary"><i className="material-icons">description</i></Link></li>
     } else {
       var signingLink = <li className="nav-item"><a href={this.props.origin + '/request_token'}>Sign In</a></li>;
     }
