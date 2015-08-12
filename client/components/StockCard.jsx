@@ -51,7 +51,6 @@ var StockCard = React.createClass({
 
 	render: function () {
 		var stock = this.props.stock;
-		console.log(stock.logo_url)
 		if (this.state.added === true) {
 			return (
 				<Card initiallyExpanded={false}>

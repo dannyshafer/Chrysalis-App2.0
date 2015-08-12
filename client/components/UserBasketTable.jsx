@@ -18,17 +18,8 @@ var UserBasketTable = React.createClass({
 		};
 	},
 
-	deleteBasket: function (e) {
-		e.preventDefault();
-		var uid = this.props.currentUser.uid
-		var id = this.props.basket_info.id
-		console.log(id)
-		var data = {id: id}
-		this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets/' + id, 'delete', JSON.stringify(data), function(message){
-			alert('Basket Deleted');
-			this.props.updateBasket("ljskdf");
-		});
-
+	updateBasket: function () {
+		this.props.updateBasket(this.props.basket_info.id);
 	},
 
 	render: function () {
@@ -106,7 +97,7 @@ var UserBasketTable = React.createClass({
 				  deselectOnClickaway={this.state.deselectOnClickaway}
 				  onRowSelection={this._onRowSelection} />
 				  <br />
-				  <RaisedButton label="Delete Basket" primary={true} onClick={this.deleteBasket}/>
+				  <RaisedButton label="Delete Basket" primary={true} onClick={this.updateBasket.bind(this, this.props.basket_info.id)}/>
 			</div>
 		);
 	},
