@@ -13,6 +13,7 @@
 /node_modules
 /log
 /public/bundle.js
+npm-debug.log
 
 ## Specific to RubyMotion:
 .dat*
