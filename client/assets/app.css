@@ -3,15 +3,67 @@
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-/*
+* {
+  border: 1px solid red;
+}
+
 body {
   background-color: black;
-}*/
-/** {
-  border: 1px solid red;
-}*/
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, .faq-header, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.landing-container {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+    .outer-video-container {
+      position: relative;
+      min-height: 650px;
+    }
+
+        .video-container {
+          position: relative;
+          min-height: 650px;
+        }
+
+    .outer-mission-statement-container {
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: white;
+        max-width: 1070px;
+        margin: 0 auto;
+        text-align: center;
+    }
+        .mission-statement-container {
+
+        }
+
+
+div {
+    display: block;
+}
+
 html {
-	font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*nav {
@@ -51,31 +103,31 @@ nav li {
   display: inline-block;
   margin-left: 20px;
   text-decoration: none;
-
 }*/
- .slogan {
+
+.slogan {
   color: #00ccff;
   text-align: center;
   margin-top: 220px;
   font-size: 30px;
  }
-
+/*
 .video-container {
   position: absolute;
   z-index: -100;
   top: 0%;
   left: 0%;
-  height: 100%;
+  height: 70%;
   width: 100%;
   overflow: hidden;
 }
-
+*/
 video {
   position: fixed;
   top: 50%;
   left: 50%;
   min-width: 100%;
-  min-height: 100%;
+  /*min-height: 100%;*/
   width: auto;
   height: auto;
   z-index: -100;
