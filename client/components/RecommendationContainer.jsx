@@ -1,15 +1,18 @@
 var React = require('react');
-var Slider = require('rc-slider');
+var Basket = require('../basket.js');
 
+// Material UI
+var mui = require('material-ui');
+var TextField = mui.TextField;
+var ThemeManager = new mui.Styles.ThemeManager();
+var RaisedButton = mui.RaisedButton;
+var LinearProgress = mui.LinearProgress;
+var Slider = mui.Slider;
+
+// Components
 var StocksContainer = require('./StocksContainer.jsx');
 var RecommendedPieChart = require('./RecommendedPieChart.jsx')
 var UserPieChart = require('./UserPieChart.jsx')
-var mui = require('material-ui');
-var LinearProgress = mui.LinearProgress;
-var ThemeManager = new mui.Styles.ThemeManager();
-var RaisedButton = mui.RaisedButton;
-var Basket = require('../basket.js');
-var TextField = mui.TextField;
 
 var RecommendationContainer = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
@@ -45,7 +48,6 @@ var RecommendationContainer = React.createClass({
   basketChanged: function(){
     this.forceUpdate();
     this.state.basket.emit('update-chart');
-    // this.handleAddBasket;
   },
 
   readUserInfoFromApi: function(){
@@ -76,11 +78,10 @@ var RecommendationContainer = React.createClass({
     }.bind(this));
   },
 
-  handleRiskSliderMove: function (value) {
+  handleRiskSliderMove: function (e, value) {
     this.setState({risk_preference: value});
   },
   render: function () {
-    console.log(this.state.basket.stocks.length)
     if (this.state.basket.stocks.length != 0) {
       var addBox = (
         <div>
@@ -115,7 +116,7 @@ var RecommendationContainer = React.createClass({
           <br />
           <br />
           <div className="slider">
-          <Slider defaultValue={this.state.risk_preference} min={1} max={10} onChange={this.handleRiskSliderMove} signedIn={this.state.signedIn} currentUser={this.props.currentUser}/>
+          <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
           </div>
           <br />
           <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.state.basket}/>

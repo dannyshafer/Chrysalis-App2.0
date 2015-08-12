@@ -7,6 +7,7 @@ var NavBar = React.createClass({
     sessionStorage.setItem('jwt','');
     location = '/';
   },
+  
   render: function(){
     if (this.props.signedIn) {
       var profileLink = <li className="nav-item"><Link to="profile">{this.props.currentUser}</Link></li>

@@ -1,15 +1,18 @@
 var React = require('react');
 var Reqwest = require('reqwest');
-var NavBar = require('./NavBar.jsx')
-// var LandingPage = require('./LandingPage.jsx')
-// var ProfileContainer = require('./ProfileContainer.jsx')
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Uri = require('jsuri');
 
+// Components
+var NavBar = require('./NavBar.jsx')
+
 var App = React.createClass({
   getDefaultProps: function() {
+    // use this for heroku deployment
     // return {origin: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''};
+
+    // use this when in development
     return {origin: 'http://localhost:3000'};
   },
   getInitialState: function() {

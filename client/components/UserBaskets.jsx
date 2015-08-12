@@ -1,15 +1,18 @@
 var React = require('react');
 
+var UserBasketTable = require('./UserBasketTable.jsx');
+
 var mui = require('material-ui');
 var ThemeManager = new mui.Styles.ThemeManager();
-var UserBasketTable = require('./UserBasketTable.jsx');
 var Slider = mui.Slider;
+var LinearProgress = mui.LinearProgress;
 
 var UserBaskets = React.createClass({
 	getInitialState: function () {
 		return {
 			baskets: [],
 			basket_info: [],
+			status: null,
 		};
 	},
 
@@ -51,12 +54,21 @@ var UserBaskets = React.createClass({
 				</div>
 			);
 		}.bind(this));
-		return (
-			<div>
-				<h3>You have {this.state.baskets.length} Baskets Saved</h3>
-				{baskets}
-			</div>
-		);
+		if (this.state.baskets.length === 0) {
+			return (
+				<div>
+					<h3>Loading Your Baskets...</h3>
+					<LinearProgress mode="indeterminate"  />
+				</div>
+			);
+		} else {
+			return (
+				<div>
+					<h3>You have {this.state.baskets.length} Baskets Saved</h3>
+					{baskets}
+				</div>
+			);
+		};
 	},
 });
 
