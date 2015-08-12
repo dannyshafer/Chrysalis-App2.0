@@ -43,9 +43,9 @@ module StocksHelper
           book_value: parsed[8].to_f * 1000000000)
 
         begin
-        symbol.update_attributes(
-          logo_url: (doc.css("img").first['src'])
-          )
+          symbol.update_attributes(
+            logo_url: (doc.css("img").first['src'])
+            )
         rescue
           next
         end
@@ -146,42 +146,42 @@ module StocksHelper
         logo_url: symbol.logo_url
         # exhange: symbol.exhange
         )
-      Recommendation.create(
-        ticker: symbol.ticker,
-        name: symbol.name,
-        industry: symbol.industry,
-        asi_component: symbol.asi_component,
-        eps: symbol.eps,
-        pe: symbol.pe,
-        pbook: symbol.pbook,
-        psales: symbol.psales,
-        markcap: symbol.markcap,
-        ask: symbol.ask,
-        bid: symbol.bid,
-        peg: symbol.peg,
-        graham_number: symbol.graham_number,
-        shares: symbol.shares,
-        book_value: symbol.book_value,
-        eps_v_ind: symbol.eps_v_ind,
-        pe_v_ind: symbol.pe_v_ind,
-        pbook_v_ind: symbol.pbook_v_ind,
-        psales_v_ind: symbol.psales_v_ind,
-        markcap_v_ind: symbol.markcap_v_ind,
-        peg_v_ind: symbol.peg_v_ind,
-        graham_number_v_ind: symbol.graham_number_v_ind,
-        shares_v_ind: symbol.shares_v_ind,
-        book_value_v_ind: symbol.book_value_v_ind,
-        info: symbol.info,
-        beta: symbol.beta,
-        date: DateTime.now.to_date,
-        logo_url: symbol.logo_url
+Recommendation.create(
+  ticker: symbol.ticker,
+  name: symbol.name,
+  industry: symbol.industry,
+  asi_component: symbol.asi_component,
+  eps: symbol.eps,
+  pe: symbol.pe,
+  pbook: symbol.pbook,
+  psales: symbol.psales,
+  markcap: symbol.markcap,
+  ask: symbol.ask,
+  bid: symbol.bid,
+  peg: symbol.peg,
+  graham_number: symbol.graham_number,
+  shares: symbol.shares,
+  book_value: symbol.book_value,
+  eps_v_ind: symbol.eps_v_ind,
+  pe_v_ind: symbol.pe_v_ind,
+  pbook_v_ind: symbol.pbook_v_ind,
+  psales_v_ind: symbol.psales_v_ind,
+  markcap_v_ind: symbol.markcap_v_ind,
+  peg_v_ind: symbol.peg_v_ind,
+  graham_number_v_ind: symbol.graham_number_v_ind,
+  shares_v_ind: symbol.shares_v_ind,
+  book_value_v_ind: symbol.book_value_v_ind,
+  info: symbol.info,
+  beta: symbol.beta,
+  date: DateTime.now.to_date,
+  logo_url: symbol.logo_url
         # exhange: symbol.exhange
-      )
-    end
-  end
+        )
+end
+end
 
 
-  def make_asi_component(beta)
+def make_asi_component(beta)
     if beta >= -5.982 && beta < -1.441 #decile 1
       1
     elsif beta > -1.441 && beta < -0.642 #decile 2
@@ -217,6 +217,44 @@ module StocksHelper
         )
     end
   end
+
+  def compare_basket_performance
+    container = []
+    doc = Nokogiri::HTML(open("https://www.google.com/finance/historical?q=INDEXSP:.INX"))
+    doc.css('.rgt').each do |i|
+      container << i.text[0..7]
+    end
+
+    index_week_end = container[8].gsub(/[^\d^\.]/, '').to_f
+    index_week_start = container[27].gsub(/[^\d^\.]/, '').to_f
+    index_week_performance = ((index_week_end - index_week_start) / index_week_end * 100).round(2)
+
+    stocks = ["aapl","msft","hpq","ibm","orcl"] #this variable is where we put the symbols in a user's basket
+    basket_week_performance = 0
+    stocks.each do |i|
+      container2 = []
+      doc2 = Nokogiri::HTML(open("http://finance.yahoo.com/q/hp?s=aapl+Historical+Prices"))
+      doc2.css('.yfnc_tabledata1').each do |i|
+        if i.include?("Dividend")
+          container2[i - 1].pop
+          next
+        else
+          container2 << i.text
+        end
+      end
+      stock_week_end = container2[4].gsub(/[^\d^\.]/, '').to_f
+      stock_week_start = container2[31].gsub(/[^\d^\.]/, '').to_f
+      basket_week_performance += (((stock_week_end - stock_week_start) / stock_week_end * 100).round(2))/stocks.length
+    end
+
+    if basket_week_performance > index_week_performance
+      return "The basket performed better than the market this week by " + (basket_week_performance - index_week_performance).round(2).to_s + " percent."
+    else
+      return "The basket underperformed the market this week by " + (index_week_performance - basket_week_performance).round(2).to_s + " percent."
+    end
+
+  end
+
 end
 
 
