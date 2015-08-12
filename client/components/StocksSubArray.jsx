@@ -1,6 +1,10 @@
 var React = require('react');
+
+// Components
+var StockCard = require('./StockCard.jsx');
+
+// Material UI
 var mui = require('material-ui');
-var StockCard = require('./StockCard.jsx')
 var Card = mui.Card;
 var CardHeader = mui.CardHeader;
 var CardText = mui.CardText;

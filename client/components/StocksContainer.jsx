@@ -1,5 +1,9 @@
 var React = require('react');
+
+// Components
 var StocksSubArray = require('./StocksSubArray.jsx');
+
+// Material UI
 var mui = require('material-ui');
 var RefreshIndicator = mui.RefreshIndicator;
 var ThemeManager = new mui.Styles.ThemeManager();

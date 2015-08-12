@@ -2,6 +2,7 @@ var React = require('react');
 var ReactD3 = require('react-d3-components');
 var PieChart = ReactD3.PieChart;
 
+// Components
 var Basket = require('../basket.js');
 
 var UserPieChart = React.createClass({
