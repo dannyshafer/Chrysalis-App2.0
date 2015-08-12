@@ -9,12 +9,11 @@ module StocksHelper
   def stocks_runner
     if !Stock.find_by(id: 1)
       stocks_make_dict
-      populate_data
     end
-
+    update_stocks
   end
 
-  def populate_data
+  def update_stocks
     url = 'http://finance.yahoo.com/d/quotes.csv?s='
     connect = "&f="
     eps = "e"
@@ -84,6 +83,7 @@ module StocksHelper
   end
 
   def stocks_update_versus_index
+
     Industry.where(graham_number: 0).destroy_all
     Industry.where(graham_number: nil).destroy_all
     Industry.where(eps: nil).destroy_all
@@ -113,6 +113,7 @@ module StocksHelper
   end
 
   def make_records_recommendations
+    Recommendation.destroy_all
     Stock.all.each do |symbol|
       Record.create(
         ticker: symbol.ticker,
@@ -145,7 +146,6 @@ module StocksHelper
         logo_url: symbol.logo_url
         # exhange: symbol.exhange
         )
-
       Recommendation.create(
         ticker: symbol.ticker,
         name: symbol.name,
