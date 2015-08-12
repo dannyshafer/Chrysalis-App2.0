@@ -1,4 +1,5 @@
 var React = require('react');
+var LazyLoad = require('react-lazy-load');
 
 // Components
 var StocksSubArray = require('./StocksSubArray.jsx');
@@ -22,7 +23,6 @@ var StocksContainer = React.createClass({
 			stocks_8: [],
 			stocks_9: [],
 			stocks_10: [],
-			risk: null,
 			definitions: {},
 		};
 	},

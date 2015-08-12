@@ -134,10 +134,10 @@ var RecommendedPieChart = React.createClass({
 										    animationSteps : 100,
 
 										    //String - Animation easing effect
-										    animationEasing : "easeOutBounce",
+										    animationEasing : "linear",
 
 										    //Boolean - Whether we animate the rotation of the Doughnut
-										    animateRotate : true,
+										    animateRotate : false,
 
 										    //Boolean - Whether we animate scaling the Doughnut from the centre
 										    animateScale : false,

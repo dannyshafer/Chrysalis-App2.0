@@ -2,6 +2,7 @@ var React = require('react');
 var Basket = require('../basket.js');
 var Router = require('react-router');
 var Link = Router.Link;
+var LazyLoad = require('react-lazy-load');
 
 // Material UI
 var mui = require('material-ui');
@@ -43,7 +44,7 @@ var RecommendationContainer = React.createClass({
   componentDidMount: function(){
     this.readUserInfoFromApi();
     this.state.basket.on('change', this.basketChanged);
-    if (!!sessionStorage.getItem('jwt')) {this.readUserInfoFromAPI();}
+    if (!!sessionStorage.getItem('jwt')) {this.readUserInfoFromApi();}
   },
 
   componentWillUnmount: function(){
