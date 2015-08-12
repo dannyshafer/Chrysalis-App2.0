@@ -6,7 +6,7 @@ class BasketsController < ApplicationController
   def index
     baskets = []
     basket_info = []
-    @current_user.baskets.all.each do |basket|
+    Basket.where(user_id: @current_user.id).order(created_at: :DESC).each do |basket|
       stocks = []
       basket_info << {name: basket.name, date: basket.date, id: basket.id}
 
@@ -21,7 +21,7 @@ class BasketsController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def destroy

@@ -70,81 +70,92 @@ var StocksContainer = React.createClass({
 	render: function () {
 		if (this.props.risk === 1) {
 		  return (
-		    <div id="modal">
+		    <div className="row">
+		    	<div className="small-12 columns">
 		      <h3>Number of Stocks: {this.state.stocks_1.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_1} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
+		    	</div>
 		    </div>
 		  );
 		} else if (this.props.risk === 2) {
 		  return (
-		    <div id="modal">
+		    <div className="row">
+		    	<div className="small-12 columns">
 		      <h3>Number of Stocks: {this.state.stocks_2.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_2} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-
+					</div>
 		    </div>
 		  );
 		} else if (this.props.risk === 3) {
 		  return (
-		    <div id="modal">
+		    <div className="row">
+		    	<div className="small-12 columns">
 		      <h3>Number of Stocks: {this.state.stocks_3.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_3} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-
+					</div>
 		    </div>
 		  );
 		} else if (this.props.risk === 4) {
 		  return (
-		    <div id="modal">
+		    <div className="row">
+		    	<div className="small-12 columns">
 		      <h3>Number of Stocks: {this.state.stocks_4.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_4} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-
+					</div>
 		    </div>
 		  );
 		} else if (this.props.risk === 5) {
 		  return (
-		    <div id="modal">
+		    <div className="row">
+		    	<div className="small-12 columns">
 		      <h3>Number of Stocks: {this.state.stocks_5.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_5} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-
+					</div>
 		    </div>
 		  );
 		} else if (this.props.risk === 6) {
 		  return (
-		    <div id="modal">
+		    <div className="row">
+		    	<div className="small-12 columns">
 		      <h3>Number of Stocks: {this.state.stocks_6.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_6} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-
+					</div>
 		    </div>
 		  );
 		} else if (this.props.risk === 7) {
 		  return (
-		    <div id="modal">
+		    <div className="row">
+		    	<div className="small-12 columns">
 		      <h3>Number of Stocks: {this.state.stocks_7.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_7} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-
+					</div>
 		    </div>
 		  );
 		} else if (this.props.risk === 8) {
 		  return (
-		    <div id="modal">
+		    <div className="row">
+		    	<div className="small-12 columns">
 		      <h3>Number of Stocks: {this.state.stocks_8.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_8} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-
+					</div>
 		    </div>
 		  );
 		} else if (this.props.risk === 9) {
 		  return (
-		    <div id="modal">
+		    <div className="row">
+		    	<div className="small-12 columns">
 		      <h3>Number of Stocks: {this.state.stocks_9.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_9} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-
+					</div>
 		    </div>
 		  );
 		} else if (this.props.risk === 10) {
 		  return (
-		    <div id="modal">
+		    <div className="row">
+		    	<div className="small-12 columns">
 		      <h3>Number of Stocks: {this.state.stocks_10.length}</h3>
 		      <StocksSubArray stocks={this.state.stocks_10} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-
+					</div>
 		    </div>
 		  );
 		} else if (this.state.status === null){
