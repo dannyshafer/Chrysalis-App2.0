@@ -50,12 +50,14 @@ var StockCard = React.createClass({
 
 	render: function () {
 		var stock = this.props.stock;
+		console.log(stock.logo_url)
 		if (this.state.added === true) {
 			return (
 				<Card initiallyExpanded={false}>
 					<CardHeader
 						title={stock.ticker}
 						subtitle={stock.name}
+						avatar={stock.logo_url}
 						showExpandableButton={true}>
 					</CardHeader>
 					<CardText expandable={true}>
@@ -80,6 +82,7 @@ var StockCard = React.createClass({
 						key={stock.id}
 						title={stock.ticker}
 						subtitle={stock.name}
+						avatar={stock.logo_url}
 						showExpandableButton={true}>
 					</CardHeader>
 					<CardText expandable={true}>
