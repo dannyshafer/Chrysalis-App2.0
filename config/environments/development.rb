@@ -43,5 +43,6 @@ Rails.application.configure do
   ENV['TWITTER_CONSUMER_KEY'] = 'GxXztNI5f2cKsTaf6iounsFJk'
   ENV['TWITTER_CONSUMER_SECRET'] = '4Qfg8yoxZW7MxKgeNq7fgc9XuLB1QVhyrB10Ox7lBlZslszGqI'
   ENV['ORIGIN'] = 'http://localhost:8080'
+  ENV['PROFILE'] = 'http://localhost:8080/profile'
   ENV['OAUTH_CALLBACK'] = 'http://127.0.0.1:3000/access_token'
 end
