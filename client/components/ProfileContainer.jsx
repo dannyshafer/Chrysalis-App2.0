@@ -82,20 +82,13 @@ var ProfileContainer= React.createClass({
             <form onSubmit={this.updateProfileAPI}>
               <fieldset>
                 <legend>Update your profile here</legend>
+                <br />
                 {this.state.message}
-                <br />
                 <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
-                <br />
                 <label for="description">{this.state.description[this.state.risk_preference]}</label>
-                <br />
                 <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
-                <br />
-
-                <br />
                 <label for="age">Age: {this.state.age}</label>
-                <br />
                 {ageSlider}
-                <br />
                 <button type="submit" className="pure-button pure-button-primary">Update Profile</button>
               </fieldset>
             </form>

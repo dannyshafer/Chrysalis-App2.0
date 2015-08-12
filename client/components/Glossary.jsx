@@ -14,7 +14,6 @@ var Glossary = React.createClass({
 
   getDefinitionsFromAPI: function(){
     this.props.readFromAPI(this.props.origin + '/definitions', function(info){
-      console.log('about to set state from api results');
       this.setState({definitions: info});
     }.bind(this));
   },
@@ -44,7 +43,6 @@ var definitionsToGlossary = function(definitions) {
     for (var key in definitions) {
         glossary.push("" + key + ": " + definitions[key]);
       };
-    console.log('creating gloss');
     return glossary;
   };
 
