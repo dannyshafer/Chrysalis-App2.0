@@ -129,8 +129,8 @@ ActiveRecord::Schema.define(version: 20150811143608) do
   end
 
   create_table "records_baskets", force: :cascade do |t|
-    t.integer  "record"
-    t.integer  "basket"
+    t.integer  "record_id"
+    t.integer  "basket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

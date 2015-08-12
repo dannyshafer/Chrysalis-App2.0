@@ -45,7 +45,7 @@ var StocksContainer = React.createClass({
   },
 
 	readStocksFromAPI: function () {
-		this.props.readFromAPI(this.props.origin + '/stocks/recommendations', function(info){
+		this.props.readFromAPI(this.props.origin + '/recommendations/recommendations', function(info){
 		  this.setState({
 		  	status: "completed",
 		  	stocks_1: info.stocks_1,
@@ -69,7 +69,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_1.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_1} definitions={this.state.definitions} readFromAPI={this.props.readFromAPI}/>
+		      <StocksSubArray stocks={this.state.stocks_1} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 		    </div>
 		  );
 		} else if (this.props.risk === 2) {
@@ -77,7 +77,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_2.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_2} definitions={this.state.definitions} readFromAPI={this.props.readFromAPI}/>
+		      <StocksSubArray stocks={this.state.stocks_2} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 
 		    </div>
 		  );
@@ -86,7 +86,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_3.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_3} definitions={this.state.definitions} readFromAPI={this.props.readFromAPI}/>
+		      <StocksSubArray stocks={this.state.stocks_3} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 
 		    </div>
 		  );
@@ -95,7 +95,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_4.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_4} definitions={this.state.definitions} readFromAPI={this.props.readFromAPI}/>
+		      <StocksSubArray stocks={this.state.stocks_4} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 
 		    </div>
 		  );
@@ -104,7 +104,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_5.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_5} definitions={this.state.definitions} readFromAPI={this.props.readFromAPI}/>
+		      <StocksSubArray stocks={this.state.stocks_5} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 
 		    </div>
 		  );
@@ -113,7 +113,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_6.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_6} definitions={this.state.definitions} readFromAPI={this.props.readFromAPI}/>
+		      <StocksSubArray stocks={this.state.stocks_6} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 
 		    </div>
 		  );
@@ -122,7 +122,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_7.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_7} definitions={this.state.definitions} readFromAPI={this.props.readFromAPI}/>
+		      <StocksSubArray stocks={this.state.stocks_7} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 
 		    </div>
 		  );
@@ -131,7 +131,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_8.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_8} definitions={this.state.definitions} readFromAPI={this.props.readFromAPI}/>
+		      <StocksSubArray stocks={this.state.stocks_8} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 
 		    </div>
 		  );
@@ -140,7 +140,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_9.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_9} definitions={this.state.definitions} readFromAPI={this.props.readFromAPI}/>
+		      <StocksSubArray stocks={this.state.stocks_9} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 
 		    </div>
 		  );
@@ -149,7 +149,7 @@ var StocksContainer = React.createClass({
 		    <div id="modal">
 		      <h1>Stocks Recommended</h1>
 		      <h3>Number of Stocks: {this.state.stocks_10.length}</h3>
-		      <StocksSubArray stocks={this.state.stocks_10} definitions={this.state.definitions} readFromAPI={this.props.readFromAPI}/>
+		      <StocksSubArray stocks={this.state.stocks_10} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 
 		    </div>
 		  );

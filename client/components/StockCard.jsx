@@ -7,14 +7,13 @@ var CardText = mui.CardText;
 var CardActions = mui.CardActions;
 var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
-var EventEmitter = require('eventemitter3');
 
-// var Basket = require('../../basket.js');
 
 var StockCard = React.createClass({
 	getInitialState: function () {
 		return {
 			added: false,
+			basket: this.props.basket,
 		};
 	},
 
@@ -29,18 +28,18 @@ var StockCard = React.createClass({
 	},
 
 	handleClicked: function () {
-		// emit to 3rd party basket.js
-		// Basket.addToBasket(this.props.stock)
+		this.state.basket.addToBasket(this.props.stock)
 		var active = !this.state.added;
 		this.setState({
 			added: active,
-		})
+		});
 	},
 
 	handleMouseOver: function(){
-    console.log("shit");
-    this.refs.betaDialog.show();
-  },
+  	console.log("shit");
+  	this.refs.betaDialog.show();
+	},
+
 
 	render: function () {
 		var stock = this.props.stock;
@@ -48,7 +47,6 @@ var StockCard = React.createClass({
 			return (
 				<Card initiallyExpanded={false}>
 					<CardHeader
-						key={stock.id}
 						title={stock.ticker}
 						subtitle={stock.name}
 						showExpandableButton={true}>
