@@ -10,10 +10,10 @@ var NavBar = require('./NavBar.jsx')
 var App = React.createClass({
   getDefaultProps: function() {
     // use this for heroku deployment
-    // return {origin: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''};
+    return {origin: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''};
 
     // use this when in development
-    return {origin: 'http://localhost:3000'};
+    // return {origin: 'http://localhost:3000'};
   },
   getInitialState: function() {
     return {signedIn: false, currentUser: {handle: '', uid: null}};
