@@ -1,7 +1,8 @@
 var React = require('react');
-var ReactD3 = require('react-d3-components');
-var PieChart = ReactD3.PieChart;
+// var ReactD3 = require('react-d3-components');
+// var PieChart = ReactD3.PieChart;
 
+// Chart js
 var DoughnutChart = require("react-chartjs-commonjs").Doughnut;
 
 var RecommendedPieChart = React.createClass({

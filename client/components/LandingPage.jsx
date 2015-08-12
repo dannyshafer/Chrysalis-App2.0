@@ -27,7 +27,6 @@ var LandingPage = React.createClass({
   componentDidMount: function () {
     if (!!sessionStorage.getItem('jwt')) {this.readUserInfoFromAPI();}
   },
-
   readUserInfoFromAPI: function(){
     var uid = this.props.currentUser.uid
     this.props.readFromAPI(this.props.origin + '/users/' + uid + '/profile', function(info){
