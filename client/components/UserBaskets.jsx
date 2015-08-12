@@ -26,7 +26,6 @@ var UserBaskets = React.createClass({
 		this.readUserBasketsFromAPI();
 	},
 
-
 	readUserBasketsFromAPI: function () {
 		var uid = this.props.currentUser.uid
 		this.props.readFromAPI(this.props.origin + '/users/' + uid + '/baskets', function(info){
@@ -47,7 +46,7 @@ var UserBaskets = React.createClass({
 		}.bind(this));
 		return (
 			<div>
-				<h3>Your Saved Baskets</h3>
+				<h3>You have {this.state.baskets.length} Baskets Saved</h3>
 				{baskets}
 			</div>
 		);
