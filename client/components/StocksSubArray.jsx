@@ -25,10 +25,6 @@ var StocksSubArray = React.createClass({
     };
   },
 
-  handleClicked: function () {
-  	console.log('healsflakj')
-  },
-
 	render: function () {
 		var stocks = this.props.stocks.map(function (stock, index) {
 			return (

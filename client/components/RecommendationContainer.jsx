@@ -115,13 +115,14 @@ var RecommendationContainer = React.createClass({
       );
     } else {
       var addBox = (
-        <h4>To create a basket, please add at least one stock.</h4>
+        <Dialog openImmediately={true}>
+          To create a basket, please add at least one stock!
+        </Dialog>
       );
     };
     if (this.state.risk_preference != null) {
       return (
         <div>
-          <h1>Recommendation Page</h1>
           {profileSetUpModal}
           <RecommendedPieChart age={this.state.age}/>
           <br />
@@ -137,7 +138,7 @@ var RecommendationContainer = React.createClass({
     } else {
       return (
         <div>
-          <h1>Recommenation Page</h1>
+          <h3>Loading Your Recommended Stocks...</h3>
           {profileSetUpModal}
           <LinearProgress mode="indeterminate"  />
         </div>

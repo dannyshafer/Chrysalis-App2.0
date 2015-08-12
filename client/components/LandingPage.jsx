@@ -30,7 +30,6 @@ var LandingPage = React.createClass({
   readUserInfoFromAPI: function(){
     var uid = this.props.currentUser.uid
     this.props.readFromAPI(this.props.origin + '/users/' + uid + '/profile', function(info){
-      console.log('got set')
       this.setState({modalOpen: !info.ageSet});
     }.bind(this));
   },
