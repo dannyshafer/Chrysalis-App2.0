@@ -66,7 +66,7 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-nav {
+/*nav {
   border: 1px solid #777AC7;
   background-color: #777AC7;
 }
@@ -103,9 +103,7 @@ nav li {
   display: inline-block;
   margin-left: 20px;
   text-decoration: none;
-
-}
-
+}*/
 
 .slogan {
   color: #00ccff;
