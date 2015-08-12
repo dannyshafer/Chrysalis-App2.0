@@ -105,7 +105,7 @@ var RecommendationContainer = React.createClass({
           <h1>Recommendation Page</h1>
           <RecommendedPieChart age={this.state.age}/>
           <br />
-          <UserPieChart readFromAPI={this.props.readFromAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
+          <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
           {addBox}
           <br />
           {this.state.message}
@@ -115,7 +115,7 @@ var RecommendationContainer = React.createClass({
           <br />
           <br />
           <div className="slider">
-          <Slider defaultValue={this.state.risk_preference} min={1} max={10} onChange={this.handleRiskSliderMove} signedIn={this.state.signedIn} currentUser={this.state.currentUser}/>
+          <Slider defaultValue={this.state.risk_preference} min={1} max={10} onChange={this.handleRiskSliderMove} signedIn={this.state.signedIn} currentUser={this.props.currentUser}/>
           </div>
           <br />
           <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.state.basket}/>

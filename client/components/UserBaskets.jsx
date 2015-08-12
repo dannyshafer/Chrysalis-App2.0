@@ -3,6 +3,7 @@ var React = require('react');
 var mui = require('material-ui');
 var ThemeManager = new mui.Styles.ThemeManager();
 var UserBasketTable = require('./UserBasketTable.jsx');
+var Slider = mui.Slider;
 
 var UserBaskets = React.createClass({
 	getInitialState: function () {
@@ -22,6 +23,10 @@ var UserBaskets = React.createClass({
 		};
 	},
 
+	updateBasket: function (asdf) {
+		this.forceUpdate();
+	},
+
 	componentDidMount: function () {
 		this.readUserBasketsFromAPI();
 	},
@@ -32,7 +37,6 @@ var UserBaskets = React.createClass({
 		  this.setState({
 		  	baskets: info.baskets,
 		  	basket_info: info.basket_info
-
 		  });
 		}.bind(this));
 	},
@@ -41,7 +45,10 @@ var UserBaskets = React.createClass({
 		var baskets = this.state.baskets.map(function (basket, index) {
 			var info = this.state.basket_info[index]
 			return (
-				<UserBasketTable basket={basket} basket_info={info} />
+				<div>
+					<UserBasketTable origin={this.props.origin} basket={basket} basket_info={info} writeToAPI={this.props.writeToAPI} currentUser={this.props.currentUser} updateBasket={this.updateBasket}/>
+					<Slider name="slider3" disabled={true} value={1} />
+				</div>
 			);
 		}.bind(this));
 		return (

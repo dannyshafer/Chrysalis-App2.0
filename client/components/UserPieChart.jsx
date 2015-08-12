@@ -11,6 +11,9 @@ var UserPieChart = React.createClass({
 			mid: 0,
 			high: 0,
 			none: 10,
+			low_num: 0,
+			mid_num: 0,
+			high_num: 0,
 			basket: this.props.basket
 		};
 	},
@@ -28,13 +31,19 @@ var UserPieChart = React.createClass({
 		var low = 0;
 		var mid = 0;
 		var high = 0;
+		var low_num = 0;
+		var mid_num = 0;
+		var high_num = 0;
 		for (var i = 0; i < this.state.basket.stocks.length; i++) {
 			if (1 <= this.state.basket.stocks[i].asi_component && this.state.basket.stocks[i].asi_component <= 3) {
 				low += 1
+				low_num += 1
 			} else if (4 <= this.state.basket.stocks[i].asi_component && this.state.basket.stocks[i].asi_component <= 7) {
 				mid += 1
+				mid_num += 1
 			} else if (8 <= this.state.basket.stocks[i].asi_component && this.state.basket.stocks[i].asi_component <= 10) {
 				high += 1
+				high_num += 1
 			};
 		};
 
@@ -42,6 +51,9 @@ var UserPieChart = React.createClass({
 			low: low/total,
 			mid: mid/total,
 			high: high/total,
+			low_num: low_num,
+			mid_num: mid_num,
+			high_num: high_num,
 			none: 0,
 		})
 	},
@@ -65,47 +77,47 @@ var UserPieChart = React.createClass({
 			var data = {
 				label: 'somethingA',
 				values: [ 
-				{x: 'High-Risk', y: this.state.high}]
+				{x: 'High-Risk: ' + this.state.high_num, y: this.state.high}]
 			};
 		} else if (this.state.low === 0 && this.state.high === 0) {
 			var data = {
 				label: 'somethingA',
 				values: [
-				{x: 'Mid-Risk', y: this.state.mid}]
+				{x: 'Mid-Risk: ' + this.state.mid_num, y: this.state.mid}]
 			};
 		} else if (this.state.mid === 0 && this.state.high === 0) {
 			var data = {
 				label: 'somethingA',
 				values: [
-				{x: 'Low-Risk', y: this.state.low}]
+				{x: 'Low-Risk: ' + this.state.low_num, y: this.state.low}]
 			};
 		} else if (this.state.low === 0) {
 			var data = {
 				label: 'somethingA',
 				values: [
-				{x: 'Mid-Risk', y: this.state.mid}, 
-				{x: 'High-Risk', y: this.state.high}]
+				{x: 'Mid-Risk: ' + this.state.mid_num, y: this.state.mid}, 
+				{x: 'High-Risk: ' + this.state.high_num, y: this.state.high}]
 			};
 		} else if (this.state.mid === 0) {
 			var data = {
 				label: 'somethingA',
 				values: [
-				{x: 'Low-Risk', y: this.state.low}, 
-				{x: 'High-Risk', y: this.state.high}]
+				{x: 'Low-Risk: ' + this.state.low_num, y: this.state.low}, 
+				{x: 'High-Risk: ' + this.state.high_num, y: this.state.high}]
 			};
 		} else if (this.state.high === 0) {
 			var data = {
 				label: 'somethingA',
 				values: [
-				{x: 'Low-Risk', y: this.state.low}, 
-				{x: 'Mid-Risk', y: this.state.mid}]
+				{x: 'Low-Risk: ' + this.state.low_num, y: this.state.low}, 
+				{x: 'Mid-Risk: ' + this.state.mid_num, y: this.state.mid}]
 			};
 		} else {
 			var data = {
 				label: 'somethingA',
-				values: [{x: 'Low-Risk', y: this.state.low},
-				{x: 'Mid-Risk', y: this.state.mid},
-				{x: 'High-Risk', y: this.state.high}]
+				values: [{x: 'Low-Risk: ' + this.state.low_num, y: this.state.low},
+				{x: 'Mid-Risk: ' + this.state.mid_num, y: this.state.mid},
+				{x: 'High-Risk: ' + this.state.high_num, y: this.state.high}]
 			};
 		};
 		var sort = null;

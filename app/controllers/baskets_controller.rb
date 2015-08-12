@@ -1,14 +1,14 @@
 require 'date'
 
 class BasketsController < ApplicationController
-  before_action :authenticate_request, only: [:index, :show, :today, :create]
+  before_action :authenticate_request, only: [:index, :show, :today, :create, :destroy]
 
   def index
     baskets = []
     basket_info = []
     @current_user.baskets.all.each do |basket|
       stocks = []
-      basket_info << {name: basket.name, date: basket.date}
+      basket_info << {name: basket.name, date: basket.date, id: basket.id}
 
       basket.records.each do |record|
         stocks << record
@@ -22,6 +22,13 @@ class BasketsController < ApplicationController
 
   def show
     
+  end
+
+  def destroy
+    p '*************'
+    p info_params["id"]
+    Basket.find(info_params["id"].to_i).destroy
+    render json: {messsage: 'delete success'}
   end
 
   def today
