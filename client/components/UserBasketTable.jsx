@@ -32,6 +32,7 @@ var UserBasketTable = React.createClass({
 									  ask: {content: stock.ask},
 									  beta: {content: stock.beta},
 									  eps: {content: stock.eps},
+									  asi: {content: stock.asi_component}
 									})
 		})
 		console.log(rowData)
@@ -70,8 +71,13 @@ var UserBasketTable = React.createClass({
 		    content: 'EPS',
 		    tooltip: 'Earnings per Share'
 		  },
+		  asi: {
+		    content: 'ASI',
+		    tooltip: 'AuShafer Index'
+		  },
+
 		};
-		var colOrder = ['ticker', 'name', 'ask', 'beta', 'eps'];
+		var colOrder = ['ticker', 'name', 'ask', 'beta', 'eps', 'asi'];
 		// var footerCols = {ticker: {content: 'Ticker'}, name: {content: 'Name'}, status: {content: 'Status'}};
 		return (
 			<div>
