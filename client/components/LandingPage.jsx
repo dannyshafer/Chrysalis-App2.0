@@ -53,7 +53,7 @@ var LandingPage = React.createClass({
         </div>
         <div className='video-container'>
           <video preload="true" autoPlay="autoplay" loop="loop" muted tabIndex="0">
-            <source src="ChrysalisRain.mp4" type="video/mp4"></source>
+            <source src="low.mp4" type="video/mp4"></source>
           </video>
         </div>
 
