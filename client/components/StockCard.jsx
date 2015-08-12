@@ -7,8 +7,8 @@ var CardText = mui.CardText;
 var CardActions = mui.CardActions;
 var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
+var FlatButton = mui.FlatButton;
 
-var Basket = require('../basket.js');
 
 var StockCard = React.createClass({
 	getInitialState: function () {
@@ -36,10 +36,15 @@ var StockCard = React.createClass({
 		});
 	},
 
-	handleMouseOver: function(){
-  	console.log("shit");
+	handleBetaClick: function(){
   	this.refs.betaDialog.show();
 	},
+	handleEPSClick: function(){
+  	this.refs.EPSDialog.show();
+	},
+	handlePEGClick: function(){
+  	this.refs.PEGDialog.show();
+  },
 
 	render: function () {
 		var stock = this.props.stock;
@@ -52,11 +57,14 @@ var StockCard = React.createClass({
 						showExpandableButton={true}>
 					</CardHeader>
 					<CardText expandable={true}>
-					<Dialog ref="betaDialog">{this.props.definitions["Beta"]}</Dialog>
-		      		<div className="definition" onMouseOver={this.handleMouseOver}>
-		      		Beta: {stock.beta}
-		      		</div><br/>
-					{stock.info}
+						<Dialog ref="betaDialog"><strong>Beta:</strong><br/><br/>{this.props.definitions["Beta"]}</Dialog>
+						<Dialog ref="EPSDialog"><strong>EPS:</strong><br/><br/>{this.props.definitions["EPS"]}</Dialog>
+						<Dialog ref="PEGDialog"><strong>PEG:</strong><br/><br/>{this.props.definitions["PEG"]}</Dialog>
+						<FlatButton onClick={this.handleBetaClick}>Beta: {stock.beta}</FlatButton>
+		      	<FlatButton onClick={this.handleEPSClick}>EPS: {stock.eps}</FlatButton>
+	      		<FlatButton onClick={this.handlePEGClick}>PEG: {stock.peg}</FlatButton>
+			      <br/>
+						{stock.info}
 					</CardText>
 						<CardActions expandable={true}>
 						<RaisedButton disabled={true} label="Added to Basket" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
@@ -73,11 +81,14 @@ var StockCard = React.createClass({
 						showExpandableButton={true}>
 					</CardHeader>
 					<CardText expandable={true}>
-					<Dialog ref="betaDialog">{this.props.definitions["Beta"]}</Dialog>
-		      		<div className="definition" onMouseOver={this.handleMouseOver}>
-		      		Beta: {stock.beta}
-		      		</div><br/>
-					{stock.info}
+						<Dialog ref="betaDialog"><strong>Beta:</strong><br/><br/>{this.props.definitions["Beta"]}</Dialog>
+						<Dialog ref="EPSDialog"><strong>EPS:</strong><br/><br/>{this.props.definitions["EPS"]}</Dialog>
+						<Dialog ref="PEGDialog"><strong>PEG:</strong><br/><br/>{this.props.definitions["PEG"]}</Dialog>
+						<FlatButton onClick={this.handleBetaClick}>Beta: {stock.beta}</FlatButton>
+		      	<FlatButton onClick={this.handleEPSClick}>EPS: {stock.eps}</FlatButton>
+	      		<FlatButton onClick={this.handlePEGClick}>PEG: {stock.peg}</FlatButton>
+			      <br/>
+						{stock.info}
 					</CardText>
 						<CardActions expandable={true}>
 						<RaisedButton disabled={false} label="Add to Basket" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
