@@ -11,48 +11,31 @@ var NavBar = React.createClass({
 
   render: function(){
     if (this.props.signedIn) {
-      var profileLink = <li><Link to="profile">{this.props.currentUser}</Link></li>
-      var recommendationLink = <li><Link to="recommendation">Recommendations</Link></li>
-      var updateLink = <li><Link to="update">Update Stocks</Link></li>
-      var userBasketLink = <li><Link to="user_baskets">Baskets</Link></li>
-      var signingLink = <li onClick={this.handleSignOutLink}>Sign Out</li>
-      var glossary = <li><Link to="glossary"><i className="material-icons">description</i></Link></li>
+      var profileLink = <li className="nav-item"><Link to="profile">{this.props.currentUser}</Link></li>
+      var recommendationLink = <li className="nav-item"><Link to="recommendation">Recommendations</Link></li>
+      var updateLink = <li className="nav-item"><Link to="update">Update Stocks</Link></li>
+      var userBasketLink = <li className="nav-item"><Link to="user_baskets">Baskets</Link></li>
+      var signingLink = <li className="nav-item"><span onClick={this.handleSignOutLink}>Sign Out</span></li>
+      var glossary = <li className="nav-item"><Link to="glossary"><i className="material-icons">description</i></Link></li>
     } else {
-      var signingLink = <li><a href={this.props.origin + '/request_token'}>Sign In</a></li>
+      var signingLink = <li className="nav-item"><a href={this.props.origin + '/request_token'}>Sign In</a></li>;
     }
     return (
-
-      <div className="contain-to-grid sticky">
-        <nav className="top-bar" data-topbar role="navigation">
-          <ul className="title-area">
-            <li>
-              <Link to="landingpage">Chrysalis</Link>
-            </li>
+      <div>
+        <nav className="nav">
+          <ul>
+            <li className="nav-item"><Link to="landingpage">Chrysalis</Link></li>
+            {profileLink}
+            {recommendationLink}
+            {userBasketLink}
+            {updateLink}
+            {signingLink}
+            {glossary}
           </ul>
-          <section className="top-bar-section">
-            <ul className="right">
-              {signingLink}
-            </ul>
-
-            <ul className="left">
-              {profileLink}
-              {recommendationLink}
-              {userBasketLink}
-              {updateLink}
-              {glossary}
-            </ul>
-          </section>
-
-
-
-
-
         </nav>
       </div>
       );
   },
 });
-
-
 
 module.exports = NavBar;
