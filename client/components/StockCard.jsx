@@ -1,4 +1,6 @@
 var React = require('react');
+
+// Material UI
 var mui = require('material-ui');
 var Dialog = mui.Dialog;
 var Card = mui.Card;

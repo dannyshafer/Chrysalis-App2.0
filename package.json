@@ -24,7 +24,6 @@
     "jsuri": "^1.3.0",
     "jsx-loader": "^0.12.2",
     "material-ui": "0.10.4",
-    "rc-slider": "1.4.0",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
     "react-video": "^1.5.3",
@@ -34,6 +33,7 @@
     "webpack-dev-server": "^1.8.0",
     "react-d3-components": "0.4.8",
     "eventemitter3": "1.1.1",
-    "object-assign" : "3.0.0"
+    "object-assign" : "3.0.0",
+    "react-chartjs-commonjs" : "0.0.3"
   }
 }

@@ -1,8 +1,10 @@
 var React = require('react');
-var Slider = require('rc-slider');
+
+// Material UI
 var mui = require('material-ui');
 var ThemeManager = new mui.Styles.ThemeManager();
 var LinearProgress = mui.LinearProgress;
+var Slider = mui.Slider;
 
 
 var ProfileContainer= React.createClass({
@@ -52,10 +54,10 @@ var ProfileContainer= React.createClass({
       this.setState({message: "Profile Updated!"})
     }.bind(this));
   },
-  handleRiskSliderMove: function(value) {
+  handleRiskSliderMove: function(e, value) {
     this.setState({risk_preference: value});
   },
-  handleAgeSliderMove: function(value) {
+  handleAgeSliderMove: function(e, value) {
     this.setState({age: value});
   },
   render: function(){
@@ -73,11 +75,13 @@ var ProfileContainer= React.createClass({
                 <br />
                 <label for="description">{this.state.description[this.state.risk_preference]}</label>
                 <br />
-                <Slider defaultValue={this.state.risk_preference} min={1} max={10} onChange={this.handleRiskSliderMove} />
+                <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
+                <br />
+
                 <br />
                 <label for="age">Age: {this.state.age}</label>
                 <br />
-                <Slider defaultValue={this.state.age} min={18} max={100} onChange={this.handleAgeSliderMove} />
+                <Slider name="Age" defaultValue={Number(this.state.age)} step={1} min={18} max={100} onChange={this.handleAgeSliderMove} />
                 <br />
                 <button type="submit" className="pure-button pure-button-primary">Update Profile</button>
               </fieldset>
