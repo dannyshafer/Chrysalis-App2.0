@@ -5,7 +5,6 @@ var ReactRouterBootstrap = require('react-router-bootstrap');
 var Link = Router.Link;
 var Nav = ReactBootstrap.Nav;
 var Navbar = ReactBootstrap.Navbar;
-var CollapsibleNav = ReactBootstrap.CollapsibleNav;
 var Button = ReactBootstrap.Button;
 var NavItem = ReactBootstrap.NavItem;
 var NavItemLink = ReactRouterBootstrap.NavItemLink;
@@ -32,17 +31,15 @@ var NavigationBar = React.createClass({
     return (
       <div>
         <Navbar className="menubar" fixedTop>
-          <CollapsibleNav>
           <Nav>
             <NavItemLink className="nav-item" to="landingpage" >Chrysalis</NavItemLink>
             {profileLink}
             {recommendationLink}
             {userBasketLink}
             {updateLink}
-            {signingLink}
             {glossary}
+            {signingLink}
           </Nav>
-          </CollapsibleNav>
         </Navbar>
       </div>
       );
