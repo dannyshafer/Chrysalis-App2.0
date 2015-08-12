@@ -26,12 +26,22 @@ var UserBaskets = React.createClass({
 		};
 	},
 
-	updateBasket: function (asdf) {
-		this.forceUpdate();
-	},
+	// updateBasket: function () {
+	// 	this.readUserBasketsFromAPI();
+	// },
 
 	componentDidMount: function () {
 		this.readUserBasketsFromAPI();
+	},
+
+	updateBasket: function (id) {
+		var uid = this.props.currentUser.uid
+		var data = {id: id}
+		this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets/' + id, 'delete', JSON.stringify(data), function(message){
+			alert('Basket Deleted');
+			this.readUserBasketsFromAPI();
+		}.bind(this));
+
 	},
 
 	readUserBasketsFromAPI: function () {
