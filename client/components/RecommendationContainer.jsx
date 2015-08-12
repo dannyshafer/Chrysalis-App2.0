@@ -1,6 +1,5 @@
 var React = require('react');
 var Slider = require('rc-slider');
-
 var StocksContainer = require('./StocksContainer.jsx');
 var RecommendedPieChart = require('./RecommendedPieChart.jsx')
 var UserPieChart = require('./UserPieChart.jsx')
@@ -27,7 +26,7 @@ var RecommendationContainer = React.createClass({
     muiTheme: React.PropTypes.object
   },
 
-  getChildContext: function () { 
+  getChildContext: function () {
     return {
       muiTheme: ThemeManager.getCurrentTheme()
     };
@@ -88,7 +87,7 @@ var RecommendationContainer = React.createClass({
                 hintText="Required"
                 errorText={this.state.floatingErrorText}
                 floatingLabelText="Basket Name"
-                onChange={this._handleFloatingErrorInputChange} 
+                onChange={this._handleFloatingErrorInputChange}
                 valueLink={this.linkState('textFieldValue')} />
         <br />
         <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket}/>
@@ -129,7 +128,7 @@ var RecommendationContainer = React.createClass({
         </div>
       );
     };
-    
+
   },
 });
 

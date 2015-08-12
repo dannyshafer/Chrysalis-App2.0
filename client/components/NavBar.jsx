@@ -2,6 +2,7 @@ var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
 
+
 var NavBar = React.createClass({
   handleSignOutLink: function() {
     sessionStorage.setItem('jwt','');
@@ -14,6 +15,7 @@ var NavBar = React.createClass({
       var updateLink = <li className="nav-item"><Link to="update">Update Stocks</Link></li>
       var userBasketLink = <li className="nav-item"><Link to="user_baskets">Baskets</Link></li>
       var signingLink = <li className="nav-item"><span onClick={this.handleSignOutLink}>Sign Out</span></li>
+      var glossary = <li><Link to="glossary"><i className="material-icons">description</i></Link></li>
     } else {
       var signingLink = <li className="nav-item"><a href={this.props.origin + '/request_token'}>Sign In</a></li>;
     }
@@ -27,6 +29,7 @@ var NavBar = React.createClass({
             {userBasketLink}
             {updateLink}
             {signingLink}
+            {glossary}
           </ul>
         </nav>
       </div>
