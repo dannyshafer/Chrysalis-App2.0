@@ -9,12 +9,11 @@ module StocksHelper
   def stocks_runner
     if !Stock.find_by(id: 1)
       stocks_make_dict
-      populate_data
     end
-
+    update_stocks
   end
 
-  def populate_data
+  def update_stocks
     url = 'http://finance.yahoo.com/d/quotes.csv?s='
     connect = "&f="
     eps = "e"
@@ -41,9 +40,15 @@ module StocksHelper
           ask: parsed[5].to_f,
           bid: parsed[6].to_f,
           peg: parsed[7].to_f,
-          book_value: parsed[8].to_f * 1000000000,
+          book_value: parsed[8].to_f * 1000000000)
+
+        begin
+        symbol.update_attributes(
           logo_url: (doc.css("img").first['src'])
           )
+        rescue
+          next
+        end
 
         shares = symbol.markcap/((symbol.ask + symbol.bid)/2)
 
@@ -78,6 +83,7 @@ module StocksHelper
   end
 
   def stocks_update_versus_index
+
     Industry.where(graham_number: 0).destroy_all
     Industry.where(graham_number: nil).destroy_all
     Industry.where(eps: nil).destroy_all
@@ -107,6 +113,7 @@ module StocksHelper
   end
 
   def make_records_recommendations
+    Recommendation.destroy_all
     Stock.all.each do |symbol|
       Record.create(
         ticker: symbol.ticker,
@@ -136,10 +143,9 @@ module StocksHelper
         info: symbol.info,
         beta: symbol.beta,
         date: DateTime.now.to_date,
-        # logo_url: symbol.logo_url
+        logo_url: symbol.logo_url
         # exhange: symbol.exhange
         )
-
       Recommendation.create(
         ticker: symbol.ticker,
         name: symbol.name,
@@ -168,7 +174,7 @@ module StocksHelper
         info: symbol.info,
         beta: symbol.beta,
         date: DateTime.now.to_date,
-        # logo_url: symbol.logo_url
+        logo_url: symbol.logo_url
         # exhange: symbol.exhange
       )
     end

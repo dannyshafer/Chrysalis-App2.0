@@ -7,6 +7,7 @@ var Card = mui.Card;
 var CardHeader = mui.CardHeader;
 var CardText = mui.CardText;
 var CardActions = mui.CardActions;
+var CardTitle = mui.CardTitle;
 var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
 var FlatButton = mui.FlatButton;
@@ -50,50 +51,54 @@ var StockCard = React.createClass({
 
 	render: function () {
 		var stock = this.props.stock;
+		console.log(stock.logo_url)
 		if (this.state.added === true) {
 			return (
 				<Card initiallyExpanded={false}>
+					<Dialog ref="betaDialog"><strong>Beta:</strong><br/><br/>{this.props.definitions["Beta"]}</Dialog>
+					<Dialog ref="EPSDialog"><strong>EPS:</strong><br/><br/>{this.props.definitions["EPS"]}</Dialog>
+					<Dialog ref="PEGDialog"><strong>PEG:</strong><br/><br/>{this.props.definitions["PEG"]}</Dialog>
+					<FlatButton onClick={this.handleBetaClick}>Beta: {stock.beta}</FlatButton>
+	      	<FlatButton onClick={this.handleEPSClick}>EPS: {stock.eps}</FlatButton>
+	    		<FlatButton onClick={this.handlePEGClick}>PEG: {stock.peg}</FlatButton>
+	    		<RaisedButton disabled={true} label="Added" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
 					<CardHeader
+						key={stock.id}
 						title={stock.ticker}
 						subtitle={stock.name}
-						showExpandableButton={true}>
-					</CardHeader>
-					<CardText expandable={true}>
-						<Dialog ref="betaDialog"><strong>Beta:</strong><br/><br/>{this.props.definitions["Beta"]}</Dialog>
-						<Dialog ref="EPSDialog"><strong>EPS:</strong><br/><br/>{this.props.definitions["EPS"]}</Dialog>
-						<Dialog ref="PEGDialog"><strong>PEG:</strong><br/><br/>{this.props.definitions["PEG"]}</Dialog>
-						<FlatButton onClick={this.handleBetaClick}>Beta: {stock.beta}</FlatButton>
-		      	<FlatButton onClick={this.handleEPSClick}>EPS: {stock.eps}</FlatButton>
-	      		<FlatButton onClick={this.handlePEGClick}>PEG: {stock.peg}</FlatButton>
-			      <br/>
-						{stock.info}
-					</CardText>
+						avatar={stock.logo_url}
+						showExpandableButton={true}
+						>
+	      	</CardHeader>
+	          <CardText expandable={true}>
+	      			{stock.info}
+	      		</CardText>
 						<CardActions expandable={true}>
-						<RaisedButton disabled={true} label="Added to Basket" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
 					</CardActions>
 				</Card>
 				);
 		} else {
 			return (
 				<Card initiallyExpanded={false}>
+					<Dialog ref="betaDialog"><strong>Beta:</strong><br/><br/>{this.props.definitions["Beta"]}</Dialog>
+					<Dialog ref="EPSDialog"><strong>EPS:</strong><br/><br/>{this.props.definitions["EPS"]}</Dialog>
+					<Dialog ref="PEGDialog"><strong>PEG:</strong><br/><br/>{this.props.definitions["PEG"]}</Dialog>
+					<FlatButton onClick={this.handleBetaClick}>Beta: {stock.beta}</FlatButton>
+	      	<FlatButton onClick={this.handleEPSClick}>EPS: {stock.eps}</FlatButton>
+	    		<FlatButton onClick={this.handlePEGClick}>PEG: {stock.peg}</FlatButton>
+	    		<RaisedButton disabled={false} label="Add" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
 					<CardHeader
 						key={stock.id}
 						title={stock.ticker}
 						subtitle={stock.name}
-						showExpandableButton={true}>
-					</CardHeader>
-					<CardText expandable={true}>
-						<Dialog ref="betaDialog"><strong>Beta:</strong><br/><br/>{this.props.definitions["Beta"]}</Dialog>
-						<Dialog ref="EPSDialog"><strong>EPS:</strong><br/><br/>{this.props.definitions["EPS"]}</Dialog>
-						<Dialog ref="PEGDialog"><strong>PEG:</strong><br/><br/>{this.props.definitions["PEG"]}</Dialog>
-						<FlatButton onClick={this.handleBetaClick}>Beta: {stock.beta}</FlatButton>
-		      	<FlatButton onClick={this.handleEPSClick}>EPS: {stock.eps}</FlatButton>
-	      		<FlatButton onClick={this.handlePEGClick}>PEG: {stock.peg}</FlatButton>
-			      <br/>
-						{stock.info}
-					</CardText>
+						avatar={stock.logo_url}
+						showExpandableButton={true}
+						>
+	      	</CardHeader>
+	          <CardText expandable={true}>
+	      			{stock.info}
+	      		</CardText>
 						<CardActions expandable={true}>
-						<RaisedButton disabled={false} label="Add to Basket" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
 					</CardActions>
 				</Card>
 			);
