@@ -129,15 +129,8 @@ var RecommendationContainer = React.createClass({
           {addBox}
           <br />
           {this.state.message}
-          <br />
-          <br />
           <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
-          <br />
-          <br />
-          <div className="slider">
           <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
-          </div>
-          <br />
           <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.state.basket}/>
         </div>
       );
