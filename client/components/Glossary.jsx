@@ -12,24 +12,17 @@ var Glossary = React.createClass({
     this.getDefinitionsFromAPI();
   },
 
-  createGlossary: function() {
-    for (var key in this.state.definitions) {
-        this.state.glossary.push("" + key + ": " + this.state.definitions[key]);
-      };
-      alert(this.state.glossary[0]);
-  },
-
-
   getDefinitionsFromAPI: function(){
     this.props.readFromAPI(this.props.origin + '/definitions', function(info){
+      console.log('about to set state from api results');
       this.setState({definitions: info});
-      this.createGlossary();
     }.bind(this));
   },
 
   render: function(){
 
-    var listItems = this.state.glossary.map(function(item) {
+    var glossary = definitionsToGlossary(this.state.definitions);
+    var listItems = glossary.map(function(item) {
       return <li> {item} </li>;
     });
 
@@ -44,5 +37,15 @@ var Glossary = React.createClass({
   },
 
 });
+
+var definitionsToGlossary = function(definitions) {
+    if (definitions === null) return [];
+    var glossary = []
+    for (var key in definitions) {
+        glossary.push("" + key + ": " + definitions[key]);
+      };
+    console.log('creating gloss');
+    return glossary;
+  };
 
 module.exports=Glossary;
