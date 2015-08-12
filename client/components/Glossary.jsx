@@ -26,8 +26,8 @@ var Glossary = React.createClass({
     });
 
     return (
-      <div>
-      Hello
+      <div className="container">
+      <h4>Glossary</h4>
         <ul>
           {listItems}
         </ul>
@@ -46,4 +46,4 @@ var definitionsToGlossary = function(definitions) {
     return glossary;
   };
 
-module.exports=Glossary;
+module.exports = Glossary;

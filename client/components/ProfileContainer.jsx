@@ -17,7 +17,7 @@ var ProfileContainer= React.createClass({
       muiTheme: ThemeManager.getCurrentTheme()
     };
   },
-  
+
   getInitialState: function(){
     return{
       risk_preference: 101,
@@ -76,7 +76,7 @@ var ProfileContainer= React.createClass({
     };
     if (this.state.risk_preference !=101) {
       return (
-        <div>
+        <div className="container">
           <h1>Your Profile</h1>
           <div className="pure-form pure-form-stacked">
             <form onSubmit={this.updateProfileAPI}>
@@ -97,7 +97,7 @@ var ProfileContainer= React.createClass({
       );
     }
     return (
-      <div>
+      <div className="container">
         <h1>Your Profile</h1>
         <LinearProgress mode="indeterminate" />
       </div>

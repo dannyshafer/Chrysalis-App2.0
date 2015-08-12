@@ -20,7 +20,7 @@ var UserBaskets = React.createClass({
 		muiTheme: React.PropTypes.object
 	},
 
-	getChildContext: function () { 
+	getChildContext: function () {
 		return {
 			muiTheme: ThemeManager.getCurrentTheme()
 		};
@@ -58,7 +58,7 @@ var UserBaskets = React.createClass({
 		var baskets = this.state.baskets.map(function (basket, index) {
 			var info = this.state.basket_info[index]
 			return (
-				<div>
+				<div className="container">
 					<UserBasketTable origin={this.props.origin} basket={basket} basket_info={info} writeToAPI={this.props.writeToAPI} currentUser={this.props.currentUser} updateBasket={this.updateBasket}/>
 					<Slider name="slider3" disabled={true} value={1} />
 				</div>
@@ -66,14 +66,14 @@ var UserBaskets = React.createClass({
 		}.bind(this));
 		if (this.state.baskets.length === 0) {
 			return (
-				<div>
+				<div className="container">
 					<h3>Loading Your Baskets...</h3>
 					<LinearProgress mode="indeterminate"  />
 				</div>
 			);
 		} else {
 			return (
-				<div>
+				<div className="container">
 					<h3>You have {this.state.baskets.length} Baskets Saved</h3>
 					{baskets}
 				</div>
