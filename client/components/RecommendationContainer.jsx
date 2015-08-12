@@ -5,10 +5,11 @@ var StocksContainer = require('./StocksContainer.jsx');
 var RecommendedPieChart = require('./RecommendedPieChart.jsx')
 var UserPieChart = require('./UserPieChart.jsx')
 var mui = require('material-ui');
-var RefreshIndicator = mui.RefreshIndicator;
+var LinearProgress = mui.LinearProgress;
 var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
 var Basket = require('../basket.js');
+var TextField = mui.TextField;
 
 var RecommendationContainer = React.createClass({
   getInitialState: function () {
@@ -85,6 +86,11 @@ var RecommendationContainer = React.createClass({
           <RecommendedPieChart age={this.state.age}/>
           <br />
           <UserPieChart readFromAPI={this.props.readFromAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
+          <TextField
+                  hintText="Hint Text"
+                  errorText={this.state.floatingErrorText}
+                  floatingLabelText="Floating Label Text"
+                  onChange={this._handleFloatingErrorInputChange} />
           <RaisedButton label="Create Today's Basket" primary={true} onClick={this.createUserBasket}/>
           <br />
           {this.state.message}
@@ -104,7 +110,8 @@ var RecommendationContainer = React.createClass({
       return (
         <div>
           <h1>Recommenation Page</h1>
-          <RefreshIndicator size={40} left={80} top={5} status="loading" />
+          <LinearProgress mode="indeterminate"  />
+
         </div>
       );
     };
