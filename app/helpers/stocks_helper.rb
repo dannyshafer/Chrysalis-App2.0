@@ -139,7 +139,7 @@ module StocksHelper
         # logo_url: symbol.logo_url
         # exhange: symbol.exhange
         )
-
+      Recommendation.destroy_all
       Recommendation.create(
         ticker: symbol.ticker,
         name: symbol.name,
