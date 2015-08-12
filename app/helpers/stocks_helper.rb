@@ -30,8 +30,9 @@ module StocksHelper
     Stock.all.each do |symbol|
       full_url = url + symbol.ticker + connect + eps + pe + pbook + psales + markcap + ask + bid + peg + book_value
       response = HTTParty.get(full_url)
+      doc = Nokogiri::HTML(open("http://search.aol.com/aol/search?s_it=topsearchbox.search&s_chn=prt_main5&v_t=comsearch&q=" + symbol.name + "+logo"))
       parsed = CSV.parse(response)[0]
-      if parsed[1].to_f != 0
+      if parsed[1].to_f != 0 && !doc.nil?
         symbol.update_attributes(eps: parsed[0].to_f,
           pe: parsed[1].to_f,
           pbook: parsed[2].to_f,
@@ -40,7 +41,8 @@ module StocksHelper
           ask: parsed[5].to_f,
           bid: parsed[6].to_f,
           peg: parsed[7].to_f,
-          book_value: parsed[8].to_f * 1000000000
+          book_value: parsed[8].to_f * 1000000000,
+          logo_url: (doc.css("img").first['src'])
           )
 
         shares = symbol.markcap/((symbol.ask + symbol.bid)/2)
@@ -203,11 +205,9 @@ module StocksHelper
     i = 0
     for i in 1..100
       j = stocks[i].split("+")
-      doc = Nokogiri::HTML(open("http://search.aol.com/aol/search?s_it=topsearchbox.search&s_chn=prt_main5&v_t=comsearch&q=" + j[0] +"+logo"))
       Stock.create(ticker: j[0],
         name: j[1],
         industry: j[2],
-        logo_url: (doc.css("img").first['src']),
         )
     end
   end

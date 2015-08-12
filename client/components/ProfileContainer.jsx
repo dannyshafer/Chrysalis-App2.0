@@ -1,8 +1,10 @@
 var React = require('react');
-var Slider = require('rc-slider');
+
+// Material UI
 var mui = require('material-ui');
 var ThemeManager = new mui.Styles.ThemeManager();
 var LinearProgress = mui.LinearProgress;
+var Slider = mui.Slider;
 
 
 var ProfileContainer= React.createClass({
@@ -18,10 +20,11 @@ var ProfileContainer= React.createClass({
   
   getInitialState: function(){
     return{
-      risk_preference: 0,
-      age: 0,
+      risk_preference: 101,
+      age: null,
       message: null,
       description: null,
+      ageSet: false,
     };
   },
   componentDidMount: function(){
@@ -31,7 +34,7 @@ var ProfileContainer= React.createClass({
   readUserInfoFromAPI: function(){
     var uid = this.props.currentUser.uid
     this.props.readFromAPI(this.props.origin + '/users/' + uid + '/profile', function(info){
-      this.setState({risk_preference: info.risk_preference, age: info.age});
+      this.setState({risk_preference: info.risk_preference, age: info.age, ageSet: info.ageSet});
     }.bind(this));
   },
   getDescriptionsFromAPI: function(){
@@ -51,15 +54,27 @@ var ProfileContainer= React.createClass({
     this.props.writeToAPI(this.props.origin + '/users/' + uid + '/profile', 'put', JSON.stringify(data), function(message){
       this.setState({message: "Profile Updated!"})
     }.bind(this));
+    this.setState({
+      ageSet: true,
+    })
   },
-  handleRiskSliderMove: function(value) {
+  handleRiskSliderMove: function(e, value) {
     this.setState({risk_preference: value});
   },
-  handleAgeSliderMove: function(value) {
+  handleAgeSliderMove: function(e, value) {
     this.setState({age: value});
   },
   render: function(){
-    if (this.state.age != 0) {
+    if (this.state.ageSet === true) {
+      var ageSlider = (
+        <Slider name="Age" disabled={true} defaultValue={Number(this.state.age)} step={1} min={18} max={100} onChange={this.handleAgeSliderMove} />
+      );
+    } else {
+      var ageSlider = (
+        <Slider name="Age" defaultValue={Number(this.state.age)} step={1} min={18} max={100} onChange={this.handleAgeSliderMove} />
+      );
+    };
+    if (this.state.risk_preference !=101) {
       return (
         <div>
           <h1>Your Profile</h1>
@@ -73,11 +88,13 @@ var ProfileContainer= React.createClass({
                 <br />
                 <label for="description">{this.state.description[this.state.risk_preference]}</label>
                 <br />
-                <Slider defaultValue={this.state.risk_preference} min={1} max={10} onChange={this.handleRiskSliderMove} />
+                <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
+                <br />
+
                 <br />
                 <label for="age">Age: {this.state.age}</label>
                 <br />
-                <Slider defaultValue={this.state.age} min={18} max={100} onChange={this.handleAgeSliderMove} />
+                {ageSlider}
                 <br />
                 <button type="submit" className="pure-button pure-button-primary">Update Profile</button>
               </fieldset>
