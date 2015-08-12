@@ -121,6 +121,3 @@ DEPENDENCIES
   rails-api
   rails_12factor
   spring
-
-BUNDLED WITH
-   1.10.6
