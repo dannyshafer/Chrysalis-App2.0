@@ -11,6 +11,8 @@ require('./assets/normalize.css');
 var React = require('react');
 var App = require('./components/App.jsx');
 var Router = require('react-router');
+var ReactBootstrap = require('react-bootstrap')
+var ReactRouterBootstrap = require('react-router-bootstrap')
 var routes = require('./config/routes.jsx');
 var $ = require('jquery');
 
