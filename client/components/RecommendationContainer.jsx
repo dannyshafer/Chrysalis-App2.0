@@ -134,18 +134,16 @@ var RecommendationContainer = React.createClass({
         <div className="container">
           {profileSetUpModal}
           <div className="row">
-            <div className="small-12 medium-6 large-6 columns Ta(c)">
+            <div className="small-12 medium-6 large-4 columns">
               <RecommendedPieChart age={this.state.age}/>
               <br />
             </div>
-            <div className="small-12 medium-6 large-6 columns Ta(c)">
+            <div className="small-12 medium-6 large-4 columns">
               <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
               <br />
             </div>
-          </div>
-          <div className="row">
             <div className="small-12 medium-6 large-4 columns">
-              <div>
+              <h4 className="text-center">Create Basket</h4>
               <TextField
                 ref="createBasket"
                 hintText="Required"
@@ -153,21 +151,22 @@ var RecommendationContainer = React.createClass({
                 floatingLabelText="Basket Name"
                 onChange={this._handleFloatingErrorInputChange}/>
               <br />
-              <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket} disabled={addBox}/>
+              <RaisedButton label="Create" primary={true} onClick={this.createUserBasket} disabled={addBox}/>
               <br />
-              </div>
               {this.state.message}
               {modal}
             </div>
-            <div className="small-12 medium-6 large-8 columns">
-              <p>Move the Slider to adjust Risk Preference</p>
+          </div>
+          <div className="row">
+            <div className="small-12 medium-12 large-12 columns">
+              <p>Move the Slider to adjust Risk Preference: {this.state.risk_preference}</p>
               <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} onDragStop={this.updateSliderValue}/>
             </div>
           </div>
-            <div className="row">
-              <div className="small-12 medium-12 large-12 columns">
-                <StocksContainer risk_preference={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.state.basket}/>
-              </div>
+          <div className="row">
+            <div className="small-12 medium-12 large-12 columns">
+              <StocksContainer risk_preference={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.state.basket}/>
+            </div>
           </div>
         </div>
       );

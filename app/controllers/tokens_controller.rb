@@ -1,9 +1,10 @@
 class TokensController < ApplicationController
 
   def request_token
-    request_token = TWITTER.get_request_token(oauth_callback: ENV['OAUTH_CALLBACK'])
+    oauth_callback = url_for(controller:'tokens', action:'access_token')
+    request_token = TWITTER.get_request_token(oauth_callback: oauth_callback)
     Oauth.create(token: request_token.token, secret: request_token.secret)
-    redirect_to request_token.authorize_url(oauth_callback: ENV['OAUTH_CALLBACK'])
+    redirect_to request_token.authorize_url(oauth_callback: oauth_callback)
   end
 
   def access_token
@@ -13,9 +14,10 @@ class TokensController < ApplicationController
       access_token = request_token.get_access_token(oauth_verifier: params[:oauth_verifier])
       user = User.find_or_create_by(uid: access_token.params[:user_id], ) { |u| u.handle = access_token.params[:screen_name] }
       jwt = JWT.encode({uid: user.uid, exp: 1.day.from_now.to_i}, Rails.application.secrets.secret_key_base)
-      redirect_to ENV['ORIGIN'] + "?jwt=#{jwt}"
+      query = {jwt: jwt}.to_query
+      redirect_to "/?#{query}"
     else
-      redirect_to ENV['ORIGIN']
+      redirect_to '/'
     end
   end
 end
