@@ -161,6 +161,7 @@ var RecommendationContainer = React.createClass({
             </div>
             <div className="small-12 medium-6 large-8 columns">
               <p>Move the Slider to adjust Risk Preference</p>
+              <p>Risk Preference: {this.state.risk_preference}</p>
               <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} onDragStop={this.updateSliderValue}/>
             </div>
           </div>
