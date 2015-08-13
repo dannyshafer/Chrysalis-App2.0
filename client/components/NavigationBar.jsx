@@ -25,7 +25,7 @@ var NavigationBar = React.createClass({
       var recommendationLink = <NavItemLink className="nav-item" to="recommendation"><p className="nav-item">Recommendations</p></NavItemLink>
       var updateLink = <NavItemLink className="nav-item" to="update"><p className="nav-item">Update Stocks</p></NavItemLink>
       var userBasketLink = <NavItemLink className="nav-item" to="user_baskets"><p className="nav-item">Baskets</p></NavItemLink>
-      var signingLink = <span className="sign-out nav-item" onClick={this.handleSignOutLink}>Sign Out</span>
+      var signingLink = <span className="nav-item sign-out" onClick={this.handleSignOutLink}>Sign Out</span>
       var glossary = <NavItemLink className="nav-item" to="glossary"><p className="nav-item">Glossary</p></NavItemLink>
     } else {
       var signingLink = <a className="nav-item" href={this.props.origin + '/request_token'}>Sign In</a>;

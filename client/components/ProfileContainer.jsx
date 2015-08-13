@@ -77,12 +77,11 @@ var ProfileContainer= React.createClass({
     if (this.state.risk_preference !=101) {
       return (
         <div className="container">
-          <h1>Your Profile</h1>
+          <h1 className="page-header">Your Profile</h1>
           <div className="pure-form pure-form-stacked">
             <form onSubmit={this.updateProfileAPI}>
               <fieldset>
-                <legend>Update your profile here</legend>
-                <br />
+                <br/>
                 {this.state.message}
                 <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
                 <label for="description">{this.state.description[this.state.risk_preference]}</label>
