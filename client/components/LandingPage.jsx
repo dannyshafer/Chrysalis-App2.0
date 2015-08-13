@@ -35,8 +35,11 @@ var LandingPage = React.createClass({
   },
   render: function(){
     if (this.props.signedIn === true && this.state.modalOpen === true) {
+      var standardActions = [
+        { text: 'Close' },
+      ];
       var profileSetUpModal = (
-        <Dialog openImmediately={true}>
+        <Dialog openImmediately={true} modal={true} actions={standardActions}>
           Please click here to set up your profile:
           <br />
           <Link to="profile">{this.props.currentUser}</Link>
