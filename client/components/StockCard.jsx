@@ -51,6 +51,7 @@ var StockCard = React.createClass({
 
 	render: function () {
 		var stock = this.props.stock;
+		console.log('rendering')
 		if (this.state.added === true) {
 			var addButton = (
 				<RaisedButton disabled={true} label="Added" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>

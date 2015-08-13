@@ -17,6 +17,12 @@ gem 'jwt'
 
 gem 'pg'
 
+gem 'rspec-rails'
+
+group :test do
+  gem 'capybara'
+end
+
 group :production do
   gem 'rails_12factor'
 
