@@ -21,12 +21,17 @@ var UserPieChart = require('./UserPieChart.jsx')
 var RecommendationContainer = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
 
+  getDefaultProps: function() {
+    return {
+      basket: new Basket,
+    };
+  },
+
   getInitialState: function () {
     return {
       risk_preference: null,
       age: null,
       textFieldValue: '',
-      basket: new Basket,
       modalOpen: false,
     };
   },
@@ -43,17 +48,17 @@ var RecommendationContainer = React.createClass({
 
   componentDidMount: function(){
     this.readUserInfoFromApi();
-    this.state.basket.on('change', this.basketChanged);
+    this.props.basket.on('change', this.basketChanged);
     if (!!sessionStorage.getItem('jwt')) {this.readUserInfoFromApi();}
   },
 
   componentWillUnmount: function(){
-    this.state.basket.off('change');
+    this.props.basket.off('change');
   },
 
   basketChanged: function(){
-    this.forceUpdate();
-    this.state.basket.emit('update-chart');
+    // this.forceUpdate();
+    this.props.basket.emit('update-chart');
   },
 
   readUserInfoFromApi: function(){
@@ -71,8 +76,8 @@ var RecommendationContainer = React.createClass({
     e.preventDefault();
     var id = {}
 
-    for(var i = 0; i < this.state.basket.stocks.length; i++) {
-        id[i] = this.state.basket.stocks[i].ticker
+    for(var i = 0; i < this.props.basket.stocks.length; i++) {
+        id[i] = this.props.basket.stocks[i].ticker
     };
 
     var data = {
@@ -103,7 +108,7 @@ var RecommendationContainer = React.createClass({
         </Dialog>
       );
     };
-    if (this.state.basket.stocks.length != 0) {
+    if (this.props.basket.stocks.length != 0) {
       var addBox = (
         <div>
         <TextField
@@ -152,7 +157,7 @@ var RecommendationContainer = React.createClass({
               <br />
             </div>
             <div className="small-12 medium-6 large-6 columns Ta(c)">
-              <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
+              <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.props.basket}/>
               <br />
             </div>
           </div>
@@ -169,7 +174,7 @@ var RecommendationContainer = React.createClass({
           </div>
             <div className="row">
               <div className="small-12 medium-12 large-12 columns">
-                <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.state.basket}/>
+                <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.props.basket}/>
               </div>
           </div>
         </div>

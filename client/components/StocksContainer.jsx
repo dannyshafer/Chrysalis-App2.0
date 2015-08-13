@@ -1,29 +1,35 @@
 var React = require('react');
-var LazyLoad = require('react-lazy-load');
+var Stocks = require('../stocks.js');
+
 
 // Components
 var StocksSubArray = require('./StocksSubArray.jsx');
 
 // Material UI
 var mui = require('material-ui');
-var RefreshIndicator = mui.RefreshIndicator;
-var ThemeManager = new mui.Styles.ThemeManager();
 
+var ThemeManager = new mui.Styles.ThemeManager();
+var LinearProgress = mui.LinearProgress;
 var StocksContainer = React.createClass({
+	getDefaultProps: function() {
+	  return {
+	    stocks_1: new Stocks,
+	    stocks_2: new Stocks,
+	    stocks_3: new Stocks,
+	    stocks_4: new Stocks,
+	    stocks_5: new Stocks,
+	    stocks_6: new Stocks,
+	    stocks_7: new Stocks,
+	    stocks_8: new Stocks,
+	    stocks_9: new Stocks,
+	    stocks_10: new Stocks,
+	    definitions: {},
+	  };
+	},
+
 	getInitialState: function () {
 		return {
 			status: null,
-			stocks_1: [],
-			stocks_2: [],
-			stocks_3: [],
-			stocks_4: [],
-			stocks_5: [],
-			stocks_6: [],
-			stocks_7: [],
-			stocks_8: [],
-			stocks_9: [],
-			stocks_10: [],
-			definitions: {},
 		};
 	},
 
@@ -50,109 +56,121 @@ var StocksContainer = React.createClass({
 
 	readStocksFromAPI: function () {
 		this.props.readFromAPI(this.props.origin + '/recommendations/recommendations', function(info){
+		  this.props.stocks_1.addToStocks(info.stocks_1);
+		  this.props.stocks_2.addToStocks(info.stocks_2);
+		  this.props.stocks_3.addToStocks(info.stocks_3);
+		  this.props.stocks_4.addToStocks(info.stocks_4);
+		  this.props.stocks_5.addToStocks(info.stocks_5);
+		  this.props.stocks_6.addToStocks(info.stocks_6);
+		  this.props.stocks_7.addToStocks(info.stocks_7);
+		  this.props.stocks_8.addToStocks(info.stocks_8);
+		  this.props.stocks_9.addToStocks(info.stocks_9);
+		  this.props.stocks_9.addToStocks(info.stocks_9);
+		  this.props.stocks_10.addToStocks(info.stocks_10);
 		  this.setState({
 		  	status: "completed",
-		  	stocks_1: info.stocks_1,
-		  	stocks_2: info.stocks_2,
-		  	stocks_3: info.stocks_3,
-		  	stocks_4: info.stocks_4,
-		  	stocks_5: info.stocks_5,
-		  	stocks_6: info.stocks_6,
-		  	stocks_7: info.stocks_7,
-		  	stocks_8: info.stocks_8,
-		  	stocks_9: info.stocks_9,
-		  	stocks_9: info.stocks_9,
-		  	stocks_10: info.stocks_10,
 		  });
 		}.bind(this));
 	},
 
 	render: function () {
-		console.log('container rendering')
-		if (this.props.risk === 1) {
-		  return (
-		    <div className="row">
-		    	<div className="small-12 columns">
-		      <StocksSubArray stocks={this.state.stocks_1} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-		    	</div>
-		    </div>
-		  );
-		} else if (this.props.risk === 2) {
-		  return (
-		    <div className="row">
-		    	<div className="small-12 columns">
-		      <StocksSubArray stocks={this.state.stocks_2} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-					</div>
-		    </div>
-		  );
-		} else if (this.props.risk === 3) {
-		  return (
-		    <div className="row">
-		    	<div className="small-12 columns">
-		      <StocksSubArray stocks={this.state.stocks_3} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-					</div>
-		    </div>
-		  );
-		} else if (this.props.risk === 4) {
-		  return (
-		    <div className="row">
-		    	<div className="small-12 columns">
-		      <StocksSubArray stocks={this.state.stocks_4} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-					</div>
-		    </div>
-		  );
-		} else if (this.props.risk === 5) {
-		  return (
-		    <div className="row">
-		    	<div className="small-12 columns">
-		      <StocksSubArray stocks={this.state.stocks_5} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-					</div>
-		    </div>
-		  );
-		} else if (this.props.risk === 6) {
-		  return (
-		    <div className="row">
-		    	<div className="small-12 columns">
-		      <StocksSubArray stocks={this.state.stocks_6} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-					</div>
-		    </div>
-		  );
-		} else if (this.props.risk === 7) {
-		  return (
-		    <div className="row">
-		    	<div className="small-12 columns">
-		      <StocksSubArray stocks={this.state.stocks_7} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-					</div>
-		    </div>
-		  );
-		} else if (this.props.risk === 8) {
-		  return (
-		    <div className="row">
-		    	<div className="small-12 columns">
-		      <StocksSubArray stocks={this.state.stocks_8} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-					</div>
-		    </div>
-		  );
-		} else if (this.props.risk === 9) {
-		  return (
-		    <div className="row">
-		    	<div className="small-12 columns">
-		      <StocksSubArray stocks={this.state.stocks_9} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-					</div>
-		    </div>
-		  );
-		} else if (this.props.risk === 10) {
-		  return (
-		    <div className="row">
-		    	<div className="small-12 columns">
-		      <StocksSubArray stocks={this.state.stocks_10} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
-					</div>
-		    </div>
-		  );
-		} else if (this.state.status === null){
+		if (this.state.status === "completed") {
+			if (this.props.risk === 1) {
+			    	console.log(this.props.stocks_1)
+			  return (
+			    <div className="row">
+			    	<div className="small-12 columns">
+			      <StocksSubArray stocks={this.props.stocks_1} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
+			    	</div>
+			    </div>
+			  );
+			} else if (this.props.risk === 2) {
+			    	console.log(this.props.stocks_2)
+			  return (
+			    <div className="row">
+			    	<div className="small-12 columns">
+			      <StocksSubArray stocks={this.props.stocks_2} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
+						</div>
+			    </div>
+			  );
+			} else if (this.props.risk === 3) {
+			    	console.log(this.props.stocks_3)
+			  return (
+			    <div className="row">
+			    	<div className="small-12 columns">
+			      <StocksSubArray stocks={this.props.stocks_3} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
+						</div>
+			    </div>
+			  );
+			} else if (this.props.risk === 4) {
+			    	console.log(this.props.stocks_4)
+			  return (
+			    <div className="row">
+			    	<div className="small-12 columns">
+			      <StocksSubArray stocks={this.props.stocks_4} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
+						</div>
+			    </div>
+			  );
+			} else if (this.props.risk === 5) {
+			    	console.log(this.props.stocks_5)
+			  return (
+			    <div className="row">
+			    	<div className="small-12 columns">
+			      <StocksSubArray stocks={this.props.stocks_5} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
+						</div>
+			    </div>
+			  );
+			} else if (this.props.risk === 6) {
+			    	console.log(this.props.stocks_6)
+			  return (
+			    <div className="row">
+			    	<div className="small-12 columns">
+			      <StocksSubArray stocks={this.props.stocks_6} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
+						</div>
+			    </div>
+			  );
+			} else if (this.props.risk === 7) {
+			    	console.log(this.props.stocks_7)
+			  return (
+			    <div className="row">
+			    	<div className="small-12 columns">
+			      <StocksSubArray stocks={this.props.stocks_7} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
+						</div>
+			    </div>
+			  );
+			} else if (this.props.risk === 8) {
+			    	console.log(this.props.stocks_8)
+			  return (
+			    <div className="row">
+			    	<div className="small-12 columns">
+			      <StocksSubArray stocks={this.props.stocks_8} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
+						</div>
+			    </div>
+			  );
+			} else if (this.props.risk === 9) {
+			    	console.log(this.props.stocks_9)
+			  return (
+			    <div className="row">
+			    	<div className="small-12 columns">
+			      <StocksSubArray stocks={this.props.stocks_9} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
+						</div>
+			    </div>
+			  );
+			} else if (this.props.risk === 10) {
+			    	console.log(this.props.stocks_10)
+			  return (
+			    <div className="row">
+			    	<div className="small-12 columns">
+			      <StocksSubArray stocks={this.props.stocks_10} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
+						</div>
+			    </div>
+			  );
+			} 
+		};
+	if (this.state.status === null){
 		  return (
 		    <div>
-		      <RefreshIndicator size={40} left={80} top={5} status="loading" />
+		    	<LinearProgress mode="indeterminate"  />
 		    </div>
 		  );
 		};

@@ -27,11 +27,12 @@ var StocksSubArray = React.createClass({
   },
 
 	render: function () {
-		var stocks = this.props.stocks.map(function (stock, index) {
+		var stocks = this.props.stocks["stocks"][0].map(function (stock, index) {
 			return (
 				<StockCard key={stock.id} stock={stock} definitions={this.props.definitions} basket={this.props.basket}/>
 			);
 		}.bind(this));
+		console.log('rendering stocks')
 		return (
 			<div>
         <div className="row">
