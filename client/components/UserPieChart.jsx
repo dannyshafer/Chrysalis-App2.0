@@ -141,7 +141,6 @@ var UserPieChart = React.createClass({
 				<div>
 					<h4>Currently Selected Allocation</h4>
 					<p>No stock is selected yet...</p>
-					<LinearProgress mode="indeterminate"  />
 				</div>
 			)
 		} else {
