@@ -18,10 +18,10 @@ body {
   box-shadow: none;
 }
 
-* {
+/** {
   border: 1px solid red;
 }
-
+*/
 .landing-container {
   margin: 0;
   padding: 0;
@@ -50,7 +50,7 @@ body {
 
 .mission-statement {
   text-align: justify;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 200%;
   color: #006699;;
 }
@@ -84,12 +84,23 @@ a {
 
 .sign-out {
   color: white;
+  left-margin: 20px;
 }
 
 
 .sub-title {
   letter-spacing: .15em;
   color: white;
+}
+
+.page-header {
+  margin-top: 50px;
+  text-align: center;
+  color: #006699;
+}
+
+.glossary-term {
+  font-weight: bold;
 }
 
 .title {
@@ -142,9 +153,6 @@ video {
   border: 1px solid red;
 }*/
 
-h1, h2, h3, h4, h5, h6, p {
-    text-align: center;
-}
 
 div {
   margin-top: 20px;
