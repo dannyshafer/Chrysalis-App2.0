@@ -28,6 +28,7 @@ var Team = React.createClass({
           <div className="small-12 medium-6 large-3 columns end">
             <img className='teampictures' src='https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/071/36a/2e3c836.jpg'/>
             <h4>Andrew Donato</h4>
+            <p>link</p>
             <p>Full stack developer.  UC Irvine Grad.  Former Electrician, Nuclear Submariner.  Mostly amateur skateboarder.</p>
           </div>
         </div>
