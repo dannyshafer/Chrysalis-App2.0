@@ -20,12 +20,13 @@ var StocksSubArray = React.createClass({
 	getInitialState: function () {
 		return {
 			status: null,
+			stocks: new Stocks,
 		};
 	},
 
 	getDefaultProps: function() {
 	  return {
-	  	stocks: new Stocks,
+	  	
 	    definitions: {},
 	  };
 	},
@@ -41,12 +42,35 @@ var StocksSubArray = React.createClass({
 
   componentDidMount: function () {
   	this.readStocksFromAPI();
+  	this.props.basket.on('basket_created', this.basketCreated);
   	// this.getDefinitionsFromAPI();
+  },
+
+  componentWillUnmount: function () {
+  	// this.props.basket.off('basket_created');
+  },
+
+  basketCreated: function () {
+  	console.log('setting new stocks')
+  	this.setState({
+  		stocks: new Stocks,
+  	});
+  	this.readStocksFromAPIagain();
+  },
+
+  readStocksFromAPIagain: function () {
+  	this.props.readFromAPI(this.props.origin + '/recommendations/recommendations', function(info){
+  		this.state.stocks.addToStocks(info);
+  	  this.setState({
+  	  	status: "completed",
+  	  });
+  	  this.props.basket.emit('new_stocks')
+  	}.bind(this));
   },
 
   readStocksFromAPI: function () {
   	this.props.readFromAPI(this.props.origin + '/recommendations/recommendations', function(info){
-  		this.props.stocks.addToStocks(info);
+  		this.state.stocks.addToStocks(info);
   	  this.setState({
   	  	status: "completed",
   	  });
@@ -55,15 +79,13 @@ var StocksSubArray = React.createClass({
 
 	render: function () {
 		if (this.state.status === "completed") {
-			console.log(this.props.stocks)
-			var stocks = this.props.stocks["stocks"][0].map(function (stock, index) {
+			var stocks = this.state.stocks["stocks"][0].map(function (stock, index) {
 				if (stock.asi_component === this.props.risk_preference) {
 					return (
 						<StockCard key={stock.id} stock={stock} definitions={this.props.definitions} basket={this.props.basket}/>
 					);
 				};
 			}.bind(this));
-			console.log('rendering stocks')
 		};
 		return (
 			<div>

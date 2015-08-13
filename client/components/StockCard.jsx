@@ -38,8 +38,6 @@ var StockCard = React.createClass({
 	},
 
 	componentDidMount: function () {
-		console.log(this.props.stock.id)
-		console.log(this.props.basket["stocks"])
 		if (inArray(this.props.basket["stocks"], this.props.stock.id)) {
 			this.setState({added: true});
 		};
@@ -56,7 +54,6 @@ var StockCard = React.createClass({
 
 	render: function () {
 		var stock = this.props.stock;
-		console.log(this.state.added)
 		if (this.state.added === true) {
 			var message = "Added";
 		} else {
