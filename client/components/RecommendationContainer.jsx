@@ -21,12 +21,17 @@ var UserPieChart = require('./UserPieChart.jsx')
 var RecommendationContainer = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
 
+  getDefaultProps: function() {
+    return {
+      basket: new Basket,
+    };
+  },
+
   getInitialState: function () {
     return {
       risk_preference: null,
       age: null,
       textFieldValue: '',
-      basket: new Basket,
       modalOpen: false,
     };
   },
@@ -43,17 +48,17 @@ var RecommendationContainer = React.createClass({
 
   componentDidMount: function(){
     this.readUserInfoFromApi();
-    this.state.basket.on('change', this.basketChanged);
+    this.props.basket.on('change', this.basketChanged);
     if (!!sessionStorage.getItem('jwt')) {this.readUserInfoFromApi();}
   },
 
   componentWillUnmount: function(){
-    this.state.basket.off('change');
+    this.props.basket.off('change');
   },
 
   basketChanged: function(){
-    this.forceUpdate();
-    this.state.basket.emit('update-chart');
+    // this.forceUpdate();
+    this.props.basket.emit('update-chart');
   },
 
   readUserInfoFromApi: function(){
@@ -71,8 +76,8 @@ var RecommendationContainer = React.createClass({
     e.preventDefault();
     var id = {}
 
-    for(var i = 0; i < this.state.basket.stocks.length; i++) {
-        id[i] = this.state.basket.stocks[i].ticker
+    for(var i = 0; i < this.props.basket.stocks.length; i++) {
+        id[i] = this.props.basket.stocks[i].ticker
     };
 
     var data = {
@@ -89,7 +94,9 @@ var RecommendationContainer = React.createClass({
   },
 
   handleRiskSliderMove: function (e, value) {
+    console.time('slider move')
     this.setState({risk_preference: value});
+    console.timeEnd('slider move')
   },
   render: function () {
     if (this.props.signedIn === true && this.state.modalOpen === true) {
@@ -101,7 +108,7 @@ var RecommendationContainer = React.createClass({
         </Dialog>
       );
     };
-    if (this.state.basket.stocks.length != 0) {
+    if (this.props.basket.stocks.length != 0) {
       var addBox = (
         <div>
         <TextField
@@ -117,37 +124,59 @@ var RecommendationContainer = React.createClass({
       );
     } else {
       var addBox = (
-        <Dialog openImmediately={true}>
+        <div>
+        <TextField
+                hintText="Required"
+                errorText={this.state.floatingErrorText}
+                floatingLabelText="Basket Name"
+                onChange={this._handleFloatingErrorInputChange}
+                valueLink={this.linkState('textFieldValue')} />
+        <br />
+        <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket} disabled={true}/>
+        <br />
+        </div>
+      );
+    };
+    if (this.state.risk_preference != null) {
+      var standardActions = [
+        { text: 'Close' },
+      ];
+      var modal = (
+        <Dialog openImmediately={true} modal={true} actions={standardActions}>
           Move the slider to browse different stocks
           <br />
           To create a basket, please add at least one stock!
         </Dialog>
-      );
-    };
-    if (this.state.risk_preference != null) {
+      )
       return (
         <div className="container">
           {profileSetUpModal}
           <div className="row">
-            <div className="small-12 medium-6 large-4 columns Ta(c)">
-            <RecommendedPieChart age={this.state.age}/>
-            <br />
+            <div className="small-12 medium-6 large-6 columns Ta(c)">
+              <RecommendedPieChart age={this.state.age}/>
+              <br />
             </div>
-
-            <div className="small-12 medium-6 large-4 columns Ta(c)">
-            <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
-            <br />
+            <div className="small-12 medium-6 large-6 columns Ta(c)">
+              <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.props.basket}/>
+              <br />
             </div>
-            <div className="small-12 medium-12 large-4 columns Ta(c)">
-            {addBox}
-            {this.state.message}
+          </div>
+          <div className="row">
+            <div className="small-12 medium-6 large-4 columns">
+              {addBox}
+              {this.state.message}
+              {modal}
             </div>
-            <div className="small-12 large-12 columns Ta(c)">
+            <div className="small-12 medium-6 large-8 columns">
               <p>Move the Slider to adjust Risk Preference</p>
               <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
             </div>
           </div>
-          <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.state.basket}/>
+            <div className="row">
+              <div className="small-12 medium-12 large-12 columns">
+                <StocksContainer risk_preference={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.props.basket}/>
+              </div>
+          </div>
         </div>
       );
     } else {
