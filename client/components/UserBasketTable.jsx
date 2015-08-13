@@ -81,7 +81,7 @@ var UserBasketTable = React.createClass({
 		// var footerCols = {ticker: {content: 'Ticker'}, name: {content: 'Name'}, status: {content: 'Status'}};
 		return (
 			<div>
-				<h4>{this.props.basket_info.name} created at {this.props.basket_info.date}</h4>
+				<h4>{this.props.basket_info.name} created at {this.props.basket_info.date} {this.props.basket_info.performance}</h4>
 				<Table
 				  headerColumns={headerCols}
 				  columnOrder={colOrder}

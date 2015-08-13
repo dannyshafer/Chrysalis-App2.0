@@ -216,7 +216,7 @@ def make_asi_component(beta)
     end
   end
 
-  def compare_basket_performance
+  def compare_basket_performance(stocks)
     container = []
     doc = Nokogiri::HTML(open("https://www.google.com/finance/historical?q=INDEXSP:.INX"))
     doc.css('.rgt').each do |i|
@@ -227,11 +227,11 @@ def make_asi_component(beta)
     index_week_start = container[27].gsub(/[^\d^\.]/, '').to_f
     index_week_performance = ((index_week_end - index_week_start) / index_week_end * 100).round(2)
 
-    stocks = ["aapl","msft","hpq","ibm","orcl"] #this variable is where we put the symbols in a user's basket
+    #this variable is where we put the symbols in a user's basket
     basket_week_performance = 0
     stocks.each do |i| #this line has to be edited to accomodate whatever the basket is called
       container2 = []
-      doc2 = Nokogiri::HTML(open("http://finance.yahoo.com/q/hp?s=aapl+Historical+Prices"))
+      doc2 = Nokogiri::HTML(open("http://finance.yahoo.com/q/hp?s=#{i}+Historical+Prices"))
       doc2.css('.yfnc_tabledata1').each do |i|
         if i.include?("Dividend")
           container2[i - 1].pop
@@ -246,9 +246,9 @@ def make_asi_component(beta)
     end
 
     if basket_week_performance > index_week_performance
-      return "The basket performed better than the market this week by " + (basket_week_performance - index_week_performance).round(2).to_s + " percent."
+      return "performed better than the market this past week by " + (basket_week_performance - index_week_performance).round(2).to_s + " percent."
     else
-      return "The basket underperformed the market this week by " + (index_week_performance - basket_week_performance).round(2).to_s + " percent."
+      return "underperformed the market this past week by " + (index_week_performance - basket_week_performance).round(2).to_s + " percent."
     end
 
   end

@@ -1,6 +1,7 @@
 require 'date'
 
 class BasketsController < ApplicationController
+  include StocksHelper
   before_action :authenticate_request, only: [:index, :show, :today, :create, :destroy]
 
   def index
@@ -8,11 +9,16 @@ class BasketsController < ApplicationController
     basket_info = []
     Basket.where(user_id: @current_user.id).order(created_at: :DESC).each do |basket|
       stocks = []
-      basket_info << {name: basket.name, date: basket.date, id: basket.id}
 
+      tickers = []
       basket.records.each do |record|
         stocks << record
+        tickers << record.ticker
       end
+
+      performance = compare_basket_performance(tickers)
+
+      basket_info << {name: basket.name, date: basket.date, id: basket.id, performance: performance}
       baskets << stocks
     end
 

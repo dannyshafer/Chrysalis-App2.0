@@ -9,28 +9,31 @@ var Team = React.createClass({
       <div className="container row">
       <h4>Team</h4>
         <div className="row">
-          <div className="small-12 medium-6 large-3 columns end">
 
+          <div className="small-12 medium-6 large-3 columns end">
             <img className='teampictures' src='https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALKAAAAJDUwYmYxNWI2LTI1ZTAtNDJlMS1iZWRlLTQyZmFkZWMzYjIyMA.jpg'/>
-            <h4>Daniel Shafer</h4>
-            <p>Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul.</p>
+            <h4><a className="gitlink" href="https://github.com/dannyshafer">Daniel Shafer</a></h4>
+            <p className="bio">Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul.</p>
           </div>
+
           <div className="small-12 medium-6 large-3 columns end">
             <img className='teampictures' src='https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALxAAAAJDg1MmI1ZmQxLTU1MDktNDY0ZC05ZTMzLTkzN2JjZDY0MGYyMw.jpg'/>
-            <h4>Ryan Au</h4>
-            <p>Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul.</p>
+            <h5><a className="gitlink" href="https://github.com/ryanau"> Ryan Au</a></h5>
+            <p className="bio">Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul.</p>
           </div>
+
           <div className="small-12 medium-6 large-3 columns end">
             <img className='teampictures' src='https://pbs.twimg.com/profile_images/585479016817291264/qlym0sGg.jpg'/>
-            <h4>John Hess</h4>
-            <p>Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul.</p>
+            <h5><a className="gitlink" href="https://github.com/alookatommorow"> John Hess</a></h5>
+            <p className="bio">Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul.</p>
           </div>
+
           <div className="small-12 medium-6 large-3 columns end">
             <img className='teampictures' src='https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/071/36a/2e3c836.jpg'/>
-            <h4>Andrew Donato</h4>
-            <p>link</p>
-            <p>Full stack developer.  UC Irvine Grad.  Former Electrician, Nuclear Submariner.  Mostly amateur skateboarder.</p>
+            <h5><a className="gitlink" href="https://github.com/andrewdonato"> Andrew Donato</a></h5>
+            <p className="bio">Full stack developer.  UC Irvine Grad.  Former Electrician, Nuclear Submariner.  Mostly amateur skateboarder.</p>
           </div>
+
         </div>
         <div className='culture small-12 medium-12 large-12'>
           <h3>Make it rain</h3>

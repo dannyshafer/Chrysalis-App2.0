@@ -1,5 +1,6 @@
 var React = require('react');
 
+
 // Material UI
 var mui = require('material-ui');
 var Dialog = mui.Dialog;
@@ -11,6 +12,7 @@ var CardTitle = mui.CardTitle;
 var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
 var FlatButton = mui.FlatButton;
+
 
 var StockCard = React.createClass({
 	childContextTypes: {
@@ -38,13 +40,14 @@ var StockCard = React.createClass({
 		return (
 			<div className="small-12 medium-6 large-4 columns end">
 				<Card initiallyExpanded={false}>
-				<RaisedButton disabled={this.props.status} label={message} primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
 					<CardHeader
 					key={stock.id}
 					title={stock.ticker}
 					subtitle={stock.name}
 					avatar={stock.logo_url}
 					showExpandableButton={true} />
+					<CardText>Price: {stock.ask} | Beta: {stock.beta} | EPS: {stock.eps} | PE: {stock.pe}</CardText>
+					<RaisedButton disabled={this.props.status} label={message} secondary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
 					<CardText expandable={true}> {stock.info} </CardText>
 					<CardActions expandable={true}></CardActions>
 				</Card>
