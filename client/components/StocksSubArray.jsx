@@ -1,5 +1,5 @@
 var React = require('react');
-// var LazyLoad = require('react-lazy-load');
+
 
 // Components
 var StockCard = require('./StockCard.jsx');
@@ -35,7 +35,7 @@ var StocksSubArray = React.createClass({
 
 	getDefaultProps: function() {
 	  return {
-	  	
+
 	    definitions: {},
 	  };
 	},
