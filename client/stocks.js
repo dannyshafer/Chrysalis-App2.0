@@ -13,5 +13,10 @@ Stocks.prototype.addToStocks = function(stock){
   return this;
 };
 
+Stocks.prototype.empty = function () {
+	this.stocks = [];
+}
+
+
 module.exports = Stocks;
 

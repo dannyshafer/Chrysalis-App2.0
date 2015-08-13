@@ -18,21 +18,16 @@ var StocksContainer = require('./StocksContainer.jsx');
 var RecommendedPieChart = require('./RecommendedPieChart.jsx')
 var UserPieChart = require('./UserPieChart.jsx')
 
+var slider_value = null
+
 var RecommendationContainer = React.createClass({
-  mixins: [React.addons.LinkedStateMixin],
-
-  getDefaultProps: function() {
-    return {
-      basket: new Basket,
-    };
-  },
-
   getInitialState: function () {
     return {
       risk_preference: null,
+      slider: null,
       age: null,
-      textFieldValue: '',
       modalOpen: false,
+      basket: new Basket,
     };
   },
 
@@ -48,17 +43,23 @@ var RecommendationContainer = React.createClass({
 
   componentDidMount: function(){
     this.readUserInfoFromApi();
-    this.props.basket.on('change', this.basketChanged);
+    this.state.basket.on('change', this.basketChanged);
+    this.state.basket.on('new_stocks', this.wipeOutBasket);
     if (!!sessionStorage.getItem('jwt')) {this.readUserInfoFromApi();}
   },
 
+  wipeOutBasket: function () {
+    this.state.basket.empty();
+    this.forceUpdate();
+  },
+
   componentWillUnmount: function(){
-    this.props.basket.off('change');
+    this.state.basket.off('change');
   },
 
   basketChanged: function(){
-    // this.forceUpdate();
-    this.props.basket.emit('update-chart');
+    this.forceUpdate();
+    this.state.basket.emit('update-chart');
   },
 
   readUserInfoFromApi: function(){
@@ -75,29 +76,34 @@ var RecommendationContainer = React.createClass({
   createUserBasket: function (e) {
     e.preventDefault();
     var id = {}
-
-    for(var i = 0; i < this.props.basket.stocks.length; i++) {
-        id[i] = this.props.basket.stocks[i].ticker
+    this.forceUpdate();
+    for(var i = 0; i < this.state.basket.stocks.length; i++) {
+        id[i] = this.state.basket.stocks[i].ticker
     };
 
     var data = {
       info: {
         ids: id,
-        name: this.state.textFieldValue,
+        name: this.refs.createBasket.getValue(),
       }
     };
     var uid = this.props.currentUser.uid
 
     this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets', 'post', JSON.stringify(data), function(message){
-      this.setState({message: "Basket Created!"})
+      this.refs.createBasket.clearValue();
+      alert('Basket Created!');
     }.bind(this));
+    this.state.basket.emit('basket_created');
   },
 
   handleRiskSliderMove: function (e, value) {
-    console.time('slider move')
-    this.setState({risk_preference: value});
-    console.timeEnd('slider move')
+    slider_value = value
   },
+
+  updateSliderValue: function (e, ui) {
+    this.setState({risk_preference: slider_value})
+  },
+
   render: function () {
     if (this.props.signedIn === true && this.state.modalOpen === true) {
       var profileSetUpModal = (
@@ -108,34 +114,10 @@ var RecommendationContainer = React.createClass({
         </Dialog>
       );
     };
-    if (this.props.basket.stocks.length != 0) {
-      var addBox = (
-        <div>
-        <TextField
-                hintText="Required"
-                errorText={this.state.floatingErrorText}
-                floatingLabelText="Basket Name"
-                onChange={this._handleFloatingErrorInputChange}
-                valueLink={this.linkState('textFieldValue')} />
-        <br />
-        <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket}/>
-        <br />
-        </div>
-      );
+    if (this.state.basket.stocks.length != 0) {
+      var addBox = false
     } else {
-      var addBox = (
-        <div>
-        <TextField
-                hintText="Required"
-                errorText={this.state.floatingErrorText}
-                floatingLabelText="Basket Name"
-                onChange={this._handleFloatingErrorInputChange}
-                valueLink={this.linkState('textFieldValue')} />
-        <br />
-        <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket} disabled={true}/>
-        <br />
-        </div>
-      );
+      var addBox = true
     };
     if (this.state.risk_preference != null) {
       var standardActions = [
@@ -157,24 +139,34 @@ var RecommendationContainer = React.createClass({
               <br />
             </div>
             <div className="small-12 medium-6 large-6 columns Ta(c)">
-              <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.props.basket}/>
+              <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
               <br />
             </div>
           </div>
           <div className="row">
             <div className="small-12 medium-6 large-4 columns">
-              {addBox}
+              <div>
+              <TextField
+                ref="createBasket"
+                hintText="Required"
+                errorText={this.state.floatingErrorText}
+                floatingLabelText="Basket Name"
+                onChange={this._handleFloatingErrorInputChange}/>
+              <br />
+              <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket} disabled={addBox}/>
+              <br />
+              </div>
               {this.state.message}
               {modal}
             </div>
             <div className="small-12 medium-6 large-8 columns">
               <p>Move the Slider to adjust Risk Preference</p>
-              <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
+              <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} onDragStop={this.updateSliderValue}/>
             </div>
           </div>
             <div className="row">
               <div className="small-12 medium-12 large-12 columns">
-                <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.props.basket}/>
+                <StocksContainer risk_preference={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.state.basket}/>
               </div>
           </div>
         </div>

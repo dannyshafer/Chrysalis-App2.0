@@ -12,14 +12,7 @@ var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
 var FlatButton = mui.FlatButton;
 
-
 var StockCard = React.createClass({
-	getInitialState: function () {
-		return {
-			added: false,
-		};
-	},
-
 	childContextTypes: {
 		muiTheme: React.PropTypes.object
 	},
@@ -32,37 +25,27 @@ var StockCard = React.createClass({
 
 	handleClicked: function () {
 		this.props.basket.addToBasket(this.props.stock)
-		var active = !this.state.added;
-		this.setState({
-			added: active,
-		});
 	},
-
 
 	render: function () {
 		var stock = this.props.stock;
-		if (this.state.added === true) {
-			var addButton = (
-				<RaisedButton disabled={true} label="Added" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
-				);
+		if (this.props.status === true) {
+			var message = "Added";
 		} else {
-			var addButton = (
-			<RaisedButton disabled={false} label="Add" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
-			);
+			var message = "Add";
 		};
 
-
 		return (
-            <div className="small-12 medium-6 large-4 columns end">
+			<div className="small-12 medium-6 large-4 columns end">
 				<Card initiallyExpanded={false}>
-		  			{addButton}
+				<RaisedButton disabled={this.props.status} label={message} primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
 					<CardHeader
-						key={stock.id}
-						title={stock.ticker}
-						subtitle={stock.name}
-						avatar={stock.logo_url}
-						showExpandableButton={true} />
-		        	<CardText expandable={true}> {stock.info} </CardText>
+					key={stock.id}
+					title={stock.ticker}
+					subtitle={stock.name}
+					avatar={stock.logo_url}
+					showExpandableButton={true} />
+					<CardText expandable={true}> {stock.info} </CardText>
 					<CardActions expandable={true}></CardActions>
 				</Card>
 				<br />

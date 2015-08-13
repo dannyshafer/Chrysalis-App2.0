@@ -59,7 +59,7 @@ var UserBaskets = React.createClass({
 			var info = this.state.basket_info[index]
 			return (
 				<div className="container">
-					<UserBasketTable origin={this.props.origin} basket={basket} basket_info={info} writeToAPI={this.props.writeToAPI} currentUser={this.props.currentUser} updateBasket={this.updateBasket}/>
+					<UserBasketTable key={basket.id} origin={this.props.origin} basket={basket} basket_info={info} writeToAPI={this.props.writeToAPI} currentUser={this.props.currentUser} updateBasket={this.updateBasket}/>
 					<Slider name="slider3" disabled={true} value={1} />
 				</div>
 			);

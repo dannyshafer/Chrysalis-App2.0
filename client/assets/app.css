@@ -48,6 +48,17 @@ body {
 
 }
 
+.culture {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.teampictures {
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+}
+
 .mission-statement {
   text-align: justify;
   font-size: 25px;
