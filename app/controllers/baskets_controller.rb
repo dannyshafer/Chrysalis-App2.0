@@ -2,28 +2,16 @@ require 'date'
 
 class BasketsController < ApplicationController
   include StocksHelper
-  before_action :authenticate_request, only: [:index, :show, :today, :create, :destroy]
+
+  before_action :authenticate_request
 
   def index
-    baskets = []
-    basket_info = []
-    Basket.where(user_id: @current_user.id).order(created_at: :DESC).each do |basket|
-      stocks = []
-
-      tickers = []
-      basket.records.each do |record|
-        stocks << record
-        tickers << record.ticker
-      end
-
-      performance = compare_basket_performance(tickers)
-
-      basket_info << {name: basket.name, date: basket.date, id: basket.id, performance: performance}
-      baskets << stocks
-    end
-
-    info = {baskets: baskets, basket_info: basket_info}
-    render json: info
+    baskets = @current_user.baskets.includes(:records)
+    render json: baskets.to_json(
+      root:    false,
+      methods: [:performance],
+      include: [:records],
+    )
   end
 
   def show

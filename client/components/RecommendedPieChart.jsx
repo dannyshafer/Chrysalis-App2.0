@@ -127,7 +127,7 @@ var RecommendedPieChart = React.createClass({
 										}
 		return (
 			<div>
-			<h4>Recommended Allocation</h4>
+			<h4 className="text-center">Recommended Allocation</h4>
 			<DoughnutChart data={chartData} options={chartOptions} />
 			</div>
 		);

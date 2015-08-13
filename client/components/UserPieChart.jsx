@@ -152,14 +152,14 @@ var UserPieChart = React.createClass({
 		if (this.state.low_num === 0 && this.state.mid_num === 0 && this.state.high_num === 0) {
 			return (
 				<div>
-					<h4>Currently Selected Allocation</h4>
+					<h4 className="text-center">Currently Selected Allocation</h4>
 					<p>No stock is selected yet...</p>
 				</div>
 			)
 		} else {
 			return (
 				<div>
-					<h4>Currently Selected Allocation</h4>
+					<h4 className="text-center">Currently Selected Allocation</h4>
 					<DoughnutChart data={chartData} options={chartOptions} />
 				</div>
 			);

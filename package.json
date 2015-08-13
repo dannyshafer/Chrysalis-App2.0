@@ -37,7 +37,6 @@
     "eventemitter3": "1.1.1",
     "object-assign" : "3.0.0",
     "react-chartjs-commonjs" : "0.0.3",
-    "jquery": "2.1.4",
-    "react-foundation-menudropdown": "1.0.0"
+    "jquery": "2.1.4"
   }
 }

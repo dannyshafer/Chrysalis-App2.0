@@ -18,14 +18,14 @@ var UserBasketTable = React.createClass({
 		};
 	},
 
-	updateBasket: function () {
-		this.props.updateBasket(this.props.basket_info.id);
+	deleteBasket: function () {
+		this.props.deleteBasket(this.props.basket.id);
 	},
 
 	render: function () {
 		var basket = this.props.basket
 		var rowData = []
-		this.props.basket.map(function (stock, index) {
+		this.props.basket.records.map(function (stock, index) {
 			rowData.push({ticker: {content: stock.ticker}, 
 									  name: {content: stock.name},
 									  ask: {content: stock.ask},
@@ -81,7 +81,7 @@ var UserBasketTable = React.createClass({
 		// var footerCols = {ticker: {content: 'Ticker'}, name: {content: 'Name'}, status: {content: 'Status'}};
 		return (
 			<div>
-				<h4>{this.props.basket_info.name} created at {this.props.basket_info.date} {this.props.basket_info.performance}</h4>
+				<h4>{this.props.basket.name} created at {this.props.basket.date} {this.props.basket.performance}</h4>
 				<Table
 				  headerColumns={headerCols}
 				  columnOrder={colOrder}
@@ -97,7 +97,7 @@ var UserBasketTable = React.createClass({
 				  deselectOnClickaway={this.state.deselectOnClickaway}
 				  onRowSelection={this._onRowSelection} />
 				  <br />
-				  <RaisedButton label="Delete Basket" primary={true} onClick={this.updateBasket.bind(this, this.props.basket_info.id)}/>
+				  <RaisedButton label="Delete Basket" primary={true} onClick={this.deleteBasket}/>
 			</div>
 		);
 	},
