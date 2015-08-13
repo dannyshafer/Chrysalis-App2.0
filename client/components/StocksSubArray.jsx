@@ -1,5 +1,5 @@
 var React = require('react');
-// var LazyLoad = require('react-lazy-load');
+
 
 // Components
 var StockCard = require('./StockCard.jsx');
@@ -16,6 +16,15 @@ var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
 
 
+
+function inArray(array, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].id == value) return true;
+    }
+    return false;
+}
+
+
 var StocksSubArray = React.createClass({
 	getInitialState: function () {
 		return {
@@ -26,7 +35,7 @@ var StocksSubArray = React.createClass({
 
 	getDefaultProps: function() {
 	  return {
-	  	
+
 	    definitions: {},
 	  };
 	},
@@ -51,10 +60,8 @@ var StocksSubArray = React.createClass({
   },
 
   basketCreated: function () {
-  	console.log('setting new stocks')
-  	this.setState({
-  		stocks: new Stocks,
-  	});
+  	this.state.stocks.empty;
+    this.forceUpdate();
   	this.readStocksFromAPIagain();
   },
 
@@ -81,8 +88,13 @@ var StocksSubArray = React.createClass({
 		if (this.state.status === "completed") {
 			var stocks = this.state.stocks["stocks"][0].map(function (stock, index) {
 				if (stock.asi_component === this.props.risk_preference) {
+          if (inArray(this.props.basket["stocks"], stock.id)) {
+            var status = true;
+          } else {
+            var status = false;
+          };
 					return (
-						<StockCard key={stock.id} stock={stock} definitions={this.props.definitions} basket={this.props.basket}/>
+						<StockCard key={stock.id} stock={stock} definitions={this.props.definitions} basket={this.props.basket} status={status}/>
 					);
 				};
 			}.bind(this));

@@ -20,8 +20,8 @@ body {
 
 /** {
   border: 1px solid red;
-}*/
-
+}
+*/
 .landing-container {
   margin: 0;
   padding: 0;
@@ -40,11 +40,11 @@ body {
 .mission-statement-container {
   width: 100%;
   background-color: white;
-  text-align: justify;
-  padding-top: 150px;
-  padding-bottom: 150px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  padding-left: 20%;
+  padding-right: 20%;
+  opacity: 0.85;
 
 }
 
@@ -64,10 +64,13 @@ body {
 }
 
 .mission-statement {
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 300%;
+  text-align: justify;
+  font-size: 25px;
+  line-height: 200%;
+  color: #006699;;
 }
+
+
 
 /*div {
   display: block;
@@ -79,27 +82,40 @@ html {
 
 .menubar {
   background-color: black;
-
 }
 
 .nav-item {
   display: inline-block;
-  margin-left: 30px;
+  margin-left: 10px;
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: white;
-
+  color: #006699;
 }
 
 a {
   text-decoration: none;
 }
 
+.sign-out {
+  color: white;
+  left-margin: 40px;
+}
+
 
 .sub-title {
   letter-spacing: .15em;
   color: white;
+}
+
+.page-header {
+  margin-top: 50px;
+  text-align: center;
+  color: #006699;
+}
+
+.glossary-term {
+  font-weight: bold;
 }
 
 .title {
@@ -152,9 +168,6 @@ video {
   border: 1px solid red;
 }*/
 
-h1, h2, h3, h4, h5, h6, p {
-    text-align: center;
-}
 
 div {
   margin-top: 20px;
