@@ -5,7 +5,7 @@ var RouteHandler = Router.RouteHandler;
 var Uri = require('jsuri');
 
 // Components
-var NavBar = require('./NavBar.jsx')
+var NavBar = require('./NavigationBar.jsx')
 
 var App = React.createClass({
   getDefaultProps: function() {
@@ -64,11 +64,7 @@ var App = React.createClass({
     return (
       <div id="app">
         <NavBar signedIn={this.state.signedIn} currentUser={this.state.currentUser} origin={this.props.origin}/>
-        <div id="content">
-        <div id="container">
           <RouteHandler origin={this.props.origin} readFromAPI={this.readFromAPI} writeToAPI={this.writeToAPI} signedIn={this.state.signedIn} currentUser={this.state.currentUser}/>
-        </div>
-        </div>
       </div>
     );
   },
