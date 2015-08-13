@@ -17,7 +17,6 @@ var StockCard = React.createClass({
 	getInitialState: function () {
 		return {
 			added: false,
-			basket: this.props.basket,
 		};
 	},
 
@@ -32,22 +31,13 @@ var StockCard = React.createClass({
 	},
 
 	handleClicked: function () {
-		this.state.basket.addToBasket(this.props.stock)
+		this.props.basket.addToBasket(this.props.stock)
 		var active = !this.state.added;
 		this.setState({
 			added: active,
 		});
 	},
 
-	handleBetaClick: function(){
-  	this.refs.betaDialog.show();
-	},
-	handleEPSClick: function(){
-  	this.refs.EPSDialog.show();
-	},
-	handlePEGClick: function(){
-  	this.refs.PEGDialog.show();
-  },
 
 	render: function () {
 		var stock = this.props.stock;
@@ -65,27 +55,6 @@ var StockCard = React.createClass({
 		return (
             <div className="small-12 medium-6 large-4 columns end">
 				<Card initiallyExpanded={false}>
-					<Dialog ref="betaDialog">
-						<strong>Beta:</strong>
-						<br/>
-						<br/>
-						{this.props.definitions["Beta"]}
-					</Dialog>
-					<Dialog ref="EPSDialog">
-						<strong>EPS:</strong>
-						<br/>
-						<br/>
-						{this.props.definitions["EPS"]}
-					</Dialog>
-					<Dialog ref="PEGDialog">
-						<strong>PEG:</strong>
-						<br/>
-						<br/>
-						{this.props.definitions["PEG"]}
-					</Dialog>
-					<FlatButton onClick={this.handleBetaClick}>Beta: {stock.beta}</FlatButton>
-		    		<FlatButton onClick={this.handleEPSClick}>EPS: {stock.eps}</FlatButton>
-		  			<FlatButton onClick={this.handlePEGClick}>PEG: {stock.peg}</FlatButton>
 		  			{addButton}
 					<CardHeader
 						key={stock.id}
@@ -93,7 +62,6 @@ var StockCard = React.createClass({
 						subtitle={stock.name}
 						avatar={stock.logo_url}
 						showExpandableButton={true} />
-
 		        	<CardText expandable={true}> {stock.info} </CardText>
 					<CardActions expandable={true}></CardActions>
 				</Card>
