@@ -19,7 +19,7 @@ var NavigationBar = React.createClass({
   render: function(){
 
     if (this.props.signedIn) {
-      var profileLink = <NavItemLink className="nav-item" to="profile">{this.props.currentUser}</NavItemLink>
+      var profileLink = <NavItemLink className="nav-item" to="profile">Profile</NavItemLink>
       var recommendationLink = <NavItemLink className="nav-item" to="recommendation">Recommendations</NavItemLink>
       var updateLink = <NavItemLink className="nav-item" to="update">Update Stocks</NavItemLink>
       var userBasketLink = <NavItemLink className="nav-item" to="user_baskets">Baskets</NavItemLink>
