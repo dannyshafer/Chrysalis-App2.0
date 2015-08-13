@@ -25,6 +25,7 @@ var NavigationBar = React.createClass({
       var userBasketLink = <NavItemLink className="nav-item" to="user_baskets">Baskets</NavItemLink>
       var signingLink = <span className="nav-item" onClick={this.handleSignOutLink}>Sign Out</span>
       var glossary = <NavItemLink className="nav-item" to="glossary"><i className="material-icons">description</i></NavItemLink>
+      var teamLink = <NavItemLink className="nav-item" to="team_page"><i className="material-icons">About Us</i></NavItemLink>
     } else {
       var signingLink = <a className="nav-item" href={this.props.origin + '/request_token'}>Sign In</a>;
     }
@@ -38,6 +39,7 @@ var NavigationBar = React.createClass({
             {userBasketLink}
             {updateLink}
             {glossary}
+            {teamLink}
             {signingLink}
           </Nav>
         </Navbar>

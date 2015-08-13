@@ -9,6 +9,8 @@ var UserBaskets = require('../components/UserBaskets.jsx');
 var Glossary = require('../components/Glossary.jsx')
 var DefaultRoute = Router.DefaultRoute;
 var Route = Router.Route;
+var LandingPage = require('../components/LandingPage.jsx');
+var TeamPage = require('../components/TeamPage.jsx');
 
 
 module.exports = (
@@ -19,5 +21,6 @@ module.exports = (
     <Route name="update" handler={UpdateContainer} />
     <Route name="user_baskets" handler={UserBaskets} />
     <Route name="glossary" handler={Glossary} />
+    <Route name="team_page" handler={TeamPage} />
   </Route>
   );

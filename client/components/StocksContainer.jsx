@@ -1,5 +1,5 @@
 var React = require('react');
-var LazyLoad = require('react-lazy-load');
+// var LazyLoad = require('react-lazy-load');
 
 // Components
 var StocksSubArray = require('./StocksSubArray.jsx');
