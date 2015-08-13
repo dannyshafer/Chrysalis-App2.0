@@ -1,5 +1,7 @@
 require('./assets/normalize.css');
 require('./assets/app.css');
+require('./assets/foundation.min.css');
+require('./assets/foundation.min.js');
 
 // require('./assets/menu.css');
 // require('./assets/blabs.css');
