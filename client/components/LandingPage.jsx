@@ -60,19 +60,16 @@ var LandingPage = React.createClass({
               </div>
 
 
-                  <div className="mission-statement-container">
-                    <p className="mission-statement">
-                      Chrysalis is a fundamental analysis website that seeks suitable investments based loosely on stock valuation techniques by Benjamin Graham.  Other services (particularly brokers) which take age and risk preference typically only return a suggested proportional mix of asset classes so that the user it dependent on their service to do the actual management of buying and selling. Chrysalis is dramatically more actionable as it suggests a mix but also offers specific securities which the user can then research further and buy through his/her preferred channel.
-
-
-                      PE ratio lower than the industry average.
-                      EPS ratio higher than the industry average.
-                      PED ratio lower than the industry average.
-                      Graham Number higher than the current price.
-
-                      While any of these constraints could be met by a given stock, fewer than five percent qualify for all four.
-                    </p>
+              <div className="mission-statement-container">
+                <p className="mission-statement">Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our clients.  Each of our stocks is guaranteed to meet all four of the following criteria:</p>
+                <div className="mission-checklist">
+                  <p>&#x2714; EPS ratio higher than the industry average.</p>
+                  <p>&#x2714; PEG ratio lower than the industry average.</p>
+                  <p>&#x2714; PE ratio lower than the industry average.</p>
+                  <p>&#x2714; Graham Number higher than the current price.</p>
                 </div>
+                <p className="mission-statement">While any of these constraints could be met by a given stock, fewer than five percent qualify for all four.  By filtering according to these criteria, Chrysalis identifies  stocks that are currently undervalued and likely to perform well over time.</p>
+              </div>
 
       </div>
     );

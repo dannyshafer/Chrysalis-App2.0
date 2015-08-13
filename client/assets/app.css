@@ -18,9 +18,9 @@ body {
   box-shadow: none;
 }
 
-/** {
+* {
   border: 1px solid red;
-}*/
+}
 
 .landing-container {
   margin: 0;
@@ -40,18 +40,24 @@ body {
 .mission-statement-container {
   width: 100%;
   background-color: white;
-  text-align: justify;
-  padding-top: 150px;
-  padding-bottom: 150px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  padding-left: 20%;
+  padding-right: 20%;
+  opacity: 0.85;
 
 }
 
 .mission-statement {
+  text-align: justify;
   font-size: 20px;
-  font-weight: bold;
-  line-height: 300%;
+  line-height: 200%;
+}
+
+.mission-checklist p {
+  font-size: 20px;
+  text-align: center;
+  color: green;
 }
 
 /*div {
