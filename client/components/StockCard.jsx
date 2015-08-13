@@ -12,6 +12,13 @@ var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
 var FlatButton = mui.FlatButton;
 
+function inArray(array, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].id == value) return true;
+    }
+    return false;
+}
+
 
 var StockCard = React.createClass({
 	getInitialState: function () {
@@ -30,6 +37,14 @@ var StockCard = React.createClass({
 		};
 	},
 
+	componentDidMount: function () {
+		console.log(this.props.stock.id)
+		console.log(this.props.basket["stocks"])
+		if (inArray(this.props.basket["stocks"], this.props.stock.id)) {
+			this.setState({added: true});
+		};
+	},
+
 	handleClicked: function () {
 		this.props.basket.addToBasket(this.props.stock)
 		var active = !this.state.added;
@@ -41,28 +56,24 @@ var StockCard = React.createClass({
 
 	render: function () {
 		var stock = this.props.stock;
+		console.log(this.state.added)
 		if (this.state.added === true) {
-			var addButton = (
-				<RaisedButton disabled={true} label="Added" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
-				);
+			var message = "Added";
 		} else {
-			var addButton = (
-			<RaisedButton disabled={false} label="Add" primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
-			);
+			var message = "Add";
 		};
 
-
 		return (
-            <div className="small-12 medium-6 large-4 columns end">
+			<div className="small-12 medium-6 large-4 columns end">
 				<Card initiallyExpanded={false}>
-		  			{addButton}
+				<RaisedButton disabled={this.state.added} label={message} primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
 					<CardHeader
-						key={stock.id}
-						title={stock.ticker}
-						subtitle={stock.name}
-						avatar={stock.logo_url}
-						showExpandableButton={true} />
-		        	<CardText expandable={true}> {stock.info} </CardText>
+					key={stock.id}
+					title={stock.ticker}
+					subtitle={stock.name}
+					avatar={stock.logo_url}
+					showExpandableButton={true} />
+					<CardText expandable={true}> {stock.info} </CardText>
 					<CardActions expandable={true}></CardActions>
 				</Card>
 				<br />
