@@ -6,4 +6,10 @@ describe StocksHelper do
       expect(helper.make_asi_component(1)).to eq(5)
     end
   end
+
+  describe "#compare_basket_performance" do
+    it "returns a string" do
+      expect(helper.compare_basket_performance).class == ("String")
+    end
+  end
 end
