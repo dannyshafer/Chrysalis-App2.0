@@ -48,6 +48,12 @@ body {
 
 }
 
+.teampictures {
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+}
+
 .mission-statement {
   font-size: 20px;
   font-weight: bold;

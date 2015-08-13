@@ -12,13 +12,13 @@ var FlatButton = mui.FlatButton;
 
 
 
-var TeamPage = React.createClass({
+var Team = React.createClass({
 
   render: function(){
 
     return (
 
-      <div className="teampage-container">
+      <div className="team-container">
         <div className="row">
           Mission statement
         </div>
@@ -26,19 +26,19 @@ var TeamPage = React.createClass({
         <div className="row">
           <div className="small-12 medium-6 large-3 columns end">
           // <div className="col-sm-12 col-md-6 col-lg-3 columns end ">
-            <img src='https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALKAAAAJDUwYmYxNWI2LTI1ZTAtNDJlMS1iZWRlLTQyZmFkZWMzYjIyMA.jpg'>Daniel Shafer</img>
+            <img src='https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALKAAAAJDUwYmYxNWI2LTI1ZTAtNDJlMS1iZWRlLTQyZmFkZWMzYjIyMA.jpg'/>
 
           </div>
           <div className="small-12 medium-6 large-3 columns end">
-            <img src='https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALxAAAAJDg1MmI1ZmQxLTU1MDktNDY0ZC05ZTMzLTkzN2JjZDY0MGYyMw.jpg'>Ryan Au</img>
+            <img src='https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALxAAAAJDg1MmI1ZmQxLTU1MDktNDY0ZC05ZTMzLTkzN2JjZDY0MGYyMw.jpg'/>
 
           </div>
           <div className="small-12 medium-6 large-3 columns end">
-            <img src='https://pbs.twimg.com/profile_images/585479016817291264/qlym0sGg.jpg'>John Hess</img>
+            <img src='https://pbs.twimg.com/profile_images/585479016817291264/qlym0sGg.jpg'/>
 
           </div>
           <div className="small-12 medium-6 large-3 columns end">
-            <img src='https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/071/36a/2e3c836.jpg'>Andrew Donato</img>
+            <img src='https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/071/36a/2e3c836.jpg'/>
 
           </div>
         </div>
@@ -50,4 +50,4 @@ var TeamPage = React.createClass({
   }
 });
 
-module.exports = TeamPage;
+module.exports = Team;
