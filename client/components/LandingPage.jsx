@@ -61,14 +61,7 @@ var LandingPage = React.createClass({
 
 
               <div className="mission-statement-container">
-                <p className="mission-statement">Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our clients.  Each of our stocks is guaranteed to meet all four of the following criteria:</p>
-                <div className="mission-checklist">
-                  <p>&#x2714; EPS ratio higher than the industry average.</p>
-                  <p>&#x2714; PEG ratio lower than the industry average.</p>
-                  <p>&#x2714; PE ratio lower than the industry average.</p>
-                  <p>&#x2714; Graham Number higher than the current price.</p>
-                </div>
-                <p className="mission-statement">While any of these constraints could be met by a given stock, fewer than five percent qualify for all four.  By filtering according to these criteria, Chrysalis identifies  stocks that are currently undervalued and likely to perform well over time.</p>
+                <p className="mission-statement">Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our clients.  Our recommendations are filtered according to rigorous criteria, producing stocks that we believe are currently undervalued and likely to perform well over time.  Get started today.</p>
               </div>
 
       </div>

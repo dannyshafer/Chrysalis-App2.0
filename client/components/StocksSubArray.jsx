@@ -1,5 +1,4 @@
 var React = require('react');
-var LazyLoad = require('react-lazy-load');
 
 // Components
 var StockCard = require('./StockCard.jsx');

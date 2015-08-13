@@ -52,13 +52,10 @@ body {
   text-align: justify;
   font-size: 20px;
   line-height: 200%;
+  color: #006699;;
 }
 
-.mission-checklist p {
-  font-size: 20px;
-  text-align: center;
-  color: green;
-}
+
 
 /*div {
   display: block;
@@ -70,21 +67,23 @@ html {
 
 .menubar {
   background-color: black;
-
 }
 
 .nav-item {
   display: inline-block;
-  margin-left: 30px;
+  margin-left: 10px;
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: white;
-
+  color: #006699;
 }
 
 a {
   text-decoration: none;
+}
+
+.sign-out {
+  color: white;
 }
 
 

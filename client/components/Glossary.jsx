@@ -1,10 +1,23 @@
 var React = require('react');
+var mui = require('material-ui');
+var ThemeManager = new mui.Styles.ThemeManager();
+var List = mui.List;
+var ListItem = mui.ListItem;
 
 var Glossary = React.createClass({
   getInitialState: function () {
     return {
       definitions: {},
-      glossary: [],
+    };
+  },
+
+  childContextTypes: {
+    muiTheme: React.PropTypes.object
+  },
+
+  getChildContext: function () {
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
     };
   },
 
@@ -18,19 +31,21 @@ var Glossary = React.createClass({
     }.bind(this));
   },
 
+
+
   render: function(){
 
     var glossary = definitionsToGlossary(this.state.definitions);
     var listItems = glossary.map(function(item) {
-      return <li> {item} </li>;
+      return <ListItem> {item} </ListItem>;
     });
 
     return (
       <div className="container">
-      <h4>Glossary</h4>
-        <ul>
+      <h1>Glossary</h1>
+        <List>
           {listItems}
-        </ul>
+        </List>
       </div>
     );
   },

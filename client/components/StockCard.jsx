@@ -64,9 +64,9 @@ var StockCard = React.createClass({
 		return (
       <div className="small-12 medium-6 large-4 columns end">
 				<Card initiallyExpanded={false}>
-					<Dialog ref="betaDialog"><strong>Beta:</strong><br/><br/>{this.props.definitions["Beta"]}</Dialog>
-					<Dialog ref="EPSDialog"><strong>EPS:</strong><br/><br/>{this.props.definitions["EPS"]}</Dialog>
-					<Dialog ref="PEGDialog"><strong>PEG:</strong><br/><br/>{this.props.definitions["PEG"]}</Dialog>
+					<Dialog ref="betaDialog"><strong>Beta:</strong><br/><br/>{this.props.definitions["Beta"]}<br/></Dialog>
+					<Dialog ref="EPSDialog"><strong>EPS:</strong><br/><br/>{this.props.definitions["EPS"]}<br/></Dialog>
+					<Dialog ref="PEGDialog"><strong>PEG:</strong><br/><br/>{this.props.definitions["PEG"]}<br/></Dialog>
 					<FlatButton onClick={this.handleBetaClick}>Beta: {stock.beta}</FlatButton>
 		    	<FlatButton onClick={this.handleEPSClick}>EPS: {stock.eps}</FlatButton>
 		  		<FlatButton onClick={this.handlePEGClick}>PEG: {stock.peg}</FlatButton>
