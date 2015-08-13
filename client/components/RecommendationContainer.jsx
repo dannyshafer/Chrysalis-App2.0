@@ -49,10 +49,8 @@ var RecommendationContainer = React.createClass({
   },
 
   wipeOutBasket: function () {
-    console.log('wiping out basket')
-    this.setState({
-      basket: new Basket,
-    });
+    this.state.basket.empty();
+    this.forceUpdate();
   },
 
   componentWillUnmount: function(){
@@ -60,7 +58,7 @@ var RecommendationContainer = React.createClass({
   },
 
   basketChanged: function(){
-    // this.forceUpdate();
+    this.forceUpdate();
     this.state.basket.emit('update-chart');
   },
 
@@ -105,6 +103,7 @@ var RecommendationContainer = React.createClass({
   updateSliderValue: function (e, ui) {
     this.setState({risk_preference: slider_value})
   },
+
   render: function () {
     if (this.props.signedIn === true && this.state.modalOpen === true) {
       var profileSetUpModal = (
@@ -148,11 +147,11 @@ var RecommendationContainer = React.createClass({
             <div className="small-12 medium-6 large-4 columns">
               <div>
               <TextField
-                      ref="createBasket"
-                      hintText="Required"
-                      errorText={this.state.floatingErrorText}
-                      floatingLabelText="Basket Name"
-                      onChange={this._handleFloatingErrorInputChange}/>
+                ref="createBasket"
+                hintText="Required"
+                errorText={this.state.floatingErrorText}
+                floatingLabelText="Basket Name"
+                onChange={this._handleFloatingErrorInputChange}/>
               <br />
               <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket} disabled={addBox}/>
               <br />

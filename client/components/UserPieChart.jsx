@@ -35,10 +35,23 @@ var UserPieChart = React.createClass({
 
 	componentDidMount: function(){
 	  this.state.basket.on('update-chart', this.handleAddBasket);
+	  this.state.basket.on('basket_created', this.handleCreateBasket);
 	},
 
 	componentWillUnmount: function(){
 	  this.state.basket.off('update-chart');
+	},
+
+	handleCreateBasket: function () {
+		this.setState({
+			low: 0,
+			mid: 0,
+			high: 0,
+			none: 10,
+			low_num: 0,
+			mid_num: 0,
+			high_num: 0,
+		})
 	},
 
 	handleAddBasket: function () {
