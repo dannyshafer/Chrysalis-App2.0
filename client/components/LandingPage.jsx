@@ -47,20 +47,21 @@ var LandingPage = React.createClass({
       );
     };
     return (
+      <div className="landing-background">
       <div className="landing-container">
 
           {profileSetUpModal}
+
+
           <div className="slogan">
             <h1 className='title'>Chrysalis</h1>
             <h2 className="sub-title">hatching insight</h2>
           </div>
-
-
-              <div className='video-container'>
+          <div className='video-container'>
                   <video preload="true" autoPlay="autoplay" loop="loop" muted tabIndex="0">
                     <source src="low.mp4" type="video/mp4"></source>
                   </video>
-              </div>
+          </div>
 
 
               <div className="mission-statement-container">
@@ -68,8 +69,11 @@ var LandingPage = React.createClass({
               </div>
 
       </div>
+      </div>
     );
   },
 });
 
 module.exports=LandingPage
+
+

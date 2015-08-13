@@ -4,11 +4,6 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 
-/*
-body {
-  background-color: white;
-}
-*/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -20,8 +15,15 @@ body {
 
 /** {
   border: 1px solid red;
+}*/
+
+* {
+  border: 0;
 }
-*/
+
+
+
+
 .landing-container {
   margin: 0;
   padding: 0;
@@ -35,6 +37,7 @@ body {
 .video-container {
   position: relative;
   min-height: 650px;
+
 }
 
 .mission-statement-container {
@@ -59,9 +62,7 @@ body {
   border-radius: 4px;
 }
 
-.bio {
 
-}
 
 .mission-statement {
   text-align: justify;
@@ -83,6 +84,10 @@ html {
 .menubar {
   background-color: black;
 }
+
+/*.landing-background {
+  background-image: url("https://ununsplash.imgix.net/uploads/1412443967017d95e2723/2919e13b?dpr=2&fit=crop&fm=jpg&h=700&q=75&w=1050");
+}*/
 
 .nav-item {
   display: inline-block;
@@ -125,7 +130,6 @@ a {
 .profile-setting {
   font-size: 25px;
   color: #006699;
-
 }
 
 .glossary-term {
