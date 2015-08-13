@@ -24,7 +24,6 @@ var NavigationBar = React.createClass({
     } else {
       var signingLink = <li><a href={this.props.origin + '/request_token'}>Sign In</a></li>;
     }
-
     return (
       <div id="menu">
         <span id="menu-link" onClick={this.props.sendMenuClick}><span></span></span>
