@@ -110,6 +110,20 @@ a {
   color: #006699;
 }
 
+.profile-settings-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
+
+.profile-setting {
+  font-size: 25px;
+  color: #006699;
+
+}
+
 .glossary-term {
   font-weight: bold;
 }

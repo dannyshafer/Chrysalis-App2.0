@@ -41,7 +41,6 @@ var NavigationBar = React.createClass({
             {recommendationLink}
             {userBasketLink}
             {updateLink}
-            {team}
             {glossary}
             {signingLink}
           </Nav>
