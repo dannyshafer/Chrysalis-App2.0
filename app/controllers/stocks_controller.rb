@@ -4,7 +4,7 @@ class StocksController < ApplicationController
 
   before_action :authenticate_request, only: [:recommendations]
 
- def recommendations
+  def recommendations
    stocks_1 = []
    stocks_2 = []
    stocks_3 = []
@@ -68,25 +68,23 @@ class StocksController < ApplicationController
 
 
    @stocks = {stocks_1: stocks_1,
-              stocks_2: stocks_2,
-              stocks_3: stocks_3,
-              stocks_4: stocks_4,
-              stocks_5: stocks_5,
-              stocks_6: stocks_6,
-              stocks_7: stocks_7,
-              stocks_8: stocks_8,
-              stocks_9: stocks_9,
-              stocks_10: stocks_10,
-            }
-   render json: @stocks
- end
- def update
+    stocks_2: stocks_2,
+    stocks_3: stocks_3,
+    stocks_4: stocks_4,
+    stocks_5: stocks_5,
+    stocks_6: stocks_6,
+    stocks_7: stocks_7,
+    stocks_8: stocks_8,
+    stocks_9: stocks_9,
+    stocks_10: stocks_10,
+  }
+  render json: @stocks
+end
+def update
   stocks_runner
   industries_runner
   stocks_update_versus_index
   make_records_recommendations
-  p '***********************'
-  p 'done!'
   render json: {message: 'success in updating stocks'}
 end
 
