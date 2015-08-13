@@ -62,24 +62,31 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-nav {
-  border: 1px solid #777AC7;
-  background-color: #777AC7;
+.menubar {
+  background-color: black;
+
+}
+
+.nav-item {
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+
 }
 
 a {
   text-decoration: none;
-  color: #FFC000;
 }
 
-.nav-item {
-  text-decoration: none;
-  color: #FFC000;
-}
 
 .sub-title {
   letter-spacing: .15em;
+  color: white;
 }
+
 .title {
   font-family: 'Maven Pro';
   font-size: 3em;
@@ -93,13 +100,6 @@ a {
   5px 4px 1px #ccc, 4px 5px 1px #eee,
   6px 5px 1px #ccc, 5px 6px 1px #eee,
   7px 6px 1px #ccc;
-}
-
-
-nav li {
-  display: inline-block;
-  margin-left: 20px;
-  text-decoration: none;
 }
 
 
