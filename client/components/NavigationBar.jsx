@@ -1,53 +1,49 @@
 var React = require('react');
 var Router = require('react-router');
-var ReactBootstrap = require('react-bootstrap');
-var ReactRouterBootstrap = require('react-router-bootstrap');
-var Link = Router.Link;
-var Nav = ReactBootstrap.Nav;
-var Navbar = ReactBootstrap.Navbar;
-var NavItem = ReactBootstrap.NavItem;
-var DropdownButton = ReactBootstrap.DropdownButton;
-var NavItemLink = ReactRouterBootstrap.NavItemLink;
-var MenuItemLink = ReactRouterBootstrap.MenuItemLink;
 
+var Link = Router.Link;
 
 var NavigationBar = React.createClass({
+
+
   handleSignOutLink: function() {
     sessionStorage.setItem('jwt','');
     location = '/';
   },
 
-  render: function(){
-
+  render: function() {
     if (this.props.signedIn) {
-
-      var homeLink = <NavItemLink className="nav-item" to="landingpage" ><p className="nav-item">Chrysalis</p></NavItemLink>
-      var profileLink = <NavItemLink className="nav-item" to="profile"><p className="nav-item">Profile</p></NavItemLink>
-      var recommendationLink = <NavItemLink className="nav-item" to="recommendation"><p className="nav-item">Recommendations</p></NavItemLink>
-      var updateLink = <NavItemLink className="nav-item" to="update"><p className="nav-item">Update Stocks</p></NavItemLink>
-      var userBasketLink = <NavItemLink className="nav-item" to="user_baskets"><p className="nav-item">Baskets</p></NavItemLink>
-      var signingLink = <span className="nav-item sign-out" onClick={this.handleSignOutLink}>Sign Out</span>
-      var glossary = <NavItemLink className="nav-item" to="glossary"><p className="nav-item">Glossary</p></NavItemLink>
-
+      var homeLink = <li><Link to="landingpage">Home</Link></li>
+      var profileLink = <li><Link to="profile">Profile</Link></li>
+      var signingLink = <li><span onClick={this.handleSignOutLink}>Sign Out</span></li>
+      var recommendationLink = <li><Link to="recommendation">Recommendations</Link></li>
+      var userBasketLink = <li><Link to="user_baskets">Baskets</Link></li>
+      var glossary =  <li><Link to="glossary">Glossary</Link></li>
+      var updateLink = <li><Link to="update">Update Stocks</Link></li>
+      var userBasketLink = <li><Link to="user_baskets">Baskets</Link></li>
     } else {
-      var signingLink = <a className="nav-item" href={this.props.origin + '/request_token'}>Sign In</a>;
+      var signingLink = <li><a href={this.props.origin + '/request_token'}>Sign In</a></li>;
     }
-    return (
-      <div>
-        <Navbar className="menubar" fixedTop>
-          <Nav>
-            {homeLink}
-            {profileLink}
-            {recommendationLink}
-            {userBasketLink}
-            {updateLink}
 
-            {glossary}
-            {signingLink}
-          </Nav>
-        </Navbar>
+    return (
+      <div id="menu">
+        <span id="menu-link" onClick={this.props.sendMenuClick}><span></span></span>
+        <div id="menu-list">
+          <div className="pure-menu pure-menu-open">
+            <span className="pure-menu-heading">Chrysalis</span>
+            <ul>
+              <span onClick={this.props.sendMenuClick}>{homeLink}</span>
+              <span onClick={this.props.sendMenuClick}>{recommendationLink}</span>
+              <span onClick={this.props.sendMenuClick}>{userBasketLink}</span>
+              <span onClick={this.props.sendMenuClick}>{glossary}</span>
+              <span onClick={this.props.sendMenuClick}>{updateLink}</span>
+              <span onClick={this.props.sendMenuClick}>{profileLink}</span>
+              <span onClick={this.props.sendMenuClick}>{signingLink}</span>
+            </ul>
+          </div>
+        </div>
       </div>
-      );
+    );
   },
 });
 
