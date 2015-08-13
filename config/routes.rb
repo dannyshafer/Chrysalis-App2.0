@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  
+  #CORS????
   match '*all', to: 'application#preflight', via: [:options]
 
-  get 'current_user', to: 'application#current_user'
+  get 'current_user',  to: 'users#current'
   get 'request_token', to: 'tokens#request_token'
-  get 'access_token', to: 'tokens#access_token'
+  get 'access_token',  to: 'tokens#access_token'
   # get 'users/profile', to: 'users#profile'
   # put 'users/profile', to: 'users#update'
 
@@ -26,5 +28,6 @@ Rails.application.routes.draw do
   get 'recommendations/recommendations', to: 'recommendations#recommendations'
 
 
-  match '*all', to: 'application#index', via: [:get]
+  get  '*path', to: 'client_app#show'
+  root          to: 'client_app#show'
 end

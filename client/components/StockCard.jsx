@@ -46,7 +46,7 @@ var StockCard = React.createClass({
 					subtitle={stock.name}
 					avatar={stock.logo_url}
 					showExpandableButton={true} />
-					<CardText>Price: {stock.ask} | Beta: {stock.beta} | EPS: {stock.eps} | PE: {stock.pe}</CardText>
+					<CardText>${stock.ask} | Beta: {stock.beta} | EPS: {stock.eps} | PE: {stock.pe}</CardText>
 					<RaisedButton disabled={this.props.status} label={message} secondary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
 					<CardText expandable={true}> {stock.info} </CardText>
 					<CardActions expandable={true}></CardActions>
