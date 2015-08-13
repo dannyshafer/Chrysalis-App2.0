@@ -27,7 +27,6 @@ var StocksSubArray = React.createClass({
   },
 
 	render: function () {
-		console.log('render subarray')
 		var stocks = this.props.stocks.map(function (stock, index) {
 			return (
 				<StockCard key={stock.id} stock={stock} definitions={this.props.definitions} basket={this.props.basket}/>
