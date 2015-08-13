@@ -2,7 +2,7 @@ var React = require('react');
 var Basket = require('../basket.js');
 var Router = require('react-router');
 var Link = Router.Link;
-var LazyLoad = require('react-lazy-load');
+
 
 // Material UI
 var mui = require('material-ui');
@@ -112,6 +112,7 @@ var RecommendationContainer = React.createClass({
                 valueLink={this.linkState('textFieldValue')} />
         <br />
         <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket}/>
+        <br />
         </div>
       );
     } else {
@@ -128,21 +129,21 @@ var RecommendationContainer = React.createClass({
         <div className="container">
           {profileSetUpModal}
           <div className="row">
-            <div className="small-12 medium-6 large-4 columns">
+            <div className="small-12 medium-6 large-4 columns Ta(c)">
             <RecommendedPieChart age={this.state.age}/>
             <br />
             </div>
 
-            <div className="small-12 medium-6 large-4 columns">
+            <div className="small-12 medium-6 large-4 columns Ta(c)">
             <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
             <br />
             </div>
-            <div className="small-12 medium-12 large-4 columns">
+            <div className="small-12 medium-12 large-4 columns Ta(c)">
             {addBox}
             {this.state.message}
             </div>
-            <div className="small-12 large-12 columns">
-              <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
+            <div className="small-12 large-12 columns Ta(c)">
+              <p>Move the Slider to adjust Risk Preference</p>
               <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
             </div>
           </div>
