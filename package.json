@@ -35,7 +35,10 @@
     "react-video": "^1.5.3",
     "reqwest": "^1.1.5",
     "style-loader": "^0.8.3",
-    "webpack": "^1.6.0",
-    "webpack-dev-server": "^1.8.0"
+    "webpack-dev-server": "^1.8.0",
+    "eventemitter3": "1.1.1",
+    "object-assign" : "3.0.0",
+    "react-chartjs-commonjs" : "0.0.3",
+    "jquery": "2.1.4",
   }
 }

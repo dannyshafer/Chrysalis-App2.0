@@ -1,4 +1,5 @@
 var React = require('react');
+var LazyLoad = require('react-lazy-load');
 
 // Components
 var StocksSubArray = require('./StocksSubArray.jsx');
@@ -22,7 +23,6 @@ var StocksContainer = React.createClass({
 			stocks_8: [],
 			stocks_9: [],
 			stocks_10: [],
-			risk: null,
 			definitions: {},
 		};
 	},
@@ -72,7 +72,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div className="row">
 		    	<div className="small-12 columns">
-		      <h3>Number of Stocks: {this.state.stocks_1.length}</h3>
+		      <h3>{this.state.stocks_1.length} Stocks with Risk Preference of 1</h3>
 		      <StocksSubArray stocks={this.state.stocks_1} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 		    	</div>
 		    </div>
@@ -81,7 +81,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div className="row">
 		    	<div className="small-12 columns">
-		      <h3>Number of Stocks: {this.state.stocks_2.length}</h3>
+		      <h3>{this.state.stocks_2.length} Stocks with Risk Preference of 2</h3>
 		      <StocksSubArray stocks={this.state.stocks_2} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 					</div>
 		    </div>
@@ -90,7 +90,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div className="row">
 		    	<div className="small-12 columns">
-		      <h3>Number of Stocks: {this.state.stocks_3.length}</h3>
+		      <h3>{this.state.stocks_3.length} Stocks with Risk Preference of 3</h3>
 		      <StocksSubArray stocks={this.state.stocks_3} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 					</div>
 		    </div>
@@ -99,7 +99,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div className="row">
 		    	<div className="small-12 columns">
-		      <h3>Number of Stocks: {this.state.stocks_4.length}</h3>
+		      <h3>{this.state.stocks_4.length} Stocks with Risk Preference of 4</h3>
 		      <StocksSubArray stocks={this.state.stocks_4} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 					</div>
 		    </div>
@@ -108,7 +108,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div className="row">
 		    	<div className="small-12 columns">
-		      <h3>Number of Stocks: {this.state.stocks_5.length}</h3>
+		      <h3>{this.state.stocks_5.length} Stocks with Risk Preference of 5</h3>
 		      <StocksSubArray stocks={this.state.stocks_5} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 					</div>
 		    </div>
@@ -117,7 +117,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div className="row">
 		    	<div className="small-12 columns">
-		      <h3>Number of Stocks: {this.state.stocks_6.length}</h3>
+		      <h3>{this.state.stocks_6.length} Stocks with Risk Preference of 6</h3>
 		      <StocksSubArray stocks={this.state.stocks_6} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 					</div>
 		    </div>
@@ -126,7 +126,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div className="row">
 		    	<div className="small-12 columns">
-		      <h3>Number of Stocks: {this.state.stocks_7.length}</h3>
+		      <h3>{this.state.stocks_7.length} Stocks with Risk Preference of 7</h3>
 		      <StocksSubArray stocks={this.state.stocks_7} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 					</div>
 		    </div>
@@ -135,7 +135,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div className="row">
 		    	<div className="small-12 columns">
-		      <h3>Number of Stocks: {this.state.stocks_8.length}</h3>
+		      <h3>{this.state.stocks_8.length} Stocks with Risk Preference of 8</h3>
 		      <StocksSubArray stocks={this.state.stocks_8} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 					</div>
 		    </div>
@@ -144,7 +144,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div className="row">
 		    	<div className="small-12 columns">
-		      <h3>Number of Stocks: {this.state.stocks_9.length}</h3>
+		      <h3>{this.state.stocks_9.length} Stocks with Risk Preference of 9</h3>
 		      <StocksSubArray stocks={this.state.stocks_9} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 					</div>
 		    </div>
@@ -153,7 +153,7 @@ var StocksContainer = React.createClass({
 		  return (
 		    <div className="row">
 		    	<div className="small-12 columns">
-		      <h3>Number of Stocks: {this.state.stocks_10.length}</h3>
+		      <h3>{this.state.stocks_10.length} Stocks with Risk Preference of 10</h3>
 		      <StocksSubArray stocks={this.state.stocks_10} readFromAPI={this.props.readFromAPI} definitions={this.state.definitions} basket={this.props.basket}/>
 					</div>
 		    </div>
