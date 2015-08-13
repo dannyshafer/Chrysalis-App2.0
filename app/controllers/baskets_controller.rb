@@ -48,7 +48,7 @@ class BasketsController < ApplicationController
     basket = @current_user.baskets.create(name: info_params["info"]["name"].capitalize!, date: Time.now())
     records_id = []
     info_params["info"]["ids"].each do |key, ticker|
-      records_id << Record.find_by(ticker: ticker, date: DateTime.now.to_date).id
+      records_id << Record.where(ticker: ticker).last.id
     end
     records_id.each do |id|
       basket.records_baskets.create(record_id: id)

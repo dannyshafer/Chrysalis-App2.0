@@ -18,9 +18,9 @@ var StocksContainer = require('./StocksContainer.jsx');
 var RecommendedPieChart = require('./RecommendedPieChart.jsx')
 var UserPieChart = require('./UserPieChart.jsx')
 
-var RecommendationContainer = React.createClass({
-  mixins: [React.addons.LinkedStateMixin],
+var slider_value = null
 
+var RecommendationContainer = React.createClass({
   getDefaultProps: function() {
     return {
       basket: new Basket,
@@ -30,8 +30,8 @@ var RecommendationContainer = React.createClass({
   getInitialState: function () {
     return {
       risk_preference: null,
+      slider: null,
       age: null,
-      textFieldValue: '',
       modalOpen: false,
     };
   },
@@ -83,20 +83,23 @@ var RecommendationContainer = React.createClass({
     var data = {
       info: {
         ids: id,
-        name: this.state.textFieldValue,
+        name: this.refs.createBasket.getValue(),
       }
     };
     var uid = this.props.currentUser.uid
 
     this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets', 'post', JSON.stringify(data), function(message){
-      this.setState({message: "Basket Created!"})
+      this.setState({message: "Basket Created!"});
+      this.refs.createBasket.clearValue()
     }.bind(this));
   },
 
   handleRiskSliderMove: function (e, value) {
-    console.time('slider move')
-    this.setState({risk_preference: value});
-    console.timeEnd('slider move')
+    slider_value = value
+  },
+
+  updateSliderValue: function (e, ui) {
+    this.setState({risk_preference: slider_value})
   },
   render: function () {
     if (this.props.signedIn === true && this.state.modalOpen === true) {
@@ -109,33 +112,9 @@ var RecommendationContainer = React.createClass({
       );
     };
     if (this.props.basket.stocks.length != 0) {
-      var addBox = (
-        <div>
-        <TextField
-                hintText="Required"
-                errorText={this.state.floatingErrorText}
-                floatingLabelText="Basket Name"
-                onChange={this._handleFloatingErrorInputChange}
-                valueLink={this.linkState('textFieldValue')} />
-        <br />
-        <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket}/>
-        <br />
-        </div>
-      );
+      var addBox = false
     } else {
-      var addBox = (
-        <div>
-        <TextField
-                hintText="Required"
-                errorText={this.state.floatingErrorText}
-                floatingLabelText="Basket Name"
-                onChange={this._handleFloatingErrorInputChange}
-                valueLink={this.linkState('textFieldValue')} />
-        <br />
-        <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket} disabled={true}/>
-        <br />
-        </div>
-      );
+      var addBox = true
     };
     if (this.state.risk_preference != null) {
       var standardActions = [
@@ -163,13 +142,23 @@ var RecommendationContainer = React.createClass({
           </div>
           <div className="row">
             <div className="small-12 medium-6 large-4 columns">
-              {addBox}
+              <div>
+              <TextField
+                      ref="createBasket"
+                      hintText="Required"
+                      errorText={this.state.floatingErrorText}
+                      floatingLabelText="Basket Name"
+                      onChange={this._handleFloatingErrorInputChange}/>
+              <br />
+              <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket} disabled={addBox}/>
+              <br />
+              </div>
               {this.state.message}
               {modal}
             </div>
             <div className="small-12 medium-6 large-8 columns">
               <p>Move the Slider to adjust Risk Preference</p>
-              <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
+              <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} onDragStop={this.updateSliderValue}/>
             </div>
           </div>
             <div className="row">
