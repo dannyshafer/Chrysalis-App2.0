@@ -174,7 +174,7 @@ var RecommendationContainer = React.createClass({
           </div>
             <div className="row">
               <div className="small-12 medium-12 large-12 columns">
-                <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.props.basket}/>
+                <StocksContainer risk_preference={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.props.basket}/>
               </div>
           </div>
         </div>
