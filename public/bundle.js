@@ -20790,7 +20790,7 @@
 /* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var React = __webpack_require__(11);
+	/* WEBPACK VAR INJECTION */(function(process) {var React = __webpack_require__(11);
 	var Reqwest = __webpack_require__(168);
 	var Router = __webpack_require__(169);
 	var RouteHandler = Router.RouteHandler;
@@ -20802,10 +20802,10 @@
 	var App = React.createClass({displayName: "App",
 	  getDefaultProps: function() {
 	    // use this for heroku deployment
-	    // return {origin: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''};
+	    return {origin: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''};
 
 	    // use this when in development
-	    return {origin: 'http://localhost:3000'};
+	    // return {origin: 'http://localhost:3000'};
 	  },
 	  getInitialState: function() {
 	    return {
@@ -20875,6 +20875,7 @@
 
 	module.exports = App;
 
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
 
 /***/ },
 /* 168 */
@@ -25111,13 +25112,13 @@
 	          React.createElement("div", {className: "pure-menu pure-menu-open"}, 
 	            React.createElement("span", {className: "pure-menu-heading"}, "Chrysalis"), 
 	            React.createElement("ul", null, 
-	              React.createElement("span", {onClick: this.props.sendMenuClick}, homeLink), 
-	              React.createElement("span", {onClick: this.props.sendMenuClick}, recommendationLink), 
-	              React.createElement("span", {onClick: this.props.sendMenuClick}, userBasketLink), 
-	              React.createElement("span", {onClick: this.props.sendMenuClick}, glossary), 
-	              React.createElement("span", {onClick: this.props.sendMenuClick}, updateLink), 
-	              React.createElement("span", {onClick: this.props.sendMenuClick}, profileLink), 
-	              React.createElement("span", {onClick: this.props.sendMenuClick}, signingLink)
+	             homeLink, 
+	             recommendationLink, 
+	             userBasketLink, 
+	             glossary, 
+	             updateLink, 
+	             profileLink, 
+	             signingLink
 	            )
 	          )
 	        )
