@@ -14,5 +14,9 @@ Basket.prototype.addToBasket = function(stock){
   return this;
 };
 
+Basket.prototype.empty = function () {
+	this.stocks = [];
+}
+
 module.exports = Basket;
 

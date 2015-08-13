@@ -12,21 +12,7 @@ var ThemeManager = new mui.Styles.ThemeManager();
 var RaisedButton = mui.RaisedButton;
 var FlatButton = mui.FlatButton;
 
-function inArray(array, value) {
-    for (var i = 0; i < array.length; i++) {
-        if (array[i].id == value) return true;
-    }
-    return false;
-}
-
-
 var StockCard = React.createClass({
-	getInitialState: function () {
-		return {
-			added: false,
-		};
-	},
-
 	childContextTypes: {
 		muiTheme: React.PropTypes.object
 	},
@@ -37,24 +23,13 @@ var StockCard = React.createClass({
 		};
 	},
 
-	componentDidMount: function () {
-		if (inArray(this.props.basket["stocks"], this.props.stock.id)) {
-			this.setState({added: true});
-		};
-	},
-
 	handleClicked: function () {
 		this.props.basket.addToBasket(this.props.stock)
-		var active = !this.state.added;
-		this.setState({
-			added: active,
-		});
 	},
-
 
 	render: function () {
 		var stock = this.props.stock;
-		if (this.state.added === true) {
+		if (this.props.status === true) {
 			var message = "Added";
 		} else {
 			var message = "Add";
@@ -63,7 +38,7 @@ var StockCard = React.createClass({
 		return (
 			<div className="small-12 medium-6 large-4 columns end">
 				<Card initiallyExpanded={false}>
-				<RaisedButton disabled={this.state.added} label={message} primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
+				<RaisedButton disabled={this.props.status} label={message} primary={true} onClick={this.handleClicked.bind(this, stock.id)}/>
 					<CardHeader
 					key={stock.id}
 					title={stock.ticker}
