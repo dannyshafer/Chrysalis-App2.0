@@ -25090,10 +25090,6 @@
 	    return { showUpdateLink: false };
 	  },
 
-	  // componentWillMount: function(){
-	  //   this.checkUserId();
-	  // },
-
 	  handleSignOutLink: function() {
 	    sessionStorage.setItem('jwt','');
 	    location = '/';
@@ -46107,7 +46103,6 @@
 
 	    this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets', 'post', JSON.stringify(data), function(message){
 	      this.refs.createBasket.clearValue();
-	      alert('Basket Created!');
 	    }.bind(this));
 	    this.state.basket.emit('basket_created');
 	  },
@@ -46562,18 +46557,6 @@
 	      muiTheme: ThemeManager.getCurrentTheme()
 	    };
 	  },
-
-		componentDidMount: function () {
-			// this.readStocksFromAPI();
-			// this.getDefinitionsFromAPI();
-		},
-
-		// getDefinitionsFromAPI: function(){
-	 //    this.props.readFromAPI(this.props.origin + '/definitions', function(info){
-	 //      this.setState({definitions: info});
-	 //    }.bind(this));
-	 //  },
-
 
 		render: function () {
 		  return (
@@ -50750,7 +50733,7 @@
 	var UpdateContainer = React.createClass({displayName: "UpdateContainer",
 		handleUpdateStocks: function(e) {
 			e.preventDefault();
-			alert('hey!');
+			alert('updating stocks... might take a while lols');
 			this.props.readFromAPI(this.props.origin + '/stocks/update', function(info){
 				console.log('update stocks')
 			}.bind(this));

@@ -91,7 +91,6 @@ var RecommendationContainer = React.createClass({
 
     this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets', 'post', JSON.stringify(data), function(message){
       this.refs.createBasket.clearValue();
-      alert('Basket Created!');
     }.bind(this));
     this.state.basket.emit('basket_created');
   },

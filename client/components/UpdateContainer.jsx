@@ -3,7 +3,7 @@ var React = require('react');
 var UpdateContainer = React.createClass({
 	handleUpdateStocks: function(e) {
 		e.preventDefault();
-		alert('hey!');
+		alert('updating stocks... might take a while lols');
 		this.props.readFromAPI(this.props.origin + '/stocks/update', function(info){
 			console.log('update stocks')
 		}.bind(this));
