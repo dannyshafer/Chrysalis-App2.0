@@ -74,8 +74,11 @@ var UserBaskets = React.createClass({
 		} else {
 			return (
 				<div className="container">
-					<h3>You have {this.state.baskets.length} Baskets Saved</h3>
-					{baskets}
+					<div className="basket-title">
+							<h3 className="your-baskets">Your Baskets</h3><br/>
+							<h5>You have {this.state.baskets.length} Baskets Saved</h5>
+							{baskets}
+					</div>
 				</div>
 			);
 		};

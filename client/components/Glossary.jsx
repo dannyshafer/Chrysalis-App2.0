@@ -31,6 +31,14 @@ var Glossary = React.createClass({
             <p>Profit divided by number of common outstanding shares. If a company earning $2 million in one year had 2 million common shares of stock outstanding, its EPS would be $1 per share.</p>
           </ListItem>
           <ListItem>
+            <p className="glossary-term">Beta (β):</p>
+            <p>A measure of volatility relative the stock market as a whole, which has a beta of 1. Higher than 1 implies more volatile than the market while less than 1 implies less volatile than the market.</p>
+          </ListItem>
+          <ListItem>
+            <p className="glossary-term">ASI (Au-Shafer Index):</p>
+            <p>A metric and methodology of assessing the suitability of a stock for potential investment. Created by Daniel Shafer and Ryan Au in 2015 based loosely on fundamental analysis techniques by Benjamin Graham.</p>
+          </ListItem>
+          <ListItem>
             <p className="glossary-term">PE:</p>
             <p>A ratio for valuing a company that measures its current share price relative to its per-share earnings. The price-earnings ratio can be calculated as: Market Value per Share / Earnings per Share.</p>
           </ListItem>
@@ -42,10 +50,7 @@ var Glossary = React.createClass({
             <p className="glossary-term">PEG:</p>
             <p>Measures stock price versus earnings and expected growth. In general, lower is better as it is cheaper to acquire shares for expected earnings growth.</p>
           </ListItem>
-          <ListItem>
-            <p className="glossary-term">Beta (β):</p>
-            <p>A measure of volatility relative the stock market as a whole, which has a beta of 1. Higher than 1 implies more volatile than the market while less than 1 implies less volatile than the market.</p>
-          </ListItem>
+
         </List>
       </div>
     );
