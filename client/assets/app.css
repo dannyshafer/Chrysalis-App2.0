@@ -127,6 +127,16 @@ a {
   color: #006699;
 }
 
+.basket-title {
+  text-align: center;
+
+}
+
+.your-baskets {
+  font-size: 35px;
+  color: #006699;
+}
+
 .profile-settings-container {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -138,6 +148,11 @@ a {
 .profile-setting {
   font-size: 25px;
   color: #006699;
+}
+
+.latin {
+  font-size: 25px;
+  color: black;
 }
 
 .stock-basket-dialog {

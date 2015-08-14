@@ -26,7 +26,7 @@ var UserBasketTable = React.createClass({
 		var basket = this.props.basket
 		var rowData = []
 		this.props.basket.records.map(function (stock, index) {
-			rowData.push({ticker: {content: stock.ticker}, 
+			rowData.push({ticker: {content: stock.ticker},
 									  name: {content: stock.name},
 									  ask: {content: stock.ask},
 									  beta: {content: stock.beta},
@@ -34,7 +34,7 @@ var UserBasketTable = React.createClass({
 									  asi: {content: stock.asi_component}
 									})
 		})
-		
+
 		var height = 80 + 30 * basket.length;
 
 		this.state = {
@@ -81,7 +81,7 @@ var UserBasketTable = React.createClass({
 		// var footerCols = {ticker: {content: 'Ticker'}, name: {content: 'Name'}, status: {content: 'Status'}};
 		return (
 			<div>
-				<h4>{this.props.basket.name} created at {this.props.basket.date} {this.props.basket.performance}</h4>
+				<h4 className="basket-description">{this.props.basket.name} created at {this.props.basket.date} {this.props.basket.performance}</h4>
 				<Table
 				  headerColumns={headerCols}
 				  columnOrder={colOrder}
@@ -89,7 +89,7 @@ var UserBasketTable = React.createClass({
 				  height={this.state.height}
 				  fixedHeader={this.state.fixedHeader}
 				  fixedFooter={this.state.fixedFooter}
-				  stripedRows={this.state.stripedRows}
+				  stripedRows={this.state.stripedows}
 				  showRowHover={this.state.showRowHover}
 				  selectable={this.state.selectable}
 				  multiSelectable={this.state.multiSelectable}

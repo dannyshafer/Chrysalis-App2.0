@@ -353,7 +353,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Josefin+Slab);", ""]);
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Maven+Pro);", ""]);
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
-	exports.push([module.id, "\n\n\n\n\n\n* {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n}\n\n/** {\n  border: 1px solid red;\n}*/\n\n* {\n  border: 0;\n}\n\n\n\n\n.landing-container {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n\n\n.video-container {\n  position: relative;\n  min-height: 650px;\n\n}\n\n.mission-statement-container {\n  width: 100%;\n  background-color: white;\n  padding-top: 110px;\n  padding-bottom: 110px;\n  padding-left: 20%;\n  padding-right: 20%;\n  opacity: 0.85;\n\n}\n\n.culture {\n  margin-top: 50px;\n  margin-bottom: 50px;\n}\n\n.teampictures {\n  height: 200px;\n  width: 200px;\n  border-radius: 4px;\n}\n\n\n\n.mission-statement {\n  text-align: justify;\n  font-size: 25px;\n  line-height: 200%;\n  color: #006699;\n}\n\n.get-started-button {\n  font-size: 25px;\n  color: #006699;\n  text-align: center;\n\n}\n\n\n\n/*div {\n  display: block;\n}*/\n\nhtml {\n  font-family: 'Roboto', sans-serif;\n}\n\n.menubar {\n  background-color: black;\n}\n\n/*.landing-background {\n  background-image: url(\"https://ununsplash.imgix.net/uploads/1412443967017d95e2723/2919e13b?dpr=2&fit=crop&fm=jpg&h=700&q=75&w=1050\");\n}*/\n\n.nav-item {\n  display: inline-block;\n  margin-left: 10px;\n  font-size: 20px;\n  margin-top: 20px;\n  margin-bottom: 20px;\n  color: #006699;\n}\n\na {\n  text-decoration: none;\n}\n\n.sign-out {\n  color: white;\n  left-margin: 40px;\n}\n\n\n.sub-title {\n  letter-spacing: .15em;\n  color: white;\n}\n\n.page-header {\n  margin-top: 50px;\n  text-align: center;\n  color: #006699;\n}\n\n.profile-settings-container {\n  margin-top: 50px;\n  margin-bottom: 50px;\n  margin-left: 100px;\n  margin-right: 100px;\n\n}\n\n.profile-setting {\n  font-size: 25px;\n  color: #006699;\n}\n\n.stock-basket-dialog {\n  text-align: center;\n}\n\n.glossary-term {\n  font-weight: bold;\n}\n\n.title {\n  font-family: 'Maven Pro';\n  font-size: 3em;\n  margin-bottom: 0;\n  color: #00ccff;\n  text-shadow:\n  1px 0px 1px #ccc, 0px 1px 1px #eee,\n  2px 1px 1px #ccc, 1px 2px 1px #eee,\n  3px 2px 1px #ccc, 2px 3px 1px #eee,\n  4px 3px 1px #ccc, 3px 4px 1px #eee,\n  5px 4px 1px #ccc, 4px 5px 1px #eee,\n  6px 5px 1px #ccc, 5px 6px 1px #eee,\n  7px 6px 1px #ccc;\n}\n\n\n.slogan {\n  color: #00ccff;\n  text-align: center;\n  margin-top: 220px;\n  font-size: 30px;\n}\n\nvideo {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  min-width: 100%;\n  min-height: 100%;\n  width: auto;\n  height: auto;\n  z-index: -100;\n  -webkit-transform: translateX(-50%) translateY(-50%);\n  transform: translateX(-50%) translateY(-50%);\n\n  background-size: cover;\n  -webkit-filter: brightness(45%);\n\n}\n\n.container {\n  margin-top: 80px;\n  margin-right: 5%;\n  margin-left: 5%;\n}\n\n/*.columns {\n  border: 1px solid red;\n}*/\n\n.text-center {\n  text-align: center;\n}\n\n\ndiv {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n\n#menu-list, #menu-link, #app {-webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; transition: all 0.2s ease-out;}\n#menu-list {margin-left: -150px; width: 150px; position: fixed; top: 0; left: 0; bottom: 0; z-index: 1000; background: #191818; overflow-y: auto; -webkit-overflow-scrolling: touch;}\n#menu-list .pure-menu li a, #menu-list .pure-menu li span {color: #999; border: none; padding: 0.6em 0 0.6em 0.6em; display: block; line-height: 1.5em; text-decoration: none; white-space: nowrap;}\n#menu-list .pure-menu li a:hover, #menu-list .pure-menu li span:hover, #menu-list .pure-menu li a:focus, #menu-list .pure-menu li span:focus {background: #333; color: white; cursor: pointer;}\n#menu-list .pure-menu-heading {font-size: 110%; color: white; margin: 0; border: none; padding: 0.55em 0 0.45em 0.6em;}\n#menu-list .pure-menu li a.active, #menu-list .pure-menu li span.active {background: #333; color: white;}\n#menu-list .pure-menu, #menu-list .pure-menu ul {border: none; background: transparent;}\n#menu-list .pure-menu ul {border-top: 1px solid #333;}\n#menu-list .pure-menu-heading {background: #006699;}\n\n#menu-link {cursor: pointer; font-size: 10px; position: fixed; display: block; top: 0; left: 0; background: #000; background: rgba(0,0,0,0.7); z-index: 10; width: 2em; height: auto; padding: 2.14em 1.6em 2.15em;}\n#menu-link span, #menu-link span:before, #menu-link span:after {background-color: white; width: 100%; height: 0.2em;}\n#menu-link span:before, #menu-link span:after {position: absolute; margin-top: -0.6em; content: '';}\n#menu-link:hover, #menu-link:focus {background: #000;}\n#menu-link span {position: relative; display: block;}\n#menu-link span:after {margin-top: 0.6em;}\n\n#app.show-menu {position: relative; left: 150px;}\n#app.show-menu #menu-list {width: 150px; left: 150px;}\n#app.show-menu #menu-link {left: 150px;}\n\n@media (min-width: 48em) {\n  #menu-link {display: none; position: fixed; left: 150px;}\n  #app {left: 0; padding-left: 150px;}\n  #app.show-menu #menu-link {left: 150px;}\n  #menu-list {left: 150px;}\n}\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n* {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n}\n\n/** {\n  border: 1px solid red;\n}*/\n\n* {\n  border: 0;\n}\n\n\n\n\n.landing-container {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n\n\n.video-container {\n  position: relative;\n  min-height: 650px;\n\n}\n\n.mission-statement-container {\n  width: 100%;\n  background-color: white;\n  padding-top: 110px;\n  padding-bottom: 110px;\n  padding-left: 20%;\n  padding-right: 20%;\n  opacity: 0.85;\n\n}\n\n.culture {\n  margin-top: 50px;\n  margin-bottom: 50px;\n}\n\n.teampictures {\n  height: 200px;\n  width: 200px;\n  border-radius: 4px;\n}\n\n\n\n.mission-statement {\n  text-align: justify;\n  font-size: 25px;\n  line-height: 200%;\n  color: #006699;\n}\n\n.get-started-button {\n  font-size: 25px;\n  color: #006699;\n  text-align: center;\n\n}\n\n\n\n/*div {\n  display: block;\n}*/\n\nhtml {\n  font-family: 'Roboto', sans-serif;\n}\n\n.menubar {\n  background-color: black;\n}\n\n/*.landing-background {\n  background-image: url(\"https://ununsplash.imgix.net/uploads/1412443967017d95e2723/2919e13b?dpr=2&fit=crop&fm=jpg&h=700&q=75&w=1050\");\n}*/\n\n.nav-item {\n  display: inline-block;\n  margin-left: 10px;\n  font-size: 20px;\n  margin-top: 20px;\n  margin-bottom: 20px;\n  color: #00CCFF;\n}\n\na {\n  text-decoration: none;\n  color: #00CCFF;\n}\n\n.sign-out {\n  color: white;\n  left-margin: 40px;\n}\n\n\n.sub-title {\n  letter-spacing: .15em;\n  color: white;\n}\n\n.page-header {\n  margin-top: 50px;\n  text-align: center;\n  color: #006699;\n}\n\n.basket-title {\n  text-align: center;\n\n}\n\n.your-baskets {\n  font-size: 35px;\n  color: #006699;\n}\n\n.profile-settings-container {\n  margin-top: 50px;\n  margin-bottom: 50px;\n  margin-left: 100px;\n  margin-right: 100px;\n\n}\n\n.profile-setting {\n  font-size: 25px;\n  color: #006699;\n}\n\n.latin {\n  font-size: 25px;\n  color: black;\n}\n\n.stock-basket-dialog {\n  text-align: center;\n}\n\n.glossary-term {\n  font-weight: bold;\n}\n\n.title {\n  font-family: 'Maven Pro';\n  font-size: 3em;\n  margin-bottom: 0;\n  color: #00ccff;\n  text-shadow:\n  1px 0px 1px #ccc, 0px 1px 1px #eee,\n  2px 1px 1px #ccc, 1px 2px 1px #eee,\n  3px 2px 1px #ccc, 2px 3px 1px #eee,\n  4px 3px 1px #ccc, 3px 4px 1px #eee,\n  5px 4px 1px #ccc, 4px 5px 1px #eee,\n  6px 5px 1px #ccc, 5px 6px 1px #eee,\n  7px 6px 1px #ccc;\n}\n\n\n.slogan {\n  color: #00ccff;\n  text-align: center;\n  margin-top: 220px;\n  font-size: 30px;\n}\n\nvideo {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  min-width: 100%;\n  min-height: 100%;\n  width: auto;\n  height: auto;\n  z-index: -100;\n  -webkit-transform: translateX(-50%) translateY(-50%);\n  transform: translateX(-50%) translateY(-50%);\n\n  background-size: cover;\n  -webkit-filter: brightness(45%);\n\n}\n\n.container {\n  margin-top: 80px;\n  margin-right: 5%;\n  margin-left: 5%;\n}\n\n/*.columns {\n  border: 1px solid red;\n}*/\n\n.text-center {\n  text-align: center;\n}\n\n\ndiv {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n\n#menu-list, #menu-link, #app {-webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; transition: all 0.2s ease-out;}\n#menu-list {margin-left: -150px; width: 150px; position: fixed; top: 0; left: 0; bottom: 0; z-index: 1000; background: #191818; overflow-y: auto; -webkit-overflow-scrolling: touch;}\n#menu-list .pure-menu li a, #menu-list .pure-menu li span {color: #999; border: none; padding: 0.6em 0 0.6em 0.6em; display: block; line-height: 1.5em; text-decoration: none; white-space: nowrap;}\n#menu-list .pure-menu li a:hover, #menu-list .pure-menu li span:hover, #menu-list .pure-menu li a:focus, #menu-list .pure-menu li span:focus {background: #333; color: white; cursor: pointer;}\n#menu-list .pure-menu-heading {font-size: 110%; color: white; margin: 0; border: none; padding: 0.55em 0 0.45em 0.6em;}\n#menu-list .pure-menu li a.active, #menu-list .pure-menu li span.active {background: #333; color: white;}\n#menu-list .pure-menu, #menu-list .pure-menu ul {border: none; background: transparent;}\n#menu-list .pure-menu ul {border-top: 1px solid #333;}\n#menu-list .pure-menu-heading {background: #006699;}\n\n#menu-link {cursor: pointer; font-size: 10px; position: fixed; display: block; top: 0; left: 0; background: #000; background: rgba(0,0,0,0.7); z-index: 10; width: 2em; height: auto; padding: 2.14em 1.6em 2.15em;}\n#menu-link span, #menu-link span:before, #menu-link span:after {background-color: white; width: 100%; height: 0.2em;}\n#menu-link span:before, #menu-link span:after {position: absolute; margin-top: -0.6em; content: '';}\n#menu-link:hover, #menu-link:focus {background: #000;}\n#menu-link span {position: relative; display: block;}\n#menu-link span:after {margin-top: 0.6em;}\n\n#app.show-menu {position: relative; left: 150px;}\n#app.show-menu #menu-list {width: 150px; left: 150px;}\n#app.show-menu #menu-link {left: 150px;}\n\n@media (min-width: 48em) {\n  #menu-link {display: none; position: fixed; left: 150px;}\n  #app {left: 0; padding-left: 150px;}\n  #app.show-menu #menu-link {left: 150px;}\n  #menu-list {left: 150px;}\n}\n\n", ""]);
 
 /***/ },
 /* 8 */
@@ -20790,7 +20790,7 @@
 /* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var React = __webpack_require__(11);
+	var React = __webpack_require__(11);
 	var Reqwest = __webpack_require__(168);
 	var Router = __webpack_require__(169);
 	var RouteHandler = Router.RouteHandler;
@@ -20802,14 +20802,14 @@
 	var App = React.createClass({displayName: "App",
 	  getDefaultProps: function() {
 	    // use this for heroku deployment
-	    return {origin: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''};
+	    // return {origin: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''};
 
 	    // use this when in development
-	    // return {origin: 'http://localhost:3000'};
+	    return {origin: 'http://localhost:3000'};
 	  },
 	  getInitialState: function() {
 	    return {
-	      signedIn: false, 
+	      signedIn: false,
 	      currentUser: {handle: '', uid: null},
 	      showMenu: false,
 	    };
@@ -20876,7 +20876,6 @@
 
 	module.exports = App;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
 
 /***/ },
 /* 168 */
@@ -25086,16 +25085,30 @@
 	var Link = Router.Link;
 
 	var NavigationBar = React.createClass({displayName: "NavigationBar",
+	  getInitialState: function() {
+	    return { showUpdateLink: false };
+	  },
+
+	  // componentWillMount: function(){
+	  //   this.checkUserId();
+	  // },
 
 	  handleSignOutLink: function() {
 	    sessionStorage.setItem('jwt','');
 	    location = '/';
 	  },
 
+	  checkUserId: function() {
+
+	    return (this.props.currentUser.uid === "31487946" || this.props.currentUser.uid === "3088927860" || this.props.currentUser.uid === "340483469" || this.props.currentUser.uid === "2321577054");
+	  },
+
 	  render: function() {
+
 	    if (this.props.signedIn) {
 	      var homeLink = React.createElement("li", null, React.createElement(Link, {to: "landingpage"}, "Home"))
 	      var profileLink = React.createElement("li", null, React.createElement(Link, {to: "profile"}, "Profile"))
+	      var teamLink = React.createElement("li", null, React.createElement(Link, {to: "team"}, "About Us"))
 	      var signingLink = React.createElement("li", null, React.createElement("span", {onClick: this.handleSignOutLink}, "Sign Out"))
 	      var recommendationLink = React.createElement("li", null, React.createElement(Link, {to: "recommendation"}, "Recommendations"))
 	      var userBasketLink = React.createElement("li", null, React.createElement(Link, {to: "user_baskets"}, "Baskets"))
@@ -25114,11 +25127,12 @@
 	            React.createElement("span", {className: "pure-menu-heading"}, "Chrysalis"), 
 	            React.createElement("ul", null, 
 	             homeLink, 
+	             profileLink, 
 	             recommendationLink, 
 	             userBasketLink, 
 	             glossary, 
-	             updateLink, 
-	             profileLink, 
+	             this.checkUserId() ? updateLink : null, 
+	             teamLink, 
 	             signingLink
 	            )
 	          )
@@ -25128,7 +25142,11 @@
 	  },
 	});
 
+	var showUpdateLink = true;
+
 	module.exports = NavigationBar;
+
+
 
 
 /***/ },
@@ -25256,7 +25274,8 @@
 	                  React.createElement("label", {className: "profile-setting", for: "risk_preference"}, "Risk Preference: ", this.state.risk_preference), 
 	                  React.createElement("br", null), React.createElement("br", null), 
 
-	                  React.createElement("label", {for: "description"}, this.state.description[this.state.risk_preference]), 
+	                    React.createElement("label", {for: "description"}, React.createElement("p", {className: "latin"}, this.state.description[this.state.risk_preference])), 
+	                  React.createElement("br", null), 
 	                  React.createElement(Slider, {name: "Risk Preference", defaultValue: Number(this.state.risk_preference), step: 1, min: 1, max: 10, onChange: this.handleRiskSliderMove}), 
 	                  React.createElement("label", {className: "profile-setting", for: "age"}, "Age: ", this.state.age), 
 	                  ageSlider, 
@@ -50827,8 +50846,11 @@
 			} else {
 				return (
 					React.createElement("div", {className: "container"}, 
-						React.createElement("h3", null, "You have ", this.state.baskets.length, " Baskets Saved"), 
-						baskets
+						React.createElement("div", {className: "basket-title"}, 
+								React.createElement("h3", {className: "your-baskets"}, "Your Baskets"), React.createElement("br", null), 
+								React.createElement("h5", null, "You have ", this.state.baskets.length, " Baskets Saved"), 
+								baskets
+						)
 					)
 				);
 			};
@@ -50870,7 +50892,7 @@
 			var basket = this.props.basket
 			var rowData = []
 			this.props.basket.records.map(function (stock, index) {
-				rowData.push({ticker: {content: stock.ticker}, 
+				rowData.push({ticker: {content: stock.ticker},
 										  name: {content: stock.name},
 										  ask: {content: stock.ask},
 										  beta: {content: stock.beta},
@@ -50878,7 +50900,7 @@
 										  asi: {content: stock.asi_component}
 										})
 			})
-			
+
 			var height = 80 + 30 * basket.length;
 
 			this.state = {
@@ -50925,7 +50947,7 @@
 			// var footerCols = {ticker: {content: 'Ticker'}, name: {content: 'Name'}, status: {content: 'Status'}};
 			return (
 				React.createElement("div", null, 
-					React.createElement("h4", null, this.props.basket.name, " created at ", this.props.basket.date, " ", this.props.basket.performance), 
+					React.createElement("h4", {className: "basket-description"}, this.props.basket.name, " created at ", this.props.basket.date, " ", this.props.basket.performance), 
 					React.createElement(Table, {
 					  headerColumns: headerCols, 
 					  columnOrder: colOrder, 
@@ -50933,7 +50955,7 @@
 					  height: this.state.height, 
 					  fixedHeader: this.state.fixedHeader, 
 					  fixedFooter: this.state.fixedFooter, 
-					  stripedRows: this.state.stripedRows, 
+					  stripedRows: this.state.stripedows, 
 					  showRowHover: this.state.showRowHover, 
 					  selectable: this.state.selectable, 
 					  multiSelectable: this.state.multiSelectable, 
@@ -50988,6 +51010,14 @@
 	            React.createElement("p", null, "Profit divided by number of common outstanding shares. If a company earning $2 million in one year had 2 million common shares of stock outstanding, its EPS would be $1 per share.")
 	          ), 
 	          React.createElement(ListItem, null, 
+	            React.createElement("p", {className: "glossary-term"}, "Beta (β):"), 
+	            React.createElement("p", null, "A measure of volatility relative the stock market as a whole, which has a beta of 1. Higher than 1 implies more volatile than the market while less than 1 implies less volatile than the market.")
+	          ), 
+	          React.createElement(ListItem, null, 
+	            React.createElement("p", {className: "glossary-term"}, "ASI (Au-Shafer Index):"), 
+	            React.createElement("p", null, "A metric and methodology of assessing the suitability of a stock for potential investment. Created by Daniel Shafer and Ryan Au in 2015 based loosely on fundamental analysis techniques by Benjamin Graham.")
+	          ), 
+	          React.createElement(ListItem, null, 
 	            React.createElement("p", {className: "glossary-term"}, "PE:"), 
 	            React.createElement("p", null, "A ratio for valuing a company that measures its current share price relative to its per-share earnings. The price-earnings ratio can be calculated as: Market Value per Share / Earnings per Share.")
 	          ), 
@@ -50998,11 +51028,8 @@
 	          React.createElement(ListItem, null, 
 	            React.createElement("p", {className: "glossary-term"}, "PEG:"), 
 	            React.createElement("p", null, "Measures stock price versus earnings and expected growth. In general, lower is better as it is cheaper to acquire shares for expected earnings growth.")
-	          ), 
-	          React.createElement(ListItem, null, 
-	            React.createElement("p", {className: "glossary-term"}, "Beta (β):"), 
-	            React.createElement("p", null, "A measure of volatility relative the stock market as a whole, which has a beta of 1. Higher than 1 implies more volatile than the market while less than 1 implies less volatile than the market.")
 	          )
+
 	        )
 	      )
 	    );
@@ -51032,49 +51059,110 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(11);
+
+	// Material UI
 	var mui = __webpack_require__(212);
+	var Dialog = mui.Dialog;
+	var Card = mui.Card;
+	var CardHeader = mui.CardHeader;
+	var CardText = mui.CardText;
+	var CardMedia = mui.CardMedia;
+	var CardActions = mui.CardActions;
+	var CardTitle = mui.CardTitle;
+	var ThemeManager = new mui.Styles.ThemeManager();
+	var RaisedButton = mui.RaisedButton;
+	var FlatButton = mui.FlatButton;
+
+
 
 	var Team = React.createClass({displayName: "Team",
+	  childContextTypes: {
+	    muiTheme: React.PropTypes.object
+	  },
+
+	  getChildContext: function () {
+	    return {
+	      muiTheme: ThemeManager.getCurrentTheme()
+	    };
+	  },
 
 	  render: function(){
-
 	    return (
-	      React.createElement("div", {className: "container row"}, 
-	      React.createElement("h4", null, "Team"), 
-	        React.createElement("div", {className: "row"}, 
+	      React.createElement("div", {className: "row"}, 
 
-	          React.createElement("div", {className: "small-12 medium-6 large-3 columns end"}, 
-	            React.createElement("img", {className: "teampictures", src: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALKAAAAJDUwYmYxNWI2LTI1ZTAtNDJlMS1iZWRlLTQyZmFkZWMzYjIyMA.jpg"}), 
-	            React.createElement("h4", null, React.createElement("a", {className: "gitlink", href: "https://github.com/dannyshafer"}, "Daniel Shafer")), 
-	            React.createElement("p", {className: "bio"}, "Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul.")
+
+	        React.createElement(Card, {className: "biocard small-12 medium-6 large-3 columns end"}, 
+	          React.createElement(CardMedia, null, 
+	            React.createElement("img", {src: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALKAAAAJDUwYmYxNWI2LTI1ZTAtNDJlMS1iZWRlLTQyZmFkZWMzYjIyMA.jpg"})
 	          ), 
-
-	          React.createElement("div", {className: "small-12 medium-6 large-3 columns end"}, 
-	            React.createElement("img", {className: "teampictures", src: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALxAAAAJDg1MmI1ZmQxLTU1MDktNDY0ZC05ZTMzLTkzN2JjZDY0MGYyMw.jpg"}), 
-	            React.createElement("h5", null, React.createElement("a", {className: "gitlink", href: "https://github.com/ryanau"}, " Ryan Au")), 
-	            React.createElement("p", {className: "bio"}, "Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul.")
+	          React.createElement(CardTitle, {title: "Danny Shafer"}), 
+	          React.createElement(CardActions, null, 
+	            React.createElement("a", {href: "https://github.com/dannyshafer"}, React.createElement(FlatButton, {label: "GitHub"}))
 	          ), 
-
-	          React.createElement("div", {className: "small-12 medium-6 large-3 columns end"}, 
-	            React.createElement("img", {className: "teampictures", src: "https://pbs.twimg.com/profile_images/585479016817291264/qlym0sGg.jpg"}), 
-	            React.createElement("h5", null, React.createElement("a", {className: "gitlink", href: "https://github.com/alookatommorow"}, " John Hess")), 
-	            React.createElement("p", {className: "bio"}, "Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul.")
-	          ), 
-
-	          React.createElement("div", {className: "small-12 medium-6 large-3 columns end"}, 
-	            React.createElement("img", {className: "teampictures", src: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/071/36a/2e3c836.jpg"}), 
-	            React.createElement("h5", null, React.createElement("a", {className: "gitlink", href: "https://github.com/andrewdonato"}, " Andrew Donato")), 
-	            React.createElement("p", {className: "bio"}, "Full stack developer.  UC Irvine Grad.  Former Electrician, Nuclear Submariner.  Mostly amateur skateboarder.")
+	          React.createElement(CardText, null, 
+	            "Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul."
 	          )
-
 	        ), 
-	        React.createElement("div", {className: "culture small-12 medium-12 large-12"}, 
-	          React.createElement("h3", null, "Make it rain"), 
-	          React.createElement("p", null, 
+
+
+
+
+	        React.createElement(Card, {className: "biocard small-12 medium-6 large-3 columns end"}, 
+	          React.createElement(CardMedia, null, 
+	            React.createElement("img", {src: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALxAAAAJDg1MmI1ZmQxLTU1MDktNDY0ZC05ZTMzLTkzN2JjZDY0MGYyMw.jpg"})
+	          ), 
+	          React.createElement(CardTitle, {title: "Ryan Au"}), 
+	          React.createElement(CardActions, null, 
+	            React.createElement("a", {href: "https://github.com/ryanau"}, React.createElement(FlatButton, {label: "GitHub"}))
+	          ), 
+	          React.createElement(CardText, null, 
+	            "Full-stack developer that knows enough code to be dangerous. Always on a look out for an adventure but can''t stop thinking about coding."
+	          )
+	        ), 
+
+
+
+
+	        React.createElement(Card, {className: "biocard small-12 medium-6 large-3 columns end"}, 
+	          React.createElement(CardMedia, null, 
+	            React.createElement("img", {src: "https://pbs.twimg.com/profile_images/585479016817291264/qlym0sGg.jpg"})
+	          ), 
+	          React.createElement(CardTitle, {title: "John Hess"}), 
+	          React.createElement(CardActions, null, 
+	            React.createElement("a", {href: "https://github.com/alookatommorow"}, React.createElement(FlatButton, {label: "GitHub"}))
+	          ), 
+	          React.createElement(CardText, null, 
+	            "Administrator turned full-stack web developer based in San Francisco, CA. Rider of boards, climber of rocks, and lifelong learner."
+	          )
+	        ), 
+
+
+
+
+	        React.createElement(Card, {className: "small-12 medium-6 large-3 columns end"}, 
+	          React.createElement(CardMedia, null, 
+	            React.createElement("img", {src: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/071/36a/2e3c836.jpg"})
+	          ), 
+	          React.createElement(CardTitle, {title: "Andrew Donato"}), 
+	          React.createElement(CardActions, null, 
+	            React.createElement("a", {href: "https://github.com/andrewdonato"}, React.createElement(FlatButton, {label: "GitHub"}))
+	          ), 
+	          React.createElement(CardText, null, 
+	            "Full-stack developer. UC Irvine Grad. Adventurer, lover, fighter, former Nuclear Submariner. Somewhat amateur skateboarder."
+	          )
+	        ), 
+
+	        React.createElement(Card, {className: "small-12 medium-12 large-12 columns end"}, 
+	          React.createElement(CardTitle, {title: "Chrysalis"}), 
+	          React.createElement(CardText, null, 
 	            "Chrysalis is a fundamental analysis website that seeks suitable investments based loosely on stock valuation techniques by Benjamin Graham. Other services (particularly brokers) which take age and risk preference typically only return a suggested proportional mix of asset classes so that the user it dependent on their service to do the actual management of buying and selling. Chrysalis is dramatically more actionable as it suggests a mix but also offers specific securities which the user can then research further and buy through his/her preferred channel."
+
 	          )
 	        )
+
+
 	      )
+
 	    );
 	  },
 
