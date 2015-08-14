@@ -30,6 +30,7 @@ var NavigationBar = React.createClass({
       var updateLink = <li><Link to="update">Update Stocks</Link></li>
       var userBasketLink = <li><Link to="user_baskets">Baskets</Link></li>
     } else {
+      var homeLink = <li><Link to="landingpage">Home</Link></li>
       var signingLink = <li><a href={this.props.origin + '/request_token'}>Sign In</a></li>;
       var teamLink = <li><Link to="team">About Us</Link></li>
     }

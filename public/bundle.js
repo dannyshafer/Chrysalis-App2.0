@@ -25112,6 +25112,7 @@
 	      var updateLink = React.createElement("li", null, React.createElement(Link, {to: "update"}, "Update Stocks"))
 	      var userBasketLink = React.createElement("li", null, React.createElement(Link, {to: "user_baskets"}, "Baskets"))
 	    } else {
+	      var homeLink = React.createElement("li", null, React.createElement(Link, {to: "landingpage"}, "Home"))
 	      var signingLink = React.createElement("li", null, React.createElement("a", {href: this.props.origin + '/request_token'}, "Sign In"));
 	      var teamLink = React.createElement("li", null, React.createElement(Link, {to: "team"}, "About Us"))
 	    }
@@ -45633,6 +45634,15 @@
 	    }.bind(this));
 	  },
 	  render: function(){
+	    if (this.props.signedIn === false) {
+	      var gettingStarted = (
+	        React.createElement("a", {href: this.props.origin + '/request_token'}, React.createElement(RaisedButton, {secondary: true, label: "Get Started Today"}))
+	      );
+	    } else {
+	      var gettingStarted = (
+	        React.createElement(Link, {to: "profile"}, React.createElement(RaisedButton, {secondary: true, label: "Get Started Today"}))
+	      );
+	    };
 	    if (this.props.signedIn === true && this.state.modalOpen === true) {
 	      var standardActions = [
 	        { text: 'Close' },
@@ -45660,7 +45670,7 @@
 	          ), 
 	              React.createElement("div", {className: "mission-statement-container"}, 
 	                React.createElement("p", {className: "mission-statement"}, "Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our users.  Our recommendations are filtered according to rigorous criteria, providing stocks selection that we believe are currently undervalued and likely to perform well over time."), 
-	              React.createElement(Link, {to: "profile"}, React.createElement(RaisedButton, {secondary: true, label: "Get Started Today"}))
+	              gettingStarted
 	              )
 	          )
 	      )
