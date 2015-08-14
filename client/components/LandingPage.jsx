@@ -58,7 +58,7 @@ var LandingPage = React.createClass({
 
               <div className='video-container'>
                   <video preload="true" autoPlay="autoplay" loop="loop" muted tabIndex="0">
-                    <source src="low.mp4" type="video/mp4"></source>
+                    <source src="480-stock-ticker.mp4" type="video/mp4"></source>
                   </video>
               </div>
 
