@@ -4,11 +4,6 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 
-/*
-body {
-  background-color: white;
-}
-*/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -20,8 +15,15 @@ body {
 
 /** {
   border: 1px solid red;
+}*/
+
+* {
+  border: 0;
 }
-*/
+
+
+
+
 .landing-container {
   margin: 0;
   padding: 0;
@@ -35,6 +37,7 @@ body {
 .video-container {
   position: relative;
   min-height: 650px;
+
 }
 
 .mission-statement-container {
@@ -59,15 +62,20 @@ body {
   border-radius: 4px;
 }
 
-.bio {
 
-}
 
 .mission-statement {
   text-align: justify;
   font-size: 25px;
   line-height: 200%;
-  color: #006699;;
+  color: #006699;
+}
+
+.get-started-button {
+  font-size: 25px;
+  color: #006699;
+  text-align: center;
+
 }
 
 
@@ -83,6 +91,10 @@ html {
 .menubar {
   background-color: black;
 }
+
+/*.landing-background {
+  background-image: url("https://ununsplash.imgix.net/uploads/1412443967017d95e2723/2919e13b?dpr=2&fit=crop&fm=jpg&h=700&q=75&w=1050");
+}*/
 
 .nav-item {
   display: inline-block;
@@ -113,6 +125,23 @@ a {
   margin-top: 50px;
   text-align: center;
   color: #006699;
+}
+
+.profile-settings-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
+
+.profile-setting {
+  font-size: 25px;
+  color: #006699;
+}
+
+.stock-basket-dialog {
+  text-align: center;
 }
 
 .glossary-term {
@@ -187,7 +216,7 @@ div {
 #menu-list .pure-menu li a.active, #menu-list .pure-menu li span.active {background: #333; color: white;}
 #menu-list .pure-menu, #menu-list .pure-menu ul {border: none; background: transparent;}
 #menu-list .pure-menu ul {border-top: 1px solid #333;}
-#menu-list .pure-menu-heading {background: #2B0043;}
+#menu-list .pure-menu-heading {background: #006699;}
 
 #menu-link {cursor: pointer; font-size: 10px; position: fixed; display: block; top: 0; left: 0; background: #000; background: rgba(0,0,0,0.7); z-index: 10; width: 2em; height: auto; padding: 2.14em 1.6em 2.15em;}
 #menu-link span, #menu-link span:before, #menu-link span:after {background-color: white; width: 100%; height: 0.2em;}

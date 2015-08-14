@@ -5,7 +5,6 @@ var Link = Router.Link;
 
 var NavigationBar = React.createClass({
 
-
   handleSignOutLink: function() {
     sessionStorage.setItem('jwt','');
     location = '/';
@@ -25,6 +24,7 @@ var NavigationBar = React.createClass({
       var signingLink = <li><a href={this.props.origin + '/request_token'}>Sign In</a></li>;
     }
     return (
+
       <div id="menu">
         <span id="menu-link" onClick={this.props.sendMenuClick}><span></span></span>
         <div id="menu-list">

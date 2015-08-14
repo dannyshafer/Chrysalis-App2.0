@@ -88,8 +88,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/normalize.css", function() {
-			var newContent = require("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/normalize.css");
+		module.hot.accept("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/normalize.css", function() {
+			var newContent = require("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/normalize.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -335,8 +335,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/app.css", function() {
-			var newContent = require("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/app.css");
+		module.hot.accept("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/app.css", function() {
+			var newContent = require("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/app.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -353,7 +353,7 @@
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Josefin+Slab);", ""]);
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Maven+Pro);", ""]);
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
-	exports.push([module.id, "\n\n\n\n\n\n/*\nbody {\n  background-color: white;\n}\n*/\n* {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n}\n\n/** {\n  border: 1px solid red;\n}\n*/\n.landing-container {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n\n\n.video-container {\n  position: relative;\n  min-height: 650px;\n}\n\n.mission-statement-container {\n  width: 100%;\n  background-color: white;\n  padding-top: 110px;\n  padding-bottom: 110px;\n  padding-left: 20%;\n  padding-right: 20%;\n  opacity: 0.85;\n\n}\n\n.culture {\n  margin-top: 50px;\n  margin-bottom: 50px;\n}\n\n.teampictures {\n  height: 200px;\n  width: 200px;\n  border-radius: 4px;\n}\n\n.bio {\n\n}\n\n.mission-statement {\n  text-align: justify;\n  font-size: 25px;\n  line-height: 200%;\n  color: #006699;;\n}\n\n\n\n/*div {\n  display: block;\n}*/\n\nhtml {\n  font-family: 'Roboto', sans-serif;\n}\n\n.menubar {\n  background-color: black;\n}\n\n.nav-item {\n  display: inline-block;\n  margin-left: 10px;\n  font-size: 20px;\n  margin-top: 20px;\n  margin-bottom: 20px;\n  color: #006699;\n}\n\na {\n  text-decoration: none;\n}\n\n.sign-out {\n  color: white;\n  left-margin: 40px;\n}\n\n\n.sub-title {\n  letter-spacing: .15em;\n  color: white;\n}\n\n.page-header {\n  margin-top: 50px;\n  text-align: center;\n  color: #006699;\n}\n\n.glossary-term {\n  font-weight: bold;\n}\n\n.title {\n  font-family: 'Maven Pro';\n  font-size: 3em;\n  margin-bottom: 0;\n  color: #00ccff;\n  text-shadow:\n  1px 0px 1px #ccc, 0px 1px 1px #eee,\n  2px 1px 1px #ccc, 1px 2px 1px #eee,\n  3px 2px 1px #ccc, 2px 3px 1px #eee,\n  4px 3px 1px #ccc, 3px 4px 1px #eee,\n  5px 4px 1px #ccc, 4px 5px 1px #eee,\n  6px 5px 1px #ccc, 5px 6px 1px #eee,\n  7px 6px 1px #ccc;\n}\n\n\n.slogan {\n  color: #00ccff;\n  text-align: center;\n  margin-top: 220px;\n  font-size: 30px;\n}\n\nvideo {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  min-width: 100%;\n  min-height: 100%;\n  width: auto;\n  height: auto;\n  z-index: -100;\n  -webkit-transform: translateX(-50%) translateY(-50%);\n  transform: translateX(-50%) translateY(-50%);\n\n  background-size: cover;\n  -webkit-filter: brightness(45%);\n\n}\n\n.container {\n  margin-top: 80px;\n  margin-right: 5%;\n  margin-left: 5%;\n}\n\n/*.columns {\n  border: 1px solid red;\n}*/\n\n.text-center {\n  text-align: center;\n}\n\n\ndiv {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n\n#menu-list, #menu-link, #app {-webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; transition: all 0.2s ease-out;}\n#menu-list {margin-left: -150px; width: 150px; position: fixed; top: 0; left: 0; bottom: 0; z-index: 1000; background: #191818; overflow-y: auto; -webkit-overflow-scrolling: touch;}\n#menu-list .pure-menu li a, #menu-list .pure-menu li span {color: #999; border: none; padding: 0.6em 0 0.6em 0.6em; display: block; line-height: 1.5em; text-decoration: none; white-space: nowrap;}\n#menu-list .pure-menu li a:hover, #menu-list .pure-menu li span:hover, #menu-list .pure-menu li a:focus, #menu-list .pure-menu li span:focus {background: #333; color: white; cursor: pointer;}\n#menu-list .pure-menu-heading {font-size: 110%; color: white; margin: 0; border: none; padding: 0.55em 0 0.45em 0.6em;}\n#menu-list .pure-menu li a.active, #menu-list .pure-menu li span.active {background: #333; color: white;}\n#menu-list .pure-menu, #menu-list .pure-menu ul {border: none; background: transparent;}\n#menu-list .pure-menu ul {border-top: 1px solid #333;}\n#menu-list .pure-menu-heading {background: #2B0043;}\n\n#menu-link {cursor: pointer; font-size: 10px; position: fixed; display: block; top: 0; left: 0; background: #000; background: rgba(0,0,0,0.7); z-index: 10; width: 2em; height: auto; padding: 2.14em 1.6em 2.15em;}\n#menu-link span, #menu-link span:before, #menu-link span:after {background-color: white; width: 100%; height: 0.2em;}\n#menu-link span:before, #menu-link span:after {position: absolute; margin-top: -0.6em; content: '';}\n#menu-link:hover, #menu-link:focus {background: #000;}\n#menu-link span {position: relative; display: block;}\n#menu-link span:after {margin-top: 0.6em;}\n\n#app.show-menu {position: relative; left: 150px;}\n#app.show-menu #menu-list {width: 150px; left: 150px;}\n#app.show-menu #menu-link {left: 150px;}\n\n@media (min-width: 48em) {\n  #menu-link {display: none; position: fixed; left: 150px;}\n  #app {left: 0; padding-left: 150px;}\n  #app.show-menu #menu-link {left: 150px;}\n  #menu-list {left: 150px;}\n}\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n* {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n}\n\n/** {\n  border: 1px solid red;\n}*/\n\n* {\n  border: 0;\n}\n\n\n\n\n.landing-container {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\n\n\n.video-container {\n  position: relative;\n  min-height: 650px;\n\n}\n\n.mission-statement-container {\n  width: 100%;\n  background-color: white;\n  padding-top: 110px;\n  padding-bottom: 110px;\n  padding-left: 20%;\n  padding-right: 20%;\n  opacity: 0.85;\n\n}\n\n.culture {\n  margin-top: 50px;\n  margin-bottom: 50px;\n}\n\n.teampictures {\n  height: 200px;\n  width: 200px;\n  border-radius: 4px;\n}\n\n\n\n.mission-statement {\n  text-align: justify;\n  font-size: 25px;\n  line-height: 200%;\n  color: #006699;\n}\n\n.get-started-button {\n  font-size: 25px;\n  color: #006699;\n  text-align: center;\n\n}\n\n\n\n/*div {\n  display: block;\n}*/\n\nhtml {\n  font-family: 'Roboto', sans-serif;\n}\n\n.menubar {\n  background-color: black;\n}\n\n/*.landing-background {\n  background-image: url(\"https://ununsplash.imgix.net/uploads/1412443967017d95e2723/2919e13b?dpr=2&fit=crop&fm=jpg&h=700&q=75&w=1050\");\n}*/\n\n.nav-item {\n  display: inline-block;\n  margin-left: 10px;\n  font-size: 20px;\n  margin-top: 20px;\n  margin-bottom: 20px;\n  color: #006699;\n}\n\na {\n  text-decoration: none;\n}\n\n.sign-out {\n  color: white;\n  left-margin: 40px;\n}\n\n\n.sub-title {\n  letter-spacing: .15em;\n  color: white;\n}\n\n.page-header {\n  margin-top: 50px;\n  text-align: center;\n  color: #006699;\n}\n\n.profile-settings-container {\n  margin-top: 50px;\n  margin-bottom: 50px;\n  margin-left: 100px;\n  margin-right: 100px;\n\n}\n\n.profile-setting {\n  font-size: 25px;\n  color: #006699;\n}\n\n.stock-basket-dialog {\n  text-align: center;\n}\n\n.glossary-term {\n  font-weight: bold;\n}\n\n.title {\n  font-family: 'Maven Pro';\n  font-size: 3em;\n  margin-bottom: 0;\n  color: #00ccff;\n  text-shadow:\n  1px 0px 1px #ccc, 0px 1px 1px #eee,\n  2px 1px 1px #ccc, 1px 2px 1px #eee,\n  3px 2px 1px #ccc, 2px 3px 1px #eee,\n  4px 3px 1px #ccc, 3px 4px 1px #eee,\n  5px 4px 1px #ccc, 4px 5px 1px #eee,\n  6px 5px 1px #ccc, 5px 6px 1px #eee,\n  7px 6px 1px #ccc;\n}\n\n\n.slogan {\n  color: #00ccff;\n  text-align: center;\n  margin-top: 220px;\n  font-size: 30px;\n}\n\nvideo {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  min-width: 100%;\n  min-height: 100%;\n  width: auto;\n  height: auto;\n  z-index: -100;\n  -webkit-transform: translateX(-50%) translateY(-50%);\n  transform: translateX(-50%) translateY(-50%);\n\n  background-size: cover;\n  -webkit-filter: brightness(45%);\n\n}\n\n.container {\n  margin-top: 80px;\n  margin-right: 5%;\n  margin-left: 5%;\n}\n\n/*.columns {\n  border: 1px solid red;\n}*/\n\n.text-center {\n  text-align: center;\n}\n\n\ndiv {\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n\n#menu-list, #menu-link, #app {-webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; transition: all 0.2s ease-out;}\n#menu-list {margin-left: -150px; width: 150px; position: fixed; top: 0; left: 0; bottom: 0; z-index: 1000; background: #191818; overflow-y: auto; -webkit-overflow-scrolling: touch;}\n#menu-list .pure-menu li a, #menu-list .pure-menu li span {color: #999; border: none; padding: 0.6em 0 0.6em 0.6em; display: block; line-height: 1.5em; text-decoration: none; white-space: nowrap;}\n#menu-list .pure-menu li a:hover, #menu-list .pure-menu li span:hover, #menu-list .pure-menu li a:focus, #menu-list .pure-menu li span:focus {background: #333; color: white; cursor: pointer;}\n#menu-list .pure-menu-heading {font-size: 110%; color: white; margin: 0; border: none; padding: 0.55em 0 0.45em 0.6em;}\n#menu-list .pure-menu li a.active, #menu-list .pure-menu li span.active {background: #333; color: white;}\n#menu-list .pure-menu, #menu-list .pure-menu ul {border: none; background: transparent;}\n#menu-list .pure-menu ul {border-top: 1px solid #333;}\n#menu-list .pure-menu-heading {background: #006699;}\n\n#menu-link {cursor: pointer; font-size: 10px; position: fixed; display: block; top: 0; left: 0; background: #000; background: rgba(0,0,0,0.7); z-index: 10; width: 2em; height: auto; padding: 2.14em 1.6em 2.15em;}\n#menu-link span, #menu-link span:before, #menu-link span:after {background-color: white; width: 100%; height: 0.2em;}\n#menu-link span:before, #menu-link span:after {position: absolute; margin-top: -0.6em; content: '';}\n#menu-link:hover, #menu-link:focus {background: #000;}\n#menu-link span {position: relative; display: block;}\n#menu-link span:after {margin-top: 0.6em;}\n\n#app.show-menu {position: relative; left: 150px;}\n#app.show-menu #menu-list {width: 150px; left: 150px;}\n#app.show-menu #menu-link {left: 150px;}\n\n@media (min-width: 48em) {\n  #menu-link {display: none; position: fixed; left: 150px;}\n  #app {left: 0; padding-left: 150px;}\n  #app.show-menu #menu-link {left: 150px;}\n  #menu-list {left: 150px;}\n}\n\n", ""]);
 
 /***/ },
 /* 8 */
@@ -369,8 +369,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/foundation.min.css", function() {
-			var newContent = require("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/foundation.min.css");
+		module.hot.accept("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/foundation.min.css", function() {
+			var newContent = require("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/foundation.min.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -20873,6 +20873,7 @@
 	  },
 	});
 
+
 	module.exports = App;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)))
@@ -25086,7 +25087,6 @@
 
 	var NavigationBar = React.createClass({displayName: "NavigationBar",
 
-
 	  handleSignOutLink: function() {
 	    sessionStorage.setItem('jwt','');
 	    location = '/';
@@ -25106,6 +25106,7 @@
 	      var signingLink = React.createElement("li", null, React.createElement("a", {href: this.props.origin + '/request_token'}, "Sign In"));
 	    }
 	    return (
+
 	      React.createElement("div", {id: "menu"}, 
 	        React.createElement("span", {id: "menu-link", onClick: this.props.sendMenuClick}, React.createElement("span", null)), 
 	        React.createElement("div", {id: "menu-list"}, 
@@ -25249,14 +25250,18 @@
 	          React.createElement("div", {className: "pure-form pure-form-stacked"}, 
 	            React.createElement("form", {onSubmit: this.updateProfileAPI}, 
 	              React.createElement("fieldset", null, 
-	                React.createElement("br", null), 
-	                this.state.message, 
-	                React.createElement("label", {for: "risk_preference"}, "Risk Preference: ", this.state.risk_preference), 
-	                React.createElement("label", {for: "description"}, this.state.description[this.state.risk_preference]), 
-	                React.createElement(Slider, {name: "Risk Preference", defaultValue: Number(this.state.risk_preference), step: 1, min: 1, max: 10, onChange: this.handleRiskSliderMove}), 
-	                React.createElement("label", {for: "age"}, "Age: ", this.state.age), 
-	                ageSlider, 
-	                React.createElement("button", {type: "submit", className: "pure-button pure-button-primary"}, "Update Profile")
+	                React.createElement("div", {className: "profile-settings-container"}, 
+	                  React.createElement("br", null), 
+	                  this.state.message, 
+	                  React.createElement("label", {className: "profile-setting", for: "risk_preference"}, "Risk Preference: ", this.state.risk_preference), 
+	                  React.createElement("br", null), React.createElement("br", null), 
+
+	                  React.createElement("label", {for: "description"}, this.state.description[this.state.risk_preference]), 
+	                  React.createElement(Slider, {name: "Risk Preference", defaultValue: Number(this.state.risk_preference), step: 1, min: 1, max: 10, onChange: this.handleRiskSliderMove}), 
+	                  React.createElement("label", {className: "profile-setting", for: "age"}, "Age: ", this.state.age), 
+	                  ageSlider, 
+	                  React.createElement("button", {type: "submit", className: "pure-button pure-button-primary"}, "Update Profile")
+	                  )
 	              )
 	            )
 	          )
@@ -25271,6 +25276,7 @@
 	    );
 	  },
 	});
+
 
 	module.exports=ProfileContainer
 
@@ -45583,6 +45589,7 @@
 	var mui = __webpack_require__(212);
 	var Dialog = mui.Dialog;
 	var ThemeManager = new mui.Styles.ThemeManager();
+	var FlatButton = mui.FlatButton;
 
 	var LandingPage = React.createClass({displayName: "LandingPage",
 	  getInitialState: function () {
@@ -45623,32 +45630,38 @@
 	      );
 	    };
 	    return (
+	      React.createElement("div", {className: "landing-background"}, 
 	      React.createElement("div", {className: "landing-container"}, 
 
 	          profileSetUpModal, 
+
+
 	          React.createElement("div", {className: "slogan"}, 
 	            React.createElement("h1", {className: "title"}, "Chrysalis"), 
 	            React.createElement("h2", {className: "sub-title"}, "hatching insight")
 	          ), 
-
-
-	              React.createElement("div", {className: "video-container"}, 
+	          React.createElement("div", {className: "video-container"}, 
 	                  React.createElement("video", {preload: "true", autoPlay: "autoplay", loop: "loop", muted: true, tabIndex: "0"}, 
-	                    React.createElement("source", {src: "low.mp4", type: "video/mp4"})
+	                    React.createElement("source", {src: "480-stock-ticker.mp4", type: "video/mp4"})
 	                  )
-	              ), 
+	          ), 
 
 
 	              React.createElement("div", {className: "mission-statement-container"}, 
-	                React.createElement("p", {className: "mission-statement"}, "Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our clients.  Our recommendations are filtered according to rigorous criteria, producing stocks that we believe are currently undervalued and likely to perform well over time.  Get started today.")
+	                React.createElement("p", {className: "mission-statement"}, "Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our clients.  Our recommendations are filtered according to rigorous criteria, producing stocks that we believe are currently undervalued and likely to perform well over time."), 
+	               React.createElement(Link, {to: "profile"}, React.createElement("p", {className: "get-started-button"}, "Get started today."))
+
 	              )
 
+	      )
 	      )
 	    );
 	  },
 	});
 
 	module.exports=LandingPage
+
+
 
 
 /***/ },
@@ -46103,16 +46116,7 @@
 	      var addBox = true
 	    };
 	    if (this.state.risk_preference != null) {
-	      var standardActions = [
-	        { text: 'Close' },
-	      ];
-	      var modal = (
-	        React.createElement(Dialog, {openImmediately: true, modal: true, actions: standardActions}, 
-	          "Move the slider to browse different stocks", 
-	          React.createElement("br", null), 
-	          "To create a basket, please add at least one stock!"
-	        )
-	      )
+
 	      return (
 	        React.createElement("div", {className: "container"}, 
 	          profileSetUpModal, 
@@ -46136,8 +46140,7 @@
 	              React.createElement("br", null), 
 	              React.createElement(RaisedButton, {label: "Create", primary: true, onClick: this.createUserBasket, disabled: addBox}), 
 	              React.createElement("br", null), 
-	              this.state.message, 
-	              modal
+	              this.state.message
 	            )
 	          ), 
 	          React.createElement("div", {className: "row"}, 
