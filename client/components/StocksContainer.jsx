@@ -24,18 +24,6 @@ var StocksContainer = React.createClass({
     };
   },
 
-	componentDidMount: function () {
-		// this.readStocksFromAPI();
-		// this.getDefinitionsFromAPI();
-	},
-
-	// getDefinitionsFromAPI: function(){
- //    this.props.readFromAPI(this.props.origin + '/definitions', function(info){
- //      this.setState({definitions: info});
- //    }.bind(this));
- //  },
-
-
 	render: function () {
 	  return (
 	    <div className="row">

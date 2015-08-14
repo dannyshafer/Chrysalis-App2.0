@@ -8,10 +8,6 @@ var NavigationBar = React.createClass({
     return { showUpdateLink: false };
   },
 
-  // componentWillMount: function(){
-  //   this.checkUserId();
-  // },
-
   handleSignOutLink: function() {
     sessionStorage.setItem('jwt','');
     location = '/';
