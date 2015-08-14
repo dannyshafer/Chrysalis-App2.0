@@ -120,16 +120,7 @@ var RecommendationContainer = React.createClass({
       var addBox = true
     };
     if (this.state.risk_preference != null) {
-      var standardActions = [
-        { text: 'Close' },
-      ];
-      var modal = (
-        <Dialog openImmediately={true} modal={true} actions={standardActions}>
 
-          <p className="stock-basket-dialog">Move the slider to browse different stocks.</p>
-          <p className="stock-basket-dialog">To create a basket, please add at least one stock!</p>
-        </Dialog>
-      )
       return (
         <div className="container">
           {profileSetUpModal}
@@ -154,7 +145,6 @@ var RecommendationContainer = React.createClass({
               <RaisedButton label="Create" primary={true} onClick={this.createUserBasket} disabled={addBox}/>
               <br />
               {this.state.message}
-              {modal}
             </div>
           </div>
           <div className="row">
