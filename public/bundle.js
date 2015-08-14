@@ -25255,6 +25255,7 @@
 	                  this.state.message, 
 	                  React.createElement("label", {className: "profile-setting", for: "risk_preference"}, "Risk Preference: ", this.state.risk_preference), 
 	                  React.createElement("br", null), React.createElement("br", null), 
+
 	                  React.createElement("label", {for: "description"}, this.state.description[this.state.risk_preference]), 
 	                  React.createElement(Slider, {name: "Risk Preference", defaultValue: Number(this.state.risk_preference), step: 1, min: 1, max: 10, onChange: this.handleRiskSliderMove}), 
 	                  React.createElement("label", {className: "profile-setting", for: "age"}, "Age: ", this.state.age), 
@@ -45641,7 +45642,7 @@
 	          ), 
 	          React.createElement("div", {className: "video-container"}, 
 	                  React.createElement("video", {preload: "true", autoPlay: "autoplay", loop: "loop", muted: true, tabIndex: "0"}, 
-	                    React.createElement("source", {src: "low.mp4", type: "video/mp4"})
+	                    React.createElement("source", {src: "480-stock-ticker.mp4", type: "video/mp4"})
 	                  )
 	          ), 
 
