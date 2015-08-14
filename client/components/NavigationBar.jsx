@@ -31,13 +31,13 @@ var NavigationBar = React.createClass({
           <div className="pure-menu pure-menu-open">
             <span className="pure-menu-heading">Chrysalis</span>
             <ul>
-              <span onClick={this.props.sendMenuClick}>{homeLink}</span>
-              <span onClick={this.props.sendMenuClick}>{recommendationLink}</span>
-              <span onClick={this.props.sendMenuClick}>{userBasketLink}</span>
-              <span onClick={this.props.sendMenuClick}>{glossary}</span>
-              <span onClick={this.props.sendMenuClick}>{updateLink}</span>
-              <span onClick={this.props.sendMenuClick}>{profileLink}</span>
-              <span onClick={this.props.sendMenuClick}>{signingLink}</span>
+             {homeLink}
+             {recommendationLink}
+             {userBasketLink}
+             {glossary}
+             {updateLink}
+             {profileLink}
+             {signingLink}
             </ul>
           </div>
         </div>
