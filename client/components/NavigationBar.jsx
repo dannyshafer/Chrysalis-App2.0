@@ -14,6 +14,7 @@ var NavigationBar = React.createClass({
     if (this.props.signedIn) {
       var homeLink = <li><Link to="landingpage">Home</Link></li>
       var profileLink = <li><Link to="profile">Profile</Link></li>
+      var team = <li><Link to="team">About Us</Link></li>
       var signingLink = <li><span onClick={this.handleSignOutLink}>Sign Out</span></li>
       var recommendationLink = <li><Link to="recommendation">Recommendations</Link></li>
       var userBasketLink = <li><Link to="user_baskets">Baskets</Link></li>
@@ -32,11 +33,12 @@ var NavigationBar = React.createClass({
             <span className="pure-menu-heading">Chrysalis</span>
             <ul>
              {homeLink}
+             {profileLink}
              {recommendationLink}
              {userBasketLink}
              {glossary}
              {updateLink}
-             {profileLink}
+             {team}
              {signingLink}
             </ul>
           </div>
