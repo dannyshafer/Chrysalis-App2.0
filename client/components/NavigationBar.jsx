@@ -14,7 +14,6 @@ var NavigationBar = React.createClass({
   },
 
   checkUserId: function() {
-
     return (this.props.currentUser.uid === "31487946" || this.props.currentUser.uid === "3088927860" || this.props.currentUser.uid === "340483469" || this.props.currentUser.uid === "2321577054");
   },
 

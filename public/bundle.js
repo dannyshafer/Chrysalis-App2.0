@@ -25096,7 +25096,6 @@
 	  },
 
 	  checkUserId: function() {
-
 	    return (this.props.currentUser.uid === "31487946" || this.props.currentUser.uid === "3088927860" || this.props.currentUser.uid === "340483469" || this.props.currentUser.uid === "2321577054");
 	  },
 
@@ -45605,7 +45604,7 @@
 	var mui = __webpack_require__(212);
 	var Dialog = mui.Dialog;
 	var ThemeManager = new mui.Styles.ThemeManager();
-	var FlatButton = mui.FlatButton;
+	var RaisedButton = mui.RaisedButton;
 
 	var LandingPage = React.createClass({displayName: "LandingPage",
 	  getInitialState: function () {
@@ -45647,29 +45646,22 @@
 	    };
 	    return (
 	      React.createElement("div", {className: "landing-background"}, 
-	      React.createElement("div", {className: "landing-container"}, 
-
+	        React.createElement("div", {className: "landing-container"}, 
 	          profileSetUpModal, 
-
-
 	          React.createElement("div", {className: "slogan"}, 
 	            React.createElement("h1", {className: "title"}, "Chrysalis"), 
 	            React.createElement("h2", {className: "sub-title"}, "hatching insight")
 	          ), 
 	          React.createElement("div", {className: "video-container"}, 
-	                  React.createElement("video", {preload: "true", autoPlay: "autoplay", loop: "loop", muted: true, tabIndex: "0"}, 
-	                    React.createElement("source", {src: "480-stock-ticker.mp4", type: "video/mp4"})
-	                  )
+	            React.createElement("video", {preload: "true", autoPlay: "autoplay", loop: "loop", muted: true, tabIndex: "0"}, 
+	              React.createElement("source", {src: "480-stock-ticker.mp4", type: "video/mp4"})
+	            )
 	          ), 
-
-
 	              React.createElement("div", {className: "mission-statement-container"}, 
-	                React.createElement("p", {className: "mission-statement"}, "Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our clients.  Our recommendations are filtered according to rigorous criteria, producing stocks that we believe are currently undervalued and likely to perform well over time."), 
-	               React.createElement(Link, {to: "profile"}, React.createElement("p", {className: "get-started-button"}, "Get started today."))
-
+	                React.createElement("p", {className: "mission-statement"}, "Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our users.  Our recommendations are filtered according to rigorous criteria, providing stocks selection that we believe are currently undervalued and likely to perform well over time."), 
+	              React.createElement(Link, {to: "profile"}, React.createElement(RaisedButton, {secondary: true, label: "Get Started Today"}))
 	              )
-
-	      )
+	          )
 	      )
 	    );
 	  },
@@ -51057,8 +51049,6 @@
 	var RaisedButton = mui.RaisedButton;
 	var FlatButton = mui.FlatButton;
 
-
-
 	var Team = React.createClass({displayName: "Team",
 	  childContextTypes: {
 	    muiTheme: React.PropTypes.object
@@ -51069,12 +51059,9 @@
 	      muiTheme: ThemeManager.getCurrentTheme()
 	    };
 	  },
-
 	  render: function(){
 	    return (
 	      React.createElement("div", {className: "row"}, 
-
-
 	        React.createElement(Card, {className: "biocard small-12 medium-6 large-3 columns end"}, 
 	          React.createElement(CardMedia, null, 
 	            React.createElement("img", {src: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALKAAAAJDUwYmYxNWI2LTI1ZTAtNDJlMS1iZWRlLTQyZmFkZWMzYjIyMA.jpg"})
@@ -51088,10 +51075,6 @@
 	            "Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul."
 	          )
 	        ), 
-
-
-
-
 	        React.createElement(Card, {className: "biocard small-12 medium-6 large-3 columns end"}, 
 	          React.createElement(CardMedia, null, 
 	            React.createElement("img", {src: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALxAAAAJDg1MmI1ZmQxLTU1MDktNDY0ZC05ZTMzLTkzN2JjZDY0MGYyMw.jpg"})
@@ -51102,13 +51085,9 @@
 	            React.createElement("a", {href: "https://www.linkedin.com/in/ryanau852"}, React.createElement(FlatButton, {label: "LinkedIn"}))
 	          ), 
 	          React.createElement(CardText, null, 
-	            "Student at Cal and a full-stack developer that knows enough code to be dangerous. Always on a look out for adventures cool projects to work on."
+	            "Student at Cal and a full-stack developer that knows enough code to be dangerous. Always on a look out for adventures and cool projects to work on."
 	          )
 	        ), 
-
-
-
-
 	        React.createElement(Card, {className: "biocard small-12 medium-6 large-3 columns end"}, 
 	          React.createElement(CardMedia, null, 
 	            React.createElement("img", {src: "https://pbs.twimg.com/profile_images/585479016817291264/qlym0sGg.jpg"})
@@ -51122,10 +51101,6 @@
 	            "Administrator turned full-stack web developer based in San Francisco, CA. Rider of boards, climber of rocks, and lifelong learner."
 	          )
 	        ), 
-
-
-
-
 	        React.createElement(Card, {className: "small-12 medium-6 large-3 columns end"}, 
 	          React.createElement(CardMedia, null, 
 	            React.createElement("img", {src: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/071/36a/2e3c836.jpg"})
@@ -51139,21 +51114,15 @@
 	            "Full-stack developer. UC Irvine Grad. Adventurer, lover, fighter, former Nuclear Submariner. Somewhat amateur skateboarder."
 	          )
 	        ), 
-
 	        React.createElement(Card, {className: "small-12 medium-12 large-12 columns end"}, 
 	          React.createElement(CardTitle, {title: "Chrysalis"}), 
 	          React.createElement(CardText, null, 
-	            "Chrysalis is a fundamental analysis website that seeks suitable investments based loosely on stock valuation techniques by Benjamin Graham. Other services (particularly brokers) which take age and risk preference typically only return a suggested proportional mix of asset classes so that the user it dependent on their service to do the actual management of buying and selling. Chrysalis is dramatically more actionable as it suggests a mix but also offers specific securities which the user can then research further and buy through his/her preferred channel."
-
+	            "Chrysalis is a fundamental analysis website that seeks suitable investments based loosely on stock valuation techniques by Benjamin Graham. Other services (particularly brokers) which take age and risk preference typically only return a suggested proportional mix of asset classes so that the user is dependent on their service to do the actual management of buying and selling. Chrysalis is dramatically more actionable as it suggests a mix but also offers specific securities which the user can then research further and buy through his/her preferred channel."
 	          )
 	        )
-
-
 	      )
-
 	    );
 	  },
-
 	});
 
 	module.exports = Team;
