@@ -197,6 +197,10 @@ video {
   border: 1px solid red;
 }*/
 
+.text-center {
+  text-align: center;
+}
+
 
 div {
   margin-top: 20px;
