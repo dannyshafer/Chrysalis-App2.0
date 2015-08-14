@@ -9,7 +9,7 @@ describe StocksHelper do
 
   describe "#compare_basket_performance" do
     it "returns a string" do
-      expect(helper.compare_basket_performance).class == ("String")
+      expect(helper.compare_basket_performance(["aapl","hpq","aa",])).class == ("String")
     end
   end
 end
