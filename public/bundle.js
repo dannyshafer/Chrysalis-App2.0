@@ -51102,7 +51102,7 @@
 	            React.createElement("a", {href: "https://www.linkedin.com/in/ryanau852"}, React.createElement(FlatButton, {label: "LinkedIn"}))
 	          ), 
 	          React.createElement(CardText, null, 
-	            "Student at Cal and a full-stack developer that knows enough code to be dangerous. Always on a look out for adventures cool projects to work on."
+	            "Student at Cal and a full-stack developer that knows enough code to be dangerous. Always on a look out for adventures and cool projects to work on."
 	          )
 	        ), 
 
@@ -51143,7 +51143,7 @@
 	        React.createElement(Card, {className: "small-12 medium-12 large-12 columns end"}, 
 	          React.createElement(CardTitle, {title: "Chrysalis"}), 
 	          React.createElement(CardText, null, 
-	            "Chrysalis is a fundamental analysis website that seeks suitable investments based loosely on stock valuation techniques by Benjamin Graham. Other services (particularly brokers) which take age and risk preference typically only return a suggested proportional mix of asset classes so that the user it dependent on their service to do the actual management of buying and selling. Chrysalis is dramatically more actionable as it suggests a mix but also offers specific securities which the user can then research further and buy through his/her preferred channel."
+	            "Chrysalis is a fundamental analysis website that seeks suitable investments based loosely on stock valuation techniques by Benjamin Graham. Other services (particularly brokers) which take age and risk preference typically only return a suggested proportional mix of asset classes so that the user is dependent on their service to do the actual management of buying and selling. Chrysalis is dramatically more actionable as it suggests a mix but also offers specific securities which the user can then research further and buy through his/her preferred channel."
 
 	          )
 	        )
