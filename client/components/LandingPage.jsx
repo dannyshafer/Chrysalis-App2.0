@@ -35,6 +35,15 @@ var LandingPage = React.createClass({
     }.bind(this));
   },
   render: function(){
+    if (this.props.signedIn === false) {
+      var gettingStarted = (
+        <a href={this.props.origin + '/request_token'}><RaisedButton secondary={true} label="Get Started Today"></RaisedButton></a>
+      );
+    } else {
+      var gettingStarted = (
+        <Link to="profile" ><RaisedButton secondary={true} label="Get Started Today"></RaisedButton></Link>
+      );
+    };
     if (this.props.signedIn === true && this.state.modalOpen === true) {
       var standardActions = [
         { text: 'Close' },
@@ -62,7 +71,7 @@ var LandingPage = React.createClass({
           </div>
               <div className="mission-statement-container">
                 <p className="mission-statement">Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our users.  Our recommendations are filtered according to rigorous criteria, providing stocks selection that we believe are currently undervalued and likely to perform well over time.</p>
-              <Link to="profile" ><RaisedButton secondary={true} label="Get Started Today"></RaisedButton></Link>
+              {gettingStarted}
               </div>
           </div>
       </div>
