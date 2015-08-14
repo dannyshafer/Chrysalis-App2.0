@@ -38,6 +38,7 @@ var Team = React.createClass({
           <CardTitle title="Danny Shafer"/>
           <CardActions>
             <a href="https://github.com/dannyshafer"><FlatButton label="GitHub"/></a>
+            <a href="https://www.linkedin.com/in/danashafer"><FlatButton label="LinkedIn"/></a>
           </CardActions>
           <CardText>
             Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul.
@@ -54,9 +55,10 @@ var Team = React.createClass({
           <CardTitle title="Ryan Au"/>
           <CardActions>
             <a href="https://github.com/ryanau"><FlatButton label="GitHub"/></a>
+            <a href="https://www.linkedin.com/in/ryanau852"><FlatButton label="LinkedIn"/></a>
           </CardActions>
           <CardText>
-            Full-stack developer that knows enough code to be dangerous. Always on a look out for an adventure but can''t stop thinking about coding.
+            Student at Cal and a full-stack developer that knows enough code to be dangerous. Always on a look out for adventures cool projects to work on.
           </CardText>
         </Card>
 
@@ -70,6 +72,7 @@ var Team = React.createClass({
           <CardTitle title="John Hess"/>
           <CardActions>
             <a href="https://github.com/alookatommorow"><FlatButton label="GitHub"/></a>
+            <a href="https://www.linkedin.com/pub/john-hess/3b/460/a09"><FlatButton label="LinkedIn"/></a>
           </CardActions>
           <CardText>
             Administrator turned full-stack web developer based in San Francisco, CA. Rider of boards, climber of rocks, and lifelong learner.
@@ -86,6 +89,7 @@ var Team = React.createClass({
           <CardTitle title="Andrew Donato"/>
           <CardActions>
             <a href="https://github.com/andrewdonato"><FlatButton label="GitHub"/></a>
+            <a href="https://www.linkedin.com/pub/andrew-donato/4b/745/890"><FlatButton label="LinkedIn"/></a>
           </CardActions>
           <CardText>
             Full-stack developer. UC Irvine Grad. Adventurer, lover, fighter, former Nuclear Submariner. Somewhat amateur skateboarder.

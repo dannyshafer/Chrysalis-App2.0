@@ -88,8 +88,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/normalize.css", function() {
-			var newContent = require("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/normalize.css");
+		module.hot.accept("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/normalize.css", function() {
+			var newContent = require("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/normalize.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -335,8 +335,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/app.css", function() {
-			var newContent = require("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/app.css");
+		module.hot.accept("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/app.css", function() {
+			var newContent = require("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/app.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -369,8 +369,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/foundation.min.css", function() {
-			var newContent = require("!!/Users/johnhess/Desktop/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/johnhess/Desktop/Chrysalis-App2.0/client/assets/foundation.min.css");
+		module.hot.accept("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/foundation.min.css", function() {
+			var newContent = require("!!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/node_modules/css-loader/index.js!/Users/ryanau/Desktop/DBCstuff/phase-3/Chrysalis-App2.0/client/assets/foundation.min.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -51098,7 +51098,8 @@
 	          ), 
 	          React.createElement(CardTitle, {title: "Danny Shafer"}), 
 	          React.createElement(CardActions, null, 
-	            React.createElement("a", {href: "https://github.com/dannyshafer"}, React.createElement(FlatButton, {label: "GitHub"}))
+	            React.createElement("a", {href: "https://github.com/dannyshafer"}, React.createElement(FlatButton, {label: "GitHub"})), 
+	            React.createElement("a", {href: "https://www.linkedin.com/in/danashafer"}, React.createElement(FlatButton, {label: "LinkedIn"}))
 	          ), 
 	          React.createElement(CardText, null, 
 	            "Rails developer, formerly business intelligence @ Kiva.org and front-end developer @ ReLISTO. Used clothing store mogul."
@@ -51114,10 +51115,11 @@
 	          ), 
 	          React.createElement(CardTitle, {title: "Ryan Au"}), 
 	          React.createElement(CardActions, null, 
-	            React.createElement("a", {href: "https://github.com/ryanau"}, React.createElement(FlatButton, {label: "GitHub"}))
+	            React.createElement("a", {href: "https://github.com/ryanau"}, React.createElement(FlatButton, {label: "GitHub"})), 
+	            React.createElement("a", {href: "https://www.linkedin.com/in/ryanau852"}, React.createElement(FlatButton, {label: "LinkedIn"}))
 	          ), 
 	          React.createElement(CardText, null, 
-	            "Full-stack developer that knows enough code to be dangerous. Always on a look out for an adventure but can''t stop thinking about coding."
+	            "Student at Cal and a full-stack developer that knows enough code to be dangerous. Always on a look out for adventures cool projects to work on."
 	          )
 	        ), 
 
@@ -51130,7 +51132,8 @@
 	          ), 
 	          React.createElement(CardTitle, {title: "John Hess"}), 
 	          React.createElement(CardActions, null, 
-	            React.createElement("a", {href: "https://github.com/alookatommorow"}, React.createElement(FlatButton, {label: "GitHub"}))
+	            React.createElement("a", {href: "https://github.com/alookatommorow"}, React.createElement(FlatButton, {label: "GitHub"})), 
+	            React.createElement("a", {href: "https://www.linkedin.com/pub/john-hess/3b/460/a09"}, React.createElement(FlatButton, {label: "LinkedIn"}))
 	          ), 
 	          React.createElement(CardText, null, 
 	            "Administrator turned full-stack web developer based in San Francisco, CA. Rider of boards, climber of rocks, and lifelong learner."
@@ -51146,7 +51149,8 @@
 	          ), 
 	          React.createElement(CardTitle, {title: "Andrew Donato"}), 
 	          React.createElement(CardActions, null, 
-	            React.createElement("a", {href: "https://github.com/andrewdonato"}, React.createElement(FlatButton, {label: "GitHub"}))
+	            React.createElement("a", {href: "https://github.com/andrewdonato"}, React.createElement(FlatButton, {label: "GitHub"})), 
+	            React.createElement("a", {href: "https://www.linkedin.com/pub/andrew-donato/4b/745/890"}, React.createElement(FlatButton, {label: "LinkedIn"}))
 	          ), 
 	          React.createElement(CardText, null, 
 	            "Full-stack developer. UC Irvine Grad. Adventurer, lover, fighter, former Nuclear Submariner. Somewhat amateur skateboarder."
