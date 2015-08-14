@@ -25103,8 +25103,8 @@
 
 	    if (this.props.signedIn) {
 	      var homeLink = React.createElement("li", null, React.createElement(Link, {to: "landingpage"}, "Home"))
-	      var profileLink = React.createElement("li", null, React.createElement(Link, {to: "profile"}, "Profile"))
 	      var teamLink = React.createElement("li", null, React.createElement(Link, {to: "team"}, "About Us"))
+	      var profileLink = React.createElement("li", null, React.createElement(Link, {to: "profile"}, "Profile"))
 	      var signingLink = React.createElement("li", null, React.createElement("span", {onClick: this.handleSignOutLink}, "Sign Out"))
 	      var recommendationLink = React.createElement("li", null, React.createElement(Link, {to: "recommendation"}, "Recommendations"))
 	      var userBasketLink = React.createElement("li", null, React.createElement(Link, {to: "user_baskets"}, "Baskets"))
@@ -25113,6 +25113,7 @@
 	      var userBasketLink = React.createElement("li", null, React.createElement(Link, {to: "user_baskets"}, "Baskets"))
 	    } else {
 	      var signingLink = React.createElement("li", null, React.createElement("a", {href: this.props.origin + '/request_token'}, "Sign In"));
+	      var teamLink = React.createElement("li", null, React.createElement(Link, {to: "team"}, "About Us"))
 	    }
 	    return (
 
@@ -51061,6 +51062,7 @@
 	  },
 	  render: function(){
 	    return (
+	      React.createElement("div", {className: "container"}, 
 	      React.createElement("div", {className: "row"}, 
 	        React.createElement(Card, {className: "biocard small-12 medium-6 large-3 columns end"}, 
 	          React.createElement(CardMedia, null, 
@@ -51120,6 +51122,7 @@
 	            "Chrysalis is a fundamental analysis website that seeks suitable investments based loosely on stock valuation techniques by Benjamin Graham. Other services (particularly brokers) which take age and risk preference typically only return a suggested proportional mix of asset classes so that the user is dependent on their service to do the actual management of buying and selling. Chrysalis is dramatically more actionable as it suggests a mix but also offers specific securities which the user can then research further and buy through his/her preferred channel."
 	          )
 	        )
+	      )
 	      )
 	    );
 	  },

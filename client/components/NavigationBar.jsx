@@ -21,8 +21,8 @@ var NavigationBar = React.createClass({
 
     if (this.props.signedIn) {
       var homeLink = <li><Link to="landingpage">Home</Link></li>
-      var profileLink = <li><Link to="profile">Profile</Link></li>
       var teamLink = <li><Link to="team">About Us</Link></li>
+      var profileLink = <li><Link to="profile">Profile</Link></li>
       var signingLink = <li><span onClick={this.handleSignOutLink}>Sign Out</span></li>
       var recommendationLink = <li><Link to="recommendation">Recommendations</Link></li>
       var userBasketLink = <li><Link to="user_baskets">Baskets</Link></li>
@@ -31,6 +31,7 @@ var NavigationBar = React.createClass({
       var userBasketLink = <li><Link to="user_baskets">Baskets</Link></li>
     } else {
       var signingLink = <li><a href={this.props.origin + '/request_token'}>Sign In</a></li>;
+      var teamLink = <li><Link to="team">About Us</Link></li>
     }
     return (
 
