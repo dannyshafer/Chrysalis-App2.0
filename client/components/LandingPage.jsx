@@ -7,6 +7,7 @@ var Link = Router.Link;
 var mui = require('material-ui');
 var Dialog = mui.Dialog;
 var ThemeManager = new mui.Styles.ThemeManager();
+var FlatButton = mui.FlatButton;
 
 var LandingPage = React.createClass({
   getInitialState: function () {
@@ -65,7 +66,9 @@ var LandingPage = React.createClass({
 
 
               <div className="mission-statement-container">
-                <p className="mission-statement">Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our clients.  Our recommendations are filtered according to rigorous criteria, producing stocks that we believe are currently undervalued and likely to perform well over time.  Get started today.</p>
+                <p className="mission-statement">Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our clients.  Our recommendations are filtered according to rigorous criteria, producing stocks that we believe are currently undervalued and likely to perform well over time.</p>
+               <Link to="profile" ><p className="get-started-button">Get started today.</p></Link>
+
               </div>
 
       </div>

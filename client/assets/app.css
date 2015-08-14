@@ -68,7 +68,14 @@
   text-align: justify;
   font-size: 25px;
   line-height: 200%;
-  color: #006699;;
+  color: #006699;
+}
+
+.get-started-button {
+  font-size: 25px;
+  color: #006699;
+  text-align: center;
+
 }
 
 
@@ -130,6 +137,10 @@ a {
 .profile-setting {
   font-size: 25px;
   color: #006699;
+}
+
+.stock-basket-dialog {
+  text-align: center;
 }
 
 .glossary-term {
@@ -200,7 +211,7 @@ div {
 #menu-list .pure-menu li a.active, #menu-list .pure-menu li span.active {background: #333; color: white;}
 #menu-list .pure-menu, #menu-list .pure-menu ul {border: none; background: transparent;}
 #menu-list .pure-menu ul {border-top: 1px solid #333;}
-#menu-list .pure-menu-heading {background: #2B0043;}
+#menu-list .pure-menu-heading {background: #006699;}
 
 #menu-link {cursor: pointer; font-size: 10px; position: fixed; display: block; top: 0; left: 0; background: #000; background: rgba(0,0,0,0.7); z-index: 10; width: 2em; height: auto; padding: 2.14em 1.6em 2.15em;}
 #menu-link span, #menu-link span:before, #menu-link span:after {background-color: white; width: 100%; height: 0.2em;}

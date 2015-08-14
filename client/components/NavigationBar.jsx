@@ -5,7 +5,6 @@ var Link = Router.Link;
 
 var NavigationBar = React.createClass({
 
-
   handleSignOutLink: function() {
     sessionStorage.setItem('jwt','');
     location = '/';

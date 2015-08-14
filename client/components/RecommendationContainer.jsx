@@ -125,9 +125,9 @@ var RecommendationContainer = React.createClass({
       ];
       var modal = (
         <Dialog openImmediately={true} modal={true} actions={standardActions}>
-          Move the slider to browse different stocks
-          <br />
-          To create a basket, please add at least one stock!
+
+          <p className="stock-basket-dialog">Move the slider to browse different stocks.</p>
+          <p className="stock-basket-dialog">To create a basket, please add at least one stock!</p>
         </Dialog>
       )
       return (
