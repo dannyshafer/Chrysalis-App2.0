@@ -181,23 +181,23 @@ end
 
 
 def make_asi_component(beta)
-    if beta >= -5.982 && beta < -1.441
+    if beta <= .37
       1
-    elsif beta > -1.441 && beta < -0.642
+    elsif beta > .37 && beta <= .68
       2
-    elsif beta > -0.642 && beta < 0.157
+    elsif beta > .68 && beta <= .79
       3
-    elsif beta > 0.157 && beta < 0.956
+    elsif beta > .79 && beta <= .95
       4
-    elsif beta > 0.956 && beta < 1.755
+    elsif beta > .95 && beta <= 1.12
       5
-    elsif beta > 1.755 && beta < 2.554
+    elsif beta > 1.12 && beta <= 1.27
       6
-    elsif beta > 2.554 && beta < 3.353
+    elsif beta > 1.27 && beta <= 1.45
       7
-    elsif beta > 3.353 && beta < 4.152
+    elsif beta > 1.45 && beta <= 1.69
       8
-    elsif beta > 4.152 && beta < 4.951
+    elsif beta > 1.69 && beta <= 2.11
       9
     else
       10
