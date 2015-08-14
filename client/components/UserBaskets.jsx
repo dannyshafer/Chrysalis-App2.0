@@ -10,9 +10,7 @@ var LinearProgress = mui.LinearProgress;
 var UserBaskets = React.createClass({
 	getInitialState: function () {
 		return {
-			baskets: [],
-			basket_info: [],
-			status: null,
+			baskets: null,
 		};
 	},
 
@@ -20,52 +18,67 @@ var UserBaskets = React.createClass({
 		muiTheme: React.PropTypes.object
 	},
 
-	getChildContext: function () { 
+	getChildContext: function () {
 		return {
 			muiTheme: ThemeManager.getCurrentTheme()
 		};
 	},
 
-	updateBasket: function (asdf) {
-		this.forceUpdate();
-	},
 
 	componentDidMount: function () {
 		this.readUserBasketsFromAPI();
 	},
 
+	deleteBasket: function (basketId) {
+		var uid = this.props.currentUser.uid
+		var data = {basketId: basketId}
+		var url = this.props.origin + '/users/' + uid + '/baskets/' + basketId;
+		var baskets = this.state.baskets.filter(function(basket){
+			return basket.id !== basketId;
+		});
+		this.setState({baskets: baskets})
+		this.props.writeToAPI(url, 'delete', JSON.stringify(data), this.readUserBasketsFromAPI);
+	},
+
 	readUserBasketsFromAPI: function () {
 		var uid = this.props.currentUser.uid
-		this.props.readFromAPI(this.props.origin + '/users/' + uid + '/baskets', function(info){
-		  this.setState({
-		  	baskets: info.baskets,
-		  	basket_info: info.basket_info
-		  });
+		this.props.readFromAPI(this.props.origin + '/users/' + uid + '/baskets', function(baskets){
+		  this.setState({baskets: baskets});
 		}.bind(this));
 	},
 
 	render: function () {
-		var baskets = this.state.baskets.map(function (basket, index) {
-			var info = this.state.basket_info[index]
+		if (this.state.baskets === null) {
 			return (
-				<div>
-					<UserBasketTable origin={this.props.origin} basket={basket} basket_info={info} writeToAPI={this.props.writeToAPI} currentUser={this.props.currentUser} updateBasket={this.updateBasket}/>
-					<Slider name="slider3" disabled={true} value={1} />
-				</div>
-			);
-		}.bind(this));
-		if (this.state.baskets.length === 0) {
-			return (
-				<div>
+				<div className="container">
 					<h3>Loading Your Baskets...</h3>
 					<LinearProgress mode="indeterminate"  />
 				</div>
 			);
+		}
+
+		var baskets = this.state.baskets.map(function (basket, index) {
+			return (
+				<div className="container">
+					<UserBasketTable key={basket.id} origin={this.props.origin} basket={basket} writeToAPI={this.props.writeToAPI} currentUser={this.props.currentUser} deleteBasket={this.deleteBasket}/>
+					<Slider name="slider3" disabled={true} value={1} />
+				</div>
+			);
+		}.bind(this));
+		if (baskets.length === 0) {
+			return (
+				<div className="container">
+					<h3>You have no baskets</h3>
+				</div>
+			);
 		} else {
 			return (
-				<div>
-					<h3>You have {this.state.baskets.length} Baskets Saved</h3>
-					{baskets}
+				<div className="container">
+					<div className="basket-title">
+							<h3 className="your-baskets">Your Baskets</h3><br/>
+							<h5>You have {this.state.baskets.length} Baskets Saved</h5>
+							{baskets}
+					</div>
 				</div>
 			);
 		};

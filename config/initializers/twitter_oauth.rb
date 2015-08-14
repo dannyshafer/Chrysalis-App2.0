@@ -1,6 +1,6 @@
 TWITTER = OAuth::Consumer.new(
-  Rails.application.secrets.twitter_consumer_key,
-  Rails.application.secrets.twitter_consumer_secret,
+  ENV['TWITTER_CONSUMER_KEY'],
+  ENV['TWITTER_CONSUMER_SECRET'],
   authorize_path: '/oauth/authenticate',
   site: 'https://api.twitter.com'
 )

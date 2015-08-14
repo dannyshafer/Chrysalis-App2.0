@@ -1,6 +1,5 @@
 var React = require('react');
-// var ReactD3 = require('react-d3-components');
-// var PieChart = ReactD3.PieChart;
+
 
 // Chart js
 var DoughnutChart = require("react-chartjs-commonjs").Doughnut;
@@ -70,26 +69,7 @@ var RecommendedPieChart = React.createClass({
 			high: high,
 		};
 	},
-	// render: function () {
-	// 	var data = {
-	// 		label: 'Recommended Allocation',
-	// 		values: [{x: 'Low-Risk', y: this.state.low}, 
-	// 		{x: 'Mid-Risk', y: this.state.mid}, 
-	// 		{x: 'High-Risk', y: this.state.high}]
-	// 	};
-	// 	var sort = null;
-	// 	return (
-	// 		<div>
-	// 			<h4>Your Recommended Allocation</h4>
-	// 			<PieChart
-	// 			data={data}
-	// 			width={500}
-	// 			height={350}
-	// 			margin={{top: 10, bottom: 10, left: 100, right: 100}}
-	// 			sort={sort} />
-	// 		</div>
-	// 	);
-	// },
+
 	render: function () {
 		var chartData = [
 											{
@@ -134,10 +114,10 @@ var RecommendedPieChart = React.createClass({
 										    animationSteps : 100,
 
 										    //String - Animation easing effect
-										    animationEasing : "easeOutBounce",
+										    animationEasing : "linear",
 
 										    //Boolean - Whether we animate the rotation of the Doughnut
-										    animateRotate : true,
+										    animateRotate : false,
 
 										    //Boolean - Whether we animate scaling the Doughnut from the centre
 										    animateScale : false,
@@ -146,7 +126,10 @@ var RecommendedPieChart = React.createClass({
 										    maintainAspectRatio: true,
 										}
 		return (
+			<div>
+			<h4 className="text-center">Recommended Allocation</h4>
 			<DoughnutChart data={chartData} options={chartOptions} />
+			</div>
 		);
 	},
 });

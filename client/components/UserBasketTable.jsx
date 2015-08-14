@@ -18,24 +18,15 @@ var UserBasketTable = React.createClass({
 		};
 	},
 
-	deleteBasket: function (e) {
-		e.preventDefault();
-		var uid = this.props.currentUser.uid
-		var id = this.props.basket_info.id
-		console.log(id)
-		var data = {id: id}
-		this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets/' + id, 'delete', JSON.stringify(data), function(message){
-			alert('Basket Deleted');
-			this.props.updateBasket("ljskdf");
-		});
-
+	deleteBasket: function () {
+		this.props.deleteBasket(this.props.basket.id);
 	},
 
 	render: function () {
 		var basket = this.props.basket
 		var rowData = []
-		this.props.basket.map(function (stock, index) {
-			rowData.push({ticker: {content: stock.ticker}, 
+		this.props.basket.records.map(function (stock, index) {
+			rowData.push({ticker: {content: stock.ticker},
 									  name: {content: stock.name},
 									  ask: {content: stock.ask},
 									  beta: {content: stock.beta},
@@ -43,7 +34,7 @@ var UserBasketTable = React.createClass({
 									  asi: {content: stock.asi_component}
 									})
 		})
-		
+
 		var height = 80 + 30 * basket.length;
 
 		this.state = {
@@ -90,7 +81,7 @@ var UserBasketTable = React.createClass({
 		// var footerCols = {ticker: {content: 'Ticker'}, name: {content: 'Name'}, status: {content: 'Status'}};
 		return (
 			<div>
-				<h4>{this.props.basket_info.name} created at {this.props.basket_info.date}</h4>
+				<h4 className="basket-description">{this.props.basket.name} created at {this.props.basket.date} {this.props.basket.performance}</h4>
 				<Table
 				  headerColumns={headerCols}
 				  columnOrder={colOrder}
@@ -98,7 +89,7 @@ var UserBasketTable = React.createClass({
 				  height={this.state.height}
 				  fixedHeader={this.state.fixedHeader}
 				  fixedFooter={this.state.fixedFooter}
-				  stripedRows={this.state.stripedRows}
+				  stripedRows={this.state.stripedows}
 				  showRowHover={this.state.showRowHover}
 				  selectable={this.state.selectable}
 				  multiSelectable={this.state.multiSelectable}

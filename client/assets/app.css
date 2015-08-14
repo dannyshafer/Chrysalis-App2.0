@@ -1,34 +1,166 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Slab");
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-/*
-body {
-  background-color: black;
-}*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
 /** {
   border: 1px solid red;
 }*/
-html {
-	font-family: 'Roboto', sans-serif;
+
+* {
+  border: 0;
 }
 
-nav {
-  border: 1px solid #777AC7;
-  background-color: #777AC7;
+
+
+
+.landing-container {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+
+.video-container {
+  position: relative;
+  min-height: 650px;
+
+}
+
+.mission-statement-container {
+  width: 100%;
+  background-color: white;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  padding-left: 20%;
+  padding-right: 20%;
+  opacity: 0.85;
+
+}
+
+.culture {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.teampictures {
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+}
+
+
+
+.mission-statement {
+  text-align: justify;
+  font-size: 25px;
+  line-height: 200%;
+  color: #006699;
+}
+
+.get-started-button {
+  font-size: 25px;
+  color: #006699;
+  text-align: center;
+
+}
+
+
+
+/*div {
+  display: block;
+}*/
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+.menubar {
+  background-color: black;
+}
+
+/*.landing-background {
+  background-image: url("https://ununsplash.imgix.net/uploads/1412443967017d95e2723/2919e13b?dpr=2&fit=crop&fm=jpg&h=700&q=75&w=1050");
+}*/
+
+.nav-item {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #00CCFF;
 }
 
 a {
   text-decoration: none;
-  color: #FFC000;
+  color: #00CCFF;
 }
 
-.nav-item {
-  text-decoration: none;
-  color: #FFC000;
+.sign-out {
+  color: white;
+  left-margin: 40px;
 }
+
+
 .sub-title {
   letter-spacing: .15em;
+  color: white;
+}
+
+.page-header {
+  margin-top: 50px;
+  text-align: center;
+  color: #006699;
+}
+
+.basket-title {
+  text-align: center;
+
+}
+
+.your-baskets {
+  font-size: 35px;
+  color: #006699;
+}
+
+.profile-settings-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
+
+.profile-setting {
+  font-size: 25px;
+  color: #006699;
+}
+
+.latin {
+  font-size: 25px;
+  color: black;
+}
+
+.stock-basket-dialog {
+  text-align: center;
+}
+
+.glossary-term {
+  font-weight: bold;
 }
 
 .title {
@@ -37,36 +169,21 @@ a {
   margin-bottom: 0;
   color: #00ccff;
   text-shadow:
-    1px 0px 1px #ccc, 0px 1px 1px #eee,
-    2px 1px 1px #ccc, 1px 2px 1px #eee,
-    3px 2px 1px #ccc, 2px 3px 1px #eee,
-    4px 3px 1px #ccc, 3px 4px 1px #eee,
-    5px 4px 1px #ccc, 4px 5px 1px #eee,
-    6px 5px 1px #ccc, 5px 6px 1px #eee,
-    7px 6px 1px #ccc;
+  1px 0px 1px #ccc, 0px 1px 1px #eee,
+  2px 1px 1px #ccc, 1px 2px 1px #eee,
+  3px 2px 1px #ccc, 2px 3px 1px #eee,
+  4px 3px 1px #ccc, 3px 4px 1px #eee,
+  5px 4px 1px #ccc, 4px 5px 1px #eee,
+  6px 5px 1px #ccc, 5px 6px 1px #eee,
+  7px 6px 1px #ccc;
 }
 
-nav li {
-  display: inline-block;
-  margin-left: 20px;
-  text-decoration: none;
 
-}
- .slogan {
+.slogan {
   color: #00ccff;
   text-align: center;
   margin-top: 220px;
   font-size: 30px;
- }
-
-.video-container {
-  position: absolute;
-  z-index: -100;
-  top: 0%;
-  left: 0%;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
 }
 
 video {
@@ -86,10 +203,51 @@ video {
 
 }
 
+.container {
+  margin-top: 80px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
 
-#container {
-	margin-right: 20px;
-	margin-left: 20px;
+/*.columns {
+  border: 1px solid red;
+}*/
+
+.text-center {
+  text-align: center;
+}
+
+
+div {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+#menu-list, #menu-link, #app {-webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; transition: all 0.2s ease-out;}
+#menu-list {margin-left: -150px; width: 150px; position: fixed; top: 0; left: 0; bottom: 0; z-index: 1000; background: #191818; overflow-y: auto; -webkit-overflow-scrolling: touch;}
+#menu-list .pure-menu li a, #menu-list .pure-menu li span {color: #999; border: none; padding: 0.6em 0 0.6em 0.6em; display: block; line-height: 1.5em; text-decoration: none; white-space: nowrap;}
+#menu-list .pure-menu li a:hover, #menu-list .pure-menu li span:hover, #menu-list .pure-menu li a:focus, #menu-list .pure-menu li span:focus {background: #333; color: white; cursor: pointer;}
+#menu-list .pure-menu-heading {font-size: 110%; color: white; margin: 0; border: none; padding: 0.55em 0 0.45em 0.6em;}
+#menu-list .pure-menu li a.active, #menu-list .pure-menu li span.active {background: #333; color: white;}
+#menu-list .pure-menu, #menu-list .pure-menu ul {border: none; background: transparent;}
+#menu-list .pure-menu ul {border-top: 1px solid #333;}
+#menu-list .pure-menu-heading {background: #006699;}
+
+#menu-link {cursor: pointer; font-size: 10px; position: fixed; display: block; top: 0; left: 0; background: #000; background: rgba(0,0,0,0.7); z-index: 10; width: 2em; height: auto; padding: 2.14em 1.6em 2.15em;}
+#menu-link span, #menu-link span:before, #menu-link span:after {background-color: white; width: 100%; height: 0.2em;}
+#menu-link span:before, #menu-link span:after {position: absolute; margin-top: -0.6em; content: '';}
+#menu-link:hover, #menu-link:focus {background: #000;}
+#menu-link span {position: relative; display: block;}
+#menu-link span:after {margin-top: 0.6em;}
+
+#app.show-menu {position: relative; left: 150px;}
+#app.show-menu #menu-list {width: 150px; left: 150px;}
+#app.show-menu #menu-link {left: 150px;}
+
+@media (min-width: 48em) {
+  #menu-link {display: none; position: fixed; left: 150px;}
+  #app {left: 0; padding-left: 150px;}
+  #app.show-menu #menu-link {left: 150px;}
+  #menu-list {left: 150px;}
+}
+

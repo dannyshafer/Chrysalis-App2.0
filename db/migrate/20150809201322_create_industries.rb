@@ -1,4 +1,4 @@
-class CreateIndustries < ActiveRecord::Migration
+Industryclass CreateIndustries < ActiveRecord::Migration
   def change
     create_table :industries do |t|
       t.string :name

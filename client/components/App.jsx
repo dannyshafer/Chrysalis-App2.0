@@ -5,7 +5,7 @@ var RouteHandler = Router.RouteHandler;
 var Uri = require('jsuri');
 
 // Components
-var NavBar = require('./NavBar.jsx')
+var NavBar = require('./NavigationBar.jsx')
 
 var App = React.createClass({
   getDefaultProps: function() {
@@ -16,7 +16,11 @@ var App = React.createClass({
     // return {origin: 'http://localhost:3000'};
   },
   getInitialState: function() {
-    return {signedIn: false, currentUser: {handle: '', uid: null}};
+    return {
+      signedIn: false,
+      currentUser: {handle: '', uid: null},
+      showMenu: false,
+    };
   },
   componentWillMount: function() {
     var jwt = new Uri(location.search).getQueryParamValue('jwt');
@@ -30,6 +34,11 @@ var App = React.createClass({
       this.setState({signedIn: true, currentUser: user, uid: user.uid});
     }.bind(this));
   },
+
+  handleMenuClick: function() {
+    this.setState({showMenu: !this.state.showMenu});
+  },
+
   readFromAPI: function(url, successFunction) {
     Reqwest({
       url: url,
@@ -61,17 +70,16 @@ var App = React.createClass({
   },
 
   render: function () {
+    var menu = this.state.showMenu ? 'show-menu' : 'hide-menu';
+
     return (
-      <div id="app">
-        <NavBar signedIn={this.state.signedIn} currentUser={this.state.currentUser} origin={this.props.origin}/>
-        <div id="content">
-        <div id="container">
+      <div id="app" className={menu}>
+        <NavBar signedIn={this.state.signedIn} currentUser={this.state.currentUser} origin={this.props.origin} sendMenuClick={this.handleMenuClick}/>
           <RouteHandler origin={this.props.origin} readFromAPI={this.readFromAPI} writeToAPI={this.writeToAPI} signedIn={this.state.signedIn} currentUser={this.state.currentUser}/>
-        </div>
-        </div>
       </div>
     );
   },
 });
+
 
 module.exports = App;

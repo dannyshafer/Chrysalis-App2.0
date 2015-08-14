@@ -3,6 +3,7 @@ var Basket = require('../basket.js');
 var Router = require('react-router');
 var Link = Router.Link;
 
+
 // Material UI
 var mui = require('material-ui');
 var TextField = mui.TextField;
@@ -17,16 +18,16 @@ var StocksContainer = require('./StocksContainer.jsx');
 var RecommendedPieChart = require('./RecommendedPieChart.jsx')
 var UserPieChart = require('./UserPieChart.jsx')
 
-var RecommendationContainer = React.createClass({
-  mixins: [React.addons.LinkedStateMixin],
+var slider_value = null
 
+var RecommendationContainer = React.createClass({
   getInitialState: function () {
     return {
       risk_preference: null,
+      slider: null,
       age: null,
-      textFieldValue: '',
-      basket: new Basket,
       modalOpen: false,
+      basket: new Basket,
     };
   },
 
@@ -34,7 +35,7 @@ var RecommendationContainer = React.createClass({
     muiTheme: React.PropTypes.object
   },
 
-  getChildContext: function () { 
+  getChildContext: function () {
     return {
       muiTheme: ThemeManager.getCurrentTheme()
     };
@@ -43,7 +44,13 @@ var RecommendationContainer = React.createClass({
   componentDidMount: function(){
     this.readUserInfoFromApi();
     this.state.basket.on('change', this.basketChanged);
-    if (!!sessionStorage.getItem('jwt')) {this.readUserInfoFromAPI();}
+    this.state.basket.on('new_stocks', this.wipeOutBasket);
+    if (!!sessionStorage.getItem('jwt')) {this.readUserInfoFromApi();}
+  },
+
+  wipeOutBasket: function () {
+    this.state.basket.empty();
+    this.forceUpdate();
   },
 
   componentWillUnmount: function(){
@@ -69,7 +76,7 @@ var RecommendationContainer = React.createClass({
   createUserBasket: function (e) {
     e.preventDefault();
     var id = {}
-
+    this.forceUpdate();
     for(var i = 0; i < this.state.basket.stocks.length; i++) {
         id[i] = this.state.basket.stocks[i].ticker
     };
@@ -77,19 +84,26 @@ var RecommendationContainer = React.createClass({
     var data = {
       info: {
         ids: id,
-        name: this.state.textFieldValue,
+        name: this.refs.createBasket.getValue(),
       }
     };
     var uid = this.props.currentUser.uid
 
     this.props.writeToAPI(this.props.origin + '/users/' + uid + '/baskets', 'post', JSON.stringify(data), function(message){
-      this.setState({message: "Basket Created!"})
+      this.refs.createBasket.clearValue();
+      alert('Basket Created!');
     }.bind(this));
+    this.state.basket.emit('basket_created');
   },
 
   handleRiskSliderMove: function (e, value) {
-    this.setState({risk_preference: value});
+    slider_value = value
   },
+
+  updateSliderValue: function (e, ui) {
+    this.setState({risk_preference: slider_value})
+  },
+
   render: function () {
     if (this.props.signedIn === true && this.state.modalOpen === true) {
       var profileSetUpModal = (
@@ -101,56 +115,61 @@ var RecommendationContainer = React.createClass({
       );
     };
     if (this.state.basket.stocks.length != 0) {
-      var addBox = (
-        <div>
-        <TextField
+      var addBox = false
+    } else {
+      var addBox = true
+    };
+    if (this.state.risk_preference != null) {
+
+      return (
+        <div className="container">
+          {profileSetUpModal}
+          <div className="row">
+            <div className="small-12 medium-6 large-4 columns">
+              <RecommendedPieChart age={this.state.age}/>
+              <br />
+            </div>
+            <div className="small-12 medium-6 large-4 columns">
+              <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
+              <br />
+            </div>
+            <div className="small-12 medium-6 large-4 columns">
+              <h4 className="text-center">Create Basket</h4>
+              <TextField
+                ref="createBasket"
                 hintText="Required"
                 errorText={this.state.floatingErrorText}
                 floatingLabelText="Basket Name"
-                onChange={this._handleFloatingErrorInputChange} 
-                valueLink={this.linkState('textFieldValue')} />
-        <br />
-        <RaisedButton label="Create Basket" primary={true} onClick={this.createUserBasket}/>
-        </div>
-      );
-    } else {
-      var addBox = (
-        <h4>To create a basket, please add at least one stock.</h4>
-      );
-    };
-    if (this.state.risk_preference != null) {
-      return (
-        <div>
-          <h1>Recommendation Page</h1>
-          {profileSetUpModal}
-          <RecommendedPieChart age={this.state.age}/>
-          <br />
-          <UserPieChart readFromAPI={this.props.readFromAPI} writeToAPI={this.props.writeToAPI} currentUser={this.state.currentUser} basket={this.state.basket}/>
-          {addBox}
-          <br />
-          {this.state.message}
-          <br />
-          <br />
-          <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
-          <br />
-          <br />
-          <div className="slider">
-          <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
+                onChange={this._handleFloatingErrorInputChange}/>
+              <br />
+              <RaisedButton label="Create" primary={true} onClick={this.createUserBasket} disabled={addBox}/>
+              <br />
+              {this.state.message}
+            </div>
           </div>
-          <br />
-          <StocksContainer risk={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.state.basket}/>
+          <div className="row">
+            <div className="small-12 medium-12 large-12 columns">
+              <p>Move the Slider to adjust Risk Preference: {this.state.risk_preference}</p>
+              <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} onDragStop={this.updateSliderValue}/>
+            </div>
+          </div>
+          <div className="row">
+            <div className="small-12 medium-12 large-12 columns">
+              <StocksContainer risk_preference={this.state.risk_preference} readFromAPI={this.props.readFromAPI} origin={this.props.origin} basket={this.state.basket}/>
+            </div>
+          </div>
         </div>
       );
     } else {
       return (
-        <div>
-          <h1>Recommenation Page</h1>
+        <div className="container">
+          <h3>Loading Your Recommended Stocks...</h3>
           {profileSetUpModal}
           <LinearProgress mode="indeterminate"  />
         </div>
       );
     };
-    
+
   },
 });
 

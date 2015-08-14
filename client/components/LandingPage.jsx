@@ -7,6 +7,7 @@ var Link = Router.Link;
 var mui = require('material-ui');
 var Dialog = mui.Dialog;
 var ThemeManager = new mui.Styles.ThemeManager();
+var FlatButton = mui.FlatButton;
 
 var LandingPage = React.createClass({
   getInitialState: function () {
@@ -30,14 +31,16 @@ var LandingPage = React.createClass({
   readUserInfoFromAPI: function(){
     var uid = this.props.currentUser.uid
     this.props.readFromAPI(this.props.origin + '/users/' + uid + '/profile', function(info){
-      console.log('got set')
       this.setState({modalOpen: !info.ageSet});
     }.bind(this));
   },
   render: function(){
     if (this.props.signedIn === true && this.state.modalOpen === true) {
+      var standardActions = [
+        { text: 'Close' },
+      ];
       var profileSetUpModal = (
-        <Dialog openImmediately={true}>
+        <Dialog openImmediately={true} modal={true} actions={standardActions}>
           Please click here to set up your profile:
           <br />
           <Link to="profile">{this.props.currentUser}</Link>
@@ -45,21 +48,35 @@ var LandingPage = React.createClass({
       );
     };
     return (
-      <div>
-        {profileSetUpModal}
-        <div className="slogan">
-          <h1 className='title'>Chrysalis</h1>
-          <h2 className="sub-title">hatching insight</h2>
-        </div>
-        <div className='video-container'>
-          <video preload="true" autoPlay="autoplay" loop="loop" muted tabIndex="0">
-            <source src="ChrysalisRain.mp4" type="video/mp4"></source>
-          </video>
-        </div>
+      <div className="landing-background">
+      <div className="landing-container">
 
+          {profileSetUpModal}
+
+
+          <div className="slogan">
+            <h1 className='title'>Chrysalis</h1>
+            <h2 className="sub-title">hatching insight</h2>
+          </div>
+          <div className='video-container'>
+                  <video preload="true" autoPlay="autoplay" loop="loop" muted tabIndex="0">
+                    <source src="480-stock-ticker.mp4" type="video/mp4"></source>
+                  </video>
+          </div>
+
+
+              <div className="mission-statement-container">
+                <p className="mission-statement">Chrysalis makes investing in stocks simple.  Catering to novice and expert investors alike, we provide investments tailored to meet the needs of our clients.  Our recommendations are filtered according to rigorous criteria, producing stocks that we believe are currently undervalued and likely to perform well over time.</p>
+               <Link to="profile" ><p className="get-started-button">Get started today.</p></Link>
+
+              </div>
+
+      </div>
       </div>
     );
   },
 });
 
 module.exports=LandingPage
+
+

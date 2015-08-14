@@ -17,7 +17,7 @@ var ProfileContainer= React.createClass({
       muiTheme: ThemeManager.getCurrentTheme()
     };
   },
-  
+
   getInitialState: function(){
     return{
       risk_preference: 101,
@@ -76,27 +76,24 @@ var ProfileContainer= React.createClass({
     };
     if (this.state.risk_preference !=101) {
       return (
-        <div>
-          <h1>Your Profile</h1>
+        <div className="container">
+          <h1 className="page-header">Your Profile</h1>
           <div className="pure-form pure-form-stacked">
             <form onSubmit={this.updateProfileAPI}>
               <fieldset>
-                <legend>Update your profile here</legend>
-                {this.state.message}
-                <br />
-                <label for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
-                <br />
-                <label for="description">{this.state.description[this.state.risk_preference]}</label>
-                <br />
-                <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
-                <br />
+                <div className="profile-settings-container">
+                  <br/>
+                  {this.state.message}
+                  <label className="profile-setting" for="risk_preference">Risk Preference: {this.state.risk_preference}</label>
+                  <br/><br/>
 
-                <br />
-                <label for="age">Age: {this.state.age}</label>
-                <br />
-                {ageSlider}
-                <br />
-                <button type="submit" className="pure-button pure-button-primary">Update Profile</button>
+                    <label for="description"><p className="latin">{this.state.description[this.state.risk_preference]}</p></label>
+                  <br/>
+                  <Slider name="Risk Preference" defaultValue={Number(this.state.risk_preference)} step={1} min={1} max={10} onChange={this.handleRiskSliderMove} />
+                  <label className="profile-setting" for="age">Age: {this.state.age}</label>
+                  {ageSlider}
+                  <button type="submit" className="pure-button pure-button-primary">Update Profile</button>
+                  </div>
               </fieldset>
             </form>
           </div>
@@ -104,12 +101,13 @@ var ProfileContainer= React.createClass({
       );
     }
     return (
-      <div>
+      <div className="container">
         <h1>Your Profile</h1>
         <LinearProgress mode="indeterminate" />
       </div>
     );
   },
 });
+
 
 module.exports=ProfileContainer

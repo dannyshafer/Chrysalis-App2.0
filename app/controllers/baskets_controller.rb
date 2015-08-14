@@ -1,27 +1,21 @@
 require 'date'
 
 class BasketsController < ApplicationController
-  before_action :authenticate_request, only: [:index, :show, :today, :create, :destroy]
+  include StocksHelper
+
+  before_action :authenticate_request
 
   def index
-    baskets = []
-    basket_info = []
-    @current_user.baskets.all.each do |basket|
-      stocks = []
-      basket_info << {name: basket.name, date: basket.date, id: basket.id}
-
-      basket.records.each do |record|
-        stocks << record
-      end
-      baskets << stocks
-    end
-
-    info = {baskets: baskets, basket_info: basket_info}
-    render json: info
+    baskets = @current_user.baskets.includes(:records)
+    render json: baskets.to_json(
+      root:    false,
+      methods: [:performance],
+      include: [:records],
+    )
   end
 
   def show
-    
+
   end
 
   def destroy
@@ -48,7 +42,7 @@ class BasketsController < ApplicationController
     basket = @current_user.baskets.create(name: info_params["info"]["name"].capitalize!, date: Time.now())
     records_id = []
     info_params["info"]["ids"].each do |key, ticker|
-      records_id << Record.find_by(ticker: ticker, date: DateTime.now.to_date).id
+      records_id << Record.where(ticker: ticker).last.id
     end
     records_id.each do |id|
       basket.records_baskets.create(record_id: id)

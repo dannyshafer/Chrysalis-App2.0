@@ -17,6 +17,18 @@ gem 'jwt'
 
 gem 'pg'
 
+gem 'rspec-rails'
+
+group :development, :test do
+  gem 'dotenv-rails'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+end
+
+group :test do
+  gem 'capybara'
+end
+
 group :production do
   gem 'rails_12factor'
 
