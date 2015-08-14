@@ -13,7 +13,7 @@ class TokensController < ApplicationController
       request_token = OAuth::RequestToken.new(TWITTER, oauth.token, oauth.secret)
       access_token = request_token.get_access_token(oauth_verifier: params[:oauth_verifier])
       user = User.find_or_create_by(uid: access_token.params[:user_id], ) { |u| u.handle = access_token.params[:screen_name] }
-      jwt = JWT.encode({uid: user.uid, exp: 1.day.from_now.to_i}, Rails.application.secrets.secret_key_base)
+      jwt = JWT.encode({uid: user.uid, exp: 1.day.from_now.to_i}, ENV['SECRET_KEY_BASE'])
       query = {jwt: jwt}.to_query
       redirect_to "/?#{query}"
     else
