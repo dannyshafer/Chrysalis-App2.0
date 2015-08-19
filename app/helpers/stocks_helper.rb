@@ -29,7 +29,7 @@ module StocksHelper
     Stock.all.each do |symbol|
       full_url = url + symbol.ticker + connect + eps + pe + pbook + psales + markcap + ask + bid + peg + book_value
       response = HTTParty.get(full_url)
-      doc = Nokogiri::HTML(open("http://search.aol.com/aol/search?s_it=topsearchbox.search&s_chn=prt_main5&v_t=comsearch&q=" + symbol.name + "+logo"))
+      doc = Nokogiri::HTML(open("http://search.aol.com/aol/search?s_it=topsearchbox.search&s_chn=prt_main5&v_t=comsearch&q=" + symbol.name.gsub(/\p{Space}/,'') + "+logo"))
       parsed = CSV.parse(response)[0]
       if parsed[1].to_f != 0 && !doc.nil?
         symbol.update_attributes(eps: parsed[0].to_f,
