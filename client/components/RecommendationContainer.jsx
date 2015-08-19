@@ -107,9 +107,7 @@ var RecommendationContainer = React.createClass({
     if (this.props.signedIn === true && this.state.modalOpen === true) {
       var profileSetUpModal = (
         <Dialog openImmediately={true}>
-          Please click here to set up your profile:
-          <br />
-          <Link to="profile">{this.props.currentUser}</Link>
+          <Link to="profile">Click here to set up your profile</Link>
         </Dialog>
       );
     };

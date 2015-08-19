@@ -45649,9 +45649,7 @@
 	      ];
 	      var profileSetUpModal = (
 	        React.createElement(Dialog, {openImmediately: true, modal: true, actions: standardActions}, 
-	          "Please click here to set up your profile:", 
-	          React.createElement("br", null), 
-	          React.createElement(Link, {to: "profile"}, this.props.currentUser)
+	          React.createElement(Link, {to: "profile"}, "Click here to set up your profile")
 	        )
 	      );
 	    };
@@ -46122,9 +46120,7 @@
 	    if (this.props.signedIn === true && this.state.modalOpen === true) {
 	      var profileSetUpModal = (
 	        React.createElement(Dialog, {openImmediately: true}, 
-	          "Please click here to set up your profile:", 
-	          React.createElement("br", null), 
-	          React.createElement(Link, {to: "profile"}, this.props.currentUser)
+	          React.createElement(Link, {to: "profile"}, "Click here to set up your profile")
 	        )
 	      );
 	    };
