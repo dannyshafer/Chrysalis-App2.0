@@ -1,4 +1,4 @@
-Chrysalis makes investing easier by doing a lot of the basic math associated with fundamental analysis, calculations that are tedious if done manually. Visit it <a href="chrysalis-app.herokuapp.com">here</a>. To get Chrysalis up and running, make sure you have Rails 4.2.0 and are running Ruby 2.2.1 within the local environment where you clone the repo.
+Chrysalis makes investing easier by doing a lot of the basic math associated with fundamental analysis, calculations that are tedious if done manually. Visit it <a href="http://chrysalis-app.herokuapp.com">here</a>. To get Chrysalis up and running, make sure you have Rails 4.2.0 and are running Ruby 2.2.1 within the local environment where you clone the repo.
 
 As of right now, Chrysalis does not run locally without an .env file for Twitter authentication. These cannot be published in the repo as they contain account information.
 
