@@ -4,7 +4,7 @@ Chrysalis makes investing in stocks simple. Catering to novice and expert invest
 
 ##Deployment
 
-Chrysalis is deployed to Heroku.  Visit the app [here](https://chrysalis.herokuapp.com/)
+Chrysalis is deployed to Heroku.  Visit the app [here](https://chrysalis.herokuapp.com/).
 
 ##Instructions for Use
 
