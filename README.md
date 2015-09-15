@@ -20,7 +20,7 @@ If you have questions about what some of the terms and statistics mean, refer to
 
 ##Demonstration
 
-![Youtube Screenshot](https://github.com/dannyshafer/Chrysalis-App2.0/tree/master/readme_images/demo.png)
+![Youtube Screenshot](https://github.com/dannyshafer/Chrysalis-App2.0/blob/master/readme_images/demo.png)
 
 Click [here](https://www.youtube.com/watch?v=ZXSXNR7Fbqg) to view the demonstration.
 
